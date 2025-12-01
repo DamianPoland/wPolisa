@@ -1,10 +1,10 @@
 "use client";
-export const ContactPage = () => {
+export const DescriptionPage = () => {
     return (
         <div className="flex items-center justify-center p-8">
-            Contact
+            Description Page
         </div>
     );
 }
 
-export default ContactPage;
+export default DescriptionPage;
