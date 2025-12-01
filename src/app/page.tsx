@@ -1,11 +1,15 @@
-import Image from "next/image";
 
-export default function Home() {
+
+export const HomePage = () => {
   return (
+    <div >
 
-    <main className="flex items-center justify-center p-8">
-      Home
-    </main>
-
+      <main className="flex flex-col items-center justify-center p-8">
+        <div>Home</div>
+      </main>
+    </div>
   );
 }
+
+
+export default HomePage;
