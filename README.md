@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## NOTES // TODO - remove
+
+Prietter
+
+jeśli w global.css
+@theme - Unknown at rule @theme
+to
+Zainstaluj i włącz rozszerzenie „Tailwind CSS IntelliSense” oraz ustaw tryb języka na „Tailwind CSS” dla pliku .css (Command Palette → „Change Language Mode” → „Tailwind CSS”).
+
 ## Getting Started
 
 First, run the development server:
