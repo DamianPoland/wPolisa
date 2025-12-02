@@ -21,7 +21,6 @@ export default function RootLayout({
     <html lang="pl">
       <body className="bg-basicBright">
         <Header />
-        {/* <div className="h-10"></div>{" "} */}
         {/* TODO replace with css margin or padding for header */}
         <div className="height-full min-h-[calc(100vh-80px)] max-w-5xl m-auto mt-20 pt-8 ">
           {children}
