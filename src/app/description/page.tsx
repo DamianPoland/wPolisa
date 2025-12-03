@@ -47,8 +47,7 @@ export const DescriptionPage = () => {
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Po pierwsze, jesteśmy ludźmi.</h1>
             <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6">Po drugie, ekspertami.</h1>
             <p className="mt-6 text-lg text-primary-foreground/80  md:text-xl">
-              Nie jesteśmy kolejną bezosobową firmą ubezpieczeniową. Jesteśmy zespołem pasjonatów, którzy naprawdę chcą
-              Ci pomóc.
+              Jesteśmy zespołem pasjonatów, którzy naprawdę chcą Ci pomóc.
             </p>
             <p
               className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"

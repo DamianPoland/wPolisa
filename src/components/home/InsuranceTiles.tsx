@@ -53,12 +53,13 @@ const InsuranceTiles = () => {
   return (
     <section className="py-16 md:py-24">
       <div className="container m-auto">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
             Nasze <span className="text-accent">Hity</span>
           </h2>
+          <p className="mt-4 text-muted-foreground">Zaufali nam najlepsi - i my im też.</p>
           <p className="mt-4 text-muted-foreground">
-            Wybierz rodzaj ubezpieczenia i wypełnij krótki formularz. Skontaktujemy się z najlepszą ofertą!
+            Wybierz rodzaj ubezpieczenia i wypełnij krótki formularz aby otrzymac najlepszą ofertę!
           </p>
         </div>
 
@@ -66,7 +67,7 @@ const InsuranceTiles = () => {
           {insuranceTypes.map((insurance, index) => (
             <Link
               key={insurance.id}
-              href={`/forms?type=${insurance.id}`}
+              href={`/forms?variant=${insurance.id}`}
               className="group animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
