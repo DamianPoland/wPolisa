@@ -37,12 +37,6 @@ const HeroSection = () => {
           >
             🛡️ Ubezpieczenia bez bólu głowy. Zamiast szukać, po prostu nas zapytaj.
           </p>
-          <p
-            className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"
-            style={{ animationDelay: "0.1s" }}
-          >
-            🛡️ My czytamy drobny druk, żebyś ty nie musiał
-          </p>
 
           {/* Benefits */}
           <div
@@ -75,7 +69,7 @@ const HeroSection = () => {
 
           {/* Trust Badge */}
           <p className="animate-fade-in mt-12 text-sm text-primary-foreground/50" style={{ animationDelay: "0.4s" }}>
-            Oszyfrujemy dla Ciebie OWU, zanim zdąrzysz wypić kawę ☕
+            Odszyfrujemy dla Ciebie OWU, zanim zdąrzysz wypić kawę ☕
           </p>
         </div>
       </div>
