@@ -12,10 +12,10 @@ export const FormPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           onClick={() => router.push("/forms/medical")}
-          className="group relative w-full aspect-square bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
+          className="group relative w-full aspect-square bg-linear-to-br from-amber-500 to-amber-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
         >
           {/* Background Animation */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-tr from-amber-400 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           <div className="relative z-10 flex flex-col items-center justify-center w-[200px] h-full">
             <Hospital className="w-16 h-16 text-white" />
