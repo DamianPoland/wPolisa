@@ -1,12 +1,18 @@
 "use client";
 
+import CTASection from "@/components/home/CTASection";
+import HeroSection from "@/components/home/HeroSection";
+import InsuranceTiles from "@/components/home/InsuranceTiles";
+import PartnersSection from "@/components/home/PartnersSection";
+
 export const HomePage = () => {
   return (
-    <div>
-      <main className="flex flex-col items-center justify-center">
-        <div>Home</div>
-      </main>
-    </div>
+    <main>
+      <HeroSection />
+      <InsuranceTiles />
+      <PartnersSection />
+      <CTASection />
+    </main>
   );
 };
 
