@@ -7,10 +7,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ users });
   } catch (err) {
     console.error("Error fetching users:", err);
-    return NextResponse.json(
-      { error: "Failed to fetch users", detail: String(err) },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch users", detail: String(err) }, { status: 500 });
   }
 }
 
@@ -20,22 +17,11 @@ export async function POST(request: NextRequest) {
 
   // Validation
   if (!pesel || !name || !surname || !email) {
-    return NextResponse.json(
-      { error: "PESEL, name, surname, and email are required" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "PESEL, name, surname, and email are required" }, { status: 400 });
   }
 
   try {
-    const user = await createUser(
-      pesel,
-      name,
-      surname,
-      email,
-      phone_number,
-      description,
-      note
-    );
+    const user = await createUser(pesel, name, surname, email, phone_number, description, note);
 
     return NextResponse.json({
       ok: true,
@@ -46,10 +32,7 @@ export async function POST(request: NextRequest) {
     });
   } catch (err) {
     console.error("Error saving user:", err);
-    return NextResponse.json(
-      { error: "Failed to save user", detail: String(err) },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to save user", detail: String(err) }, { status: 500 });
   }
 }
 
@@ -67,9 +50,6 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ ok: true, id });
   } catch (err) {
     console.error("Error deleting user:", err);
-    return NextResponse.json(
-      { error: "Failed to delete user", detail: String(err) },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to delete user", detail: String(err) }, { status: 500 });
   }
 }

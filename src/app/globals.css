@@ -5,19 +5,21 @@
 
 @theme {
   --color-basicBright: #f8f8f8;
-  --color-basicMiddleLighter: #c3cbd4;
   --color-basicMiddle: #9ba4af;
-  --color-basicMiddleDarker: #838d9a;
   --color-basicDark: #1c3757;
-  --color-accentBright: #ff7c2a;
+  --color-accentBright: #e67a2c;
   --color-accentDark: #d45c10;
+}
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 body {

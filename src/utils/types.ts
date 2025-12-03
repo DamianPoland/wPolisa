@@ -9,3 +9,9 @@ export interface IDBUser {
   note?: string;
   created_at?: string;
 }
+
+export type MenuItem = {
+  id: number;
+  href: string;
+  title: string;
+};

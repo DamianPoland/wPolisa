@@ -1,24 +1,37 @@
-import Link from "next/link";
-import logo from "@/assets/images/logo5-tr-full-dark-64.png";
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import DesktopNav from "@/components/navigation/DesktopNav";
+import MobileNav from "@/components/navigation/MobileNav";
+import Logo from "@/components/logo/Logo";
+import { MenuItem } from "@/utils/types";
+
+const menuItems: MenuItem[] = [
+  { id: 1, href: "/", title: "Główna" },
+  { id: 2, href: "/description", title: "O nas" },
+  { id: 3, href: "/forms", title: "Formularze" },
+  { id: 4, href: "/contact", title: "Kontakt" },
+];
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <>
-      <header className="fixed top-0 left-0 right-0 w-full h-20 px-32 py-2 bg-basicDark shadow-md z-50">
-        <div className="flex items-center justify-between max-w-5xl m-auto px-10">
-          <div>
-            <Image src={logo} alt="logo" />
-          </div>
-          <nav className="flex gap-4 text-basicBright">
-            <Link href="/">Home</Link>
-            <Link href="/description">Description</Link>
-            <Link href="/forms">Form</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
-        </div>
-      </header>
-    </>
+    <header className="fixed top-0 left-0 right-0 w-full h-20 md:px-32 py-2 bg-basicDark shadow-md z-50">
+      <div className="flex items-center justify-between max-w-7xl m-auto">
+        <Logo closeMenu={closeMenu} />
+        <DesktopNav menuItems={menuItems} />
+      </div>
+      <MobileNav toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} menuItems={menuItems} />
+    </header>
   );
 };
 export default Header;

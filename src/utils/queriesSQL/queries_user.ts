@@ -1,5 +1,5 @@
 import sql from "@/lib/db";
-import { IDBUser } from "../interfaces";
+import { IDBUser } from "../types";
 
 // CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; // jeśli jeszcze nie jest dodane
 // CREATE TABLE users (
@@ -26,9 +26,7 @@ export async function createUser(
 ): Promise<IDBUser> {
   const result = await sql`
     INSERT INTO users (pesel, name, surname, email, phone_number, description, note)
-    VALUES (${pesel}, ${name}, ${surname}, ${email}, ${phone_number || null}, ${
-    description || null
-  }, ${note || null})
+    VALUES (${pesel}, ${name}, ${surname}, ${email}, ${phone_number || null}, ${description || null}, ${note || null})
     RETURNING id, pesel, name, surname, email, phone_number, description, note, created_at
   `;
 
@@ -62,8 +60,7 @@ export async function updateUser(
   id: string,
   updates: Partial<Omit<IDBUser, "id" | "created_at">>
 ): Promise<IDBUser | null> {
-  const { pesel, name, surname, email, phone_number, description, note } =
-    updates;
+  const { pesel, name, surname, email, phone_number, description, note } = updates;
 
   const result = await sql`
     UPDATE users

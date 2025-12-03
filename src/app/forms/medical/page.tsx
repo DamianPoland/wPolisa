@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { IDBUser } from "@/utils/interfaces";
+import { IDBUser } from "@/utils/types";
 
 const MedicalPage = () => {
   const {
@@ -36,9 +36,7 @@ const MedicalPage = () => {
       reset();
     } catch (error: any) {
       console.error("Error submitting form:", error);
-      setErrorMsg(
-        error?.response?.data?.error || error.message || "Failed to submit form"
-      );
+      setErrorMsg(error?.response?.data?.error || error.message || "Failed to submit form");
     }
   };
 
@@ -46,24 +44,14 @@ const MedicalPage = () => {
     <div className="max-w-md mx-auto p-6">
       <h1 className="text-2xl font-bold mb-6">Pakiet medyczny</h1>
 
-      {message && (
-        <div className="mb-4 p-3 bg-green-100 text-green-800 rounded-lg">
-          {message}
-        </div>
-      )}
+      {message && <div className="mb-4 p-3 bg-green-100 text-green-800 rounded-lg">{message}</div>}
 
-      {errorMsg && (
-        <div className="mb-4 p-3 bg-red-100 text-red-800 rounded-lg">
-          {errorMsg}
-        </div>
-      )}
+      {errorMsg && <div className="mb-4 p-3 bg-red-100 text-red-800 rounded-lg">{errorMsg}</div>}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* PESEL */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            PESEL *
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">PESEL *</label>
           <input
             {...register("pesel", {
               required: "PESEL jest wymagany",
@@ -76,50 +64,40 @@ const MedicalPage = () => {
             placeholder="Wpisz 11-cyfrowy PESEL"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors.pesel && (
-            <span className="text-red-600 text-sm">{errors.pesel.message}</span>
-          )}
+          {errors.pesel && <span className="text-red-600 text-sm">{errors.pesel.message}</span>}
         </div>
 
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Imię *
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Imię *</label>
           <input
-            {...register("name", { required: "Imię jest wymagane" })}
+            {...register("name", {
+              required: "Imię jest wymagane",
+            })}
             type="text"
             placeholder="Wpisz imię"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors.name && (
-            <span className="text-red-600 text-sm">{errors.name.message}</span>
-          )}
+          {errors.name && <span className="text-red-600 text-sm">{errors.name.message}</span>}
         </div>
 
         {/* Surname */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Nazwisko *
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Nazwisko *</label>
           <input
-            {...register("surname", { required: "Nazwisko jest wymagane" })}
+            {...register("surname", {
+              required: "Nazwisko jest wymagane",
+            })}
             type="text"
             placeholder="Wpisz nazwisko"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors.surname && (
-            <span className="text-red-600 text-sm">
-              {errors.surname.message}
-            </span>
-          )}
+          {errors.surname && <span className="text-red-600 text-sm">{errors.surname.message}</span>}
         </div>
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Adres e-mail *
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Adres e-mail *</label>
           <input
             {...register("email", {
               required: "Adres e-mail jest wymagany",
@@ -132,16 +110,12 @@ const MedicalPage = () => {
             placeholder="Wpisz adres e-mail"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors.email && (
-            <span className="text-red-600 text-sm">{errors.email.message}</span>
-          )}
+          {errors.email && <span className="text-red-600 text-sm">{errors.email.message}</span>}
         </div>
 
         {/* Phone Number */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Numer telefonu
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Numer telefonu</label>
           <input
             {...register("phone_number")}
             type="tel"
@@ -152,9 +126,7 @@ const MedicalPage = () => {
 
         {/* Description */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Opis
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Opis</label>
           <textarea
             {...register("description")}
             placeholder="Wpisz opis"
@@ -165,9 +137,7 @@ const MedicalPage = () => {
 
         {/* Note */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Notatka
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Notatka</label>
           <textarea
             {...register("note")}
             placeholder="Wpisz notatkę"
@@ -177,12 +147,7 @@ const MedicalPage = () => {
         </div>
 
         {/* Submit Button */}
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full"
-          variant="default"
-        >
+        <Button type="submit" disabled={isSubmitting} className="w-full" variant="default">
           {isSubmitting ? "Wysyłanie..." : "Wyślij formularz"}
         </Button>
       </form>
