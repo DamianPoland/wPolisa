@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
@@ -147,9 +146,9 @@ const MedicalPage = () => {
         </div>
 
         {/* Submit Button */}
-        <Button type="submit" disabled={isSubmitting} className="w-full" variant="default">
+        <button type="submit" disabled={isSubmitting} className="w-full bg-gray-400">
           {isSubmitting ? "Wysyłanie..." : "Wyślij formularz"}
-        </Button>
+        </button>
       </form>
     </div>
   );
