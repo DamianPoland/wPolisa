@@ -28,7 +28,6 @@ export default function RootLayout({
     <html lang="pl" className={montserrat.className}>
       <body className="bg-basicBright">
         <Header />
-        {/* TODO replace with css margin or padding for header */}
         <div className="height-full min-h-[calc(100vh-80px)] max-w-7xl m-auto mt-20 px-4 py-8 ">{children}</div>
         <Footer />
       </body>

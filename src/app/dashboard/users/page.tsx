@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { IDBUser } from "@/utils/types";
 
@@ -33,9 +32,9 @@ const PageUsers: React.FC = () => {
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Użytkownicy</h1>
         <div className="flex items-center gap-2">
-          <Button variant="default" onClick={() => fetchUsers()}>
+          <button className="bg-gray-500" onClick={() => fetchUsers()}>
             Odśwież
-          </Button>
+          </button>
         </div>
       </div>
 
