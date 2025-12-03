@@ -79,7 +79,7 @@ const Header = () => {
               </Link>
             ))}
             <Button variant="accent" className="mt-2" asChild>
-              <Link href="/kontakt" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 Skontaktuj się
               </Link>
             </Button>

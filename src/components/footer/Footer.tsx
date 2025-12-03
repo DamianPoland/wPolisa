@@ -49,25 +49,25 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Ubezpieczenia</h3>
             <nav className="flex flex-col gap-2">
               <Link
-                href="/forms?type=medyczny"
+                href="/forms?variant=medyczny"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Pakiet Medyczny
               </Link>
               <Link
-                href="/forms?type=zycie"
+                href="/forms?variant=zycie"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Życia
               </Link>
               <Link
-                href="/forms?type=podroze"
+                href="/forms?variant=podroze"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Podróży
               </Link>
               <Link
-                href="/forms?type=dom"
+                href="/forms?variant=dom"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Domu

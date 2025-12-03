@@ -22,9 +22,7 @@ const PartnersSection = () => {
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
             Nasi <span className="text-accent">Partnerzy</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Współpracujemy tylko z najlepszymi. Twoje bezpieczeństwo jest w dobrych rękach – dosłownie.
-          </p>
+          <p className="mt-4 text-muted-foreground">Twoje bezpieczeństwo jest w dobrych rękach – dosłownie.</p>
         </div>
 
         {/* Insurance Partners */}
