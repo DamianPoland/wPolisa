@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -30,9 +29,7 @@ export default function RootLayout({
       <body className="bg-basicBright">
         <Header />
         {/* TODO replace with css margin or padding for header */}
-        <div className="height-full min-h-[calc(100vh-80px)] max-w-5xl m-auto mt-20 px-4 py-8 ">
-          {children}
-        </div>
+        <div className="height-full min-h-[calc(100vh-80px)] max-w-7xl m-auto mt-20 px-4 py-8 ">{children}</div>
         <Footer />
       </body>
     </html>

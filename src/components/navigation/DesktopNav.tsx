@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MenuItem } from "../header/Header";
+import { MenuItem } from "@/utils/types";
 
-type DesktopNavProps = {
+interface IDesktopNav {
   menuItems: MenuItem[];
-};
+}
 
-const DesktopNav = ({ menuItems }: DesktopNavProps) => {
+const DesktopNav = ({ menuItems }: IDesktopNav) => {
   const pathname = usePathname();
 
   return (
@@ -19,9 +19,7 @@ const DesktopNav = ({ menuItems }: DesktopNavProps) => {
           <Link
             key={item.id}
             href={item.href}
-            className={`px-3 py-2 hover:text-accentBright ${
-              isActive ? "text-accentBright" : "text-basicBright"
-            }`}
+            className={`px-3 py-2 hover:text-accentBright ${isActive ? "text-accentBright" : "text-basicBright"}`}
           >
             {item.title}
           </Link>

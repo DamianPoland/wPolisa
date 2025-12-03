@@ -7,9 +7,7 @@ export const FormPage = () => {
 
   return (
     <div className="flex flex-col items-center  min-h-screen p-8">
-      <h1 className="text-4xl font-bold text-center mb-12">
-        Formularze kontaktowe
-      </h1>
+      <h1 className="text-4xl font-bold text-center mb-12">Formularze kontaktowe</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
@@ -21,12 +19,8 @@ export const FormPage = () => {
 
           <div className="relative z-10 flex flex-col items-center justify-center w-[200px] h-full">
             <Hospital className="w-16 h-16 text-white" />
-            <h2 className="text-2xl font-bold text-white text-center">
-              Pakiet
-            </h2>
-            <h2 className="text-2xl font-bold text-white text-center">
-              medyczny
-            </h2>
+            <h2 className="text-2xl font-bold text-white text-center">Pakiet</h2>
+            <h2 className="text-2xl font-bold text-white text-center">medyczny</h2>
           </div>
         </div>
       </div>
