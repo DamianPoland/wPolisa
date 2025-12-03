@@ -1,12 +1,32 @@
-import Link from "next/link";
+"use client";
 
-const DesktopNav = () => {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { MenuItem } from "../header/Header";
+
+type DesktopNavProps = {
+  menuItems: MenuItem[];
+};
+
+const DesktopNav = ({ menuItems }: DesktopNavProps) => {
+  const pathname = usePathname();
+
   return (
     <nav className="hidden md:flex gap-4 text-basicBright">
-      <Link href="/">Home</Link>
-      <Link href="/description">Description</Link>
-      <Link href="/form">Form</Link>
-      <Link href="/contact">Contact</Link>
+      {menuItems.map((item) => {
+        const isActive = pathname === item.href;
+        return (
+          <Link
+            key={item.id}
+            href={item.href}
+            className={`px-3 py-2 hover:text-accentBright ${
+              isActive ? "text-accentBright" : "text-basicBright"
+            }`}
+          >
+            {item.title}
+          </Link>
+        );
+      })}
     </nav>
   );
 };

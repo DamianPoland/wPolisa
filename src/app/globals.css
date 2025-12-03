@@ -9,15 +9,21 @@
   --color-basicMiddle: #9ba4af;
   --color-basicMiddleDarker: #838d9a;
   --color-basicDark: #1c3757;
-  --color-accentBright: #ff7c2a;
+  --color-accentBright: #e67a2c;
   --color-accentDark: #d45c10;
+}
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-montserrat);
 }
 
 body {
