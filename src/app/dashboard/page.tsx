@@ -12,10 +12,10 @@ export const FormPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           onClick={() => router.push("/dashboard/users")}
-          className="group relative w-full aspect-square bg-gradient-to-br from-sky-500 to-sky-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
+          className="group relative w-full aspect-square bg-linear-to-br from-sky-500 to-sky-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
         >
           {/* Background Animation */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-sky-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-tr from-sky-400 to-sky-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           <div className="relative z-10 flex flex-col items-center justify-center w-[200px] h-full">
             <Users className="w-16 h-16 text-white" />
@@ -25,10 +25,10 @@ export const FormPage = () => {
 
         <div
           onClick={() => router.push("/dashboard/enquiries")}
-          className="group relative w-full aspect-square bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
+          className="group relative w-full aspect-square bg-linear-to-br from-amber-500 to-amber-600 rounded-lg shadow-lg cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-102 active:scale-95"
         >
           {/* Background Animation */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-amber-400 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-tr from-amber-400 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           <div className="relative z-10 flex flex-col items-center justify-center w-[200px] h-full">
             <FileText className="w-16 h-16 text-white" />
