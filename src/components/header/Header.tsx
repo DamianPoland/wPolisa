@@ -14,10 +14,10 @@ export type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { id: 1, href: "/", title: "Home" },
-  { id: 2, href: "/description", title: "Description" },
-  { id: 3, href: "/form", title: "Form" },
-  { id: 4, href: "/contact", title: "Contact" },
+  { id: 1, href: "/", title: "Główna" },
+  { id: 2, href: "/description", title: "O nas" },
+  { id: 3, href: "/forms", title: "Formularze" },
+  { id: 4, href: "/contact", title: "Kontact" },
 ];
 
 const Header = () => {
