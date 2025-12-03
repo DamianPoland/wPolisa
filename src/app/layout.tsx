@@ -26,10 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" className={montserrat.className}>
-      <body className="bg-basicBright">
-        <Header />
-        <div className="height-full min-h-[calc(100vh-80px)] max-w-7xl m-auto mt-20 px-4 py-8 ">{children}</div>
-        <Footer />
+      <body>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
