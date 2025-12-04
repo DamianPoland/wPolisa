@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< Updated upstream
 import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
+=======
+import { Phone, Mail, MapPin } from "lucide-react";
+>>>>>>> Stashed changes
 import Link from "next/link";
 import Logo from "@/components/logo/Logo";
 import { Icon } from "@/utils/types";
