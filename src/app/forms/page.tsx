@@ -77,17 +77,17 @@ export const FormPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">
               Zacznijmy od czegoś <span className="text-accent">prostego!</span>
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/80">
+            <p className="mt-6 text-primary-foreground/80 text-lg">
               Wybierz, czego potrzebujesz, a my odezwiemy się z gotowymi propozycjami.
             </p>
             <p
-              className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"
+              className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
               style={{ animationDelay: "0.1s" }}
             >
               🛡️ Zrób pierwszy krok w minutę - my zrobimy pozostałe 99.
@@ -97,7 +97,7 @@ export const FormPage = () => {
       </section>
 
       {/* Insurance Type Selection */}
-      <section className="py-12">
+      <section className="px-4 md:px-0 py-12">
         <div className="container m-auto">
           <h2 className="mb-8 text-center text-2xl font-bold text-foreground">Wybierz rodzaj ubezpieczenia</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,7 +139,7 @@ export const FormPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="bg-muted/50 py-12 md:py-16">
+      <section id="contact-form" className="bg-muted/50 px-4 md:px-0 py-12 md:py-16">
         <div className="container m-auto">
           <Card className="mx-auto max-w-2xl border-border shadow-card">
             <CardHeader>

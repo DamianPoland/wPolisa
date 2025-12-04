@@ -2,14 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700", "900"],
-  variable: "--font-montserrat",
-});
+import { plusJakartaSans } from "@/utils/constants";
 
 // TODO poprawoć opisy metadata
 export const metadata: Metadata = {
@@ -25,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className={montserrat.className}>
+    <html lang="pl" className={plusJakartaSans.className}>
       <body>
         <div className="flex min-h-screen flex-col">
           <Header />

@@ -51,7 +51,7 @@ const insuranceTypes = [
 
 const InsuranceTiles = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="px-4 md:px-0 py-16 md:py-24">
       <div className="container m-auto">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">

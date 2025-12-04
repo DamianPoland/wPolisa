@@ -16,9 +16,9 @@ const medicalPartners = ["Luxmed", "Medicover"];
 
 const PartnersSection = () => {
   return (
-    <section className="bg-muted/50 py-16 md:py-24">
+    <section className="bg-muted/5 py-16 md:py-24">
       <div className="container m-auto">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl px-4 md:px-0 text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
             Nasi <span className="text-accent">Partnerzy</span>
           </h2>
