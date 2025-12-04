@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/logo/Logo";
+import { Icon } from "@/utils/types";
 
 const navLinks = [
   { name: "Strona główna", path: "/" },
@@ -20,14 +22,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
       <div className="container flex h-16 items-center justify-between md:h-20 m-auto">
-        <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-accent">
-            <Shield className="h-6 w-6 text-accent-foreground" />
-          </div>
-          <span className="text-xl font-bold text-foreground">
-            w<span className="text-accent">Polisa</span>
-          </span>
-        </Link>
+        <Logo logoVariant={Icon.DARK} />
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 md:flex">

@@ -1,6 +1,8 @@
 "use client";
-import { Shield, Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/components/logo/Logo";
+import { Icon } from "@/utils/types";
 
 const Footer = () => {
   return (
@@ -9,14 +11,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <Shield className="h-6 w-6 text-accent-foreground" />
-              </div>
-              <span className="text-xl font-bold">
-                w<span className="text-accent">Polisa</span>
-              </span>
-            </Link>
+            <Logo logoVariant={Icon.LIGHT} />
             <p className="text-sm text-primary-foreground/70">
               Multiagencja ubezpieczeniowa. Łączymy wiedzę, doświadczenie i najlepsze oferty na rynku.
             </p>

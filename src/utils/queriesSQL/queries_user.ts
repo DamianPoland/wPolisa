@@ -1,5 +1,5 @@
 import sql from "@/lib/db";
-import { IDBUser } from "../types";
+import { IDBUser } from "@/utils/types";
 
 // CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; // jeśli jeszcze nie jest dodane
 // CREATE TABLE users (

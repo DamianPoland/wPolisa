@@ -1,7 +1,9 @@
 "use client";
-import { Shield, ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import shieldColor from "@/assets/images/shield-color-32.png";
 
 const HeroSection = () => {
   const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatne doradztwo i pomoc", "Szybka obsługa online"];
@@ -18,7 +20,7 @@ const HeroSection = () => {
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="animate-fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground backdrop-blur-sm">
-            <Shield className="h-4 w-4 text-accent" />
+            <Image src={shieldColor} alt="shield" className="h-4 w-4" />
             <span>Multiagencja Ubezpieczeniowa</span>
           </div>
 
