@@ -1,5 +1,5 @@
 "use client";
-import { Phone, Mail, MapPin, Facebook, Linkedin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo/Logo";
 import { Icon } from "@/utils/types";
