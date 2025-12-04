@@ -15,3 +15,8 @@ export type MenuItem = {
   href: string;
   title: string;
 };
+
+export enum Icon {
+  DARK = "dark",
+  LIGHT = "light",
+}
