@@ -3,8 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"); */
-
 @theme {
   --color-basicBright: #f8f8f8;
   --color-basicMiddle: #9ba4af;
