@@ -9,7 +9,7 @@ const HeroSection = () => {
   const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatne doradztwo i pomoc", "Szybka obsługa online"];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-hero">
+    <section className="relative overflow-hidden bg-gradient-hero px-4 md:px-0">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-accent blur-3xl" />
@@ -34,7 +34,7 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p
-            className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"
+            className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
             style={{ animationDelay: "0.1s" }}
           >
             🛡️ Ubezpieczenia bez bólu głowy. Zamiast szukać, po prostu nas zapytaj.
@@ -70,8 +70,8 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Badge */}
-          <p className="animate-fade-in mt-12 text-sm text-primary-foreground/50" style={{ animationDelay: "0.4s" }}>
-            Odszyfrujemy dla Ciebie OWU, zanim zdąrzysz wypić kawę ☕
+          <p className="animate-fade-in mt-12 text-lg text-primary-foreground/80" style={{ animationDelay: "0.4s" }}>
+            Odszyfrujemy dla Ciebie OWU, zanim zdążysz wypić kawę ☕
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@ const HeroSection = () => {
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path
             d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
+            fill="hsl(0 0% 97%)"
           />
         </svg>
       </div>

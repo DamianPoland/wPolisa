@@ -41,16 +41,16 @@ export const DescriptionPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero py-16 md:py-24">
+      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-24">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Po pierwsze, jesteśmy ludźmi.</h1>
             <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6">Po drugie, ekspertami.</h1>
-            <p className="mt-6 text-lg text-primary-foreground/80  md:text-xl">
+            <p className="mt-6 text-primary-foreground/80 text-lg">
               Jesteśmy zespołem pasjonatów, którzy naprawdę chcą Ci pomóc.
             </p>
             <p
-              className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"
+              className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
               style={{ animationDelay: "0.1s" }}
             >
               🛡️ My czytamy drobny druk, żebyś ty nie musiał.
@@ -60,7 +60,7 @@ export const DescriptionPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16">
+      <section className="mx-4 md:mx-0 py-16">
         <div className="container m-auto">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
@@ -81,7 +81,7 @@ export const DescriptionPage = () => {
       </section>
 
       {/* Experience */}
-      <section className="bg-muted/50 py-16 md:py-24">
+      <section className="bg-muted/50 px-4 md:px-0 py-16 md:py-24">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">
@@ -98,7 +98,7 @@ export const DescriptionPage = () => {
               </p>
               <p>
                 Każdego klienta traktujemy indywidualnie. Twoje potrzeby są unikalne, więc i Twoje ubezpieczenie powinno
-                być dopasowane. Nie sprzedajemy "produktów" – szukamy rozwiązań.
+                być dopasowane. Nie sprzedajemy &quot;produktów&quot; – szukamy rozwiązań.
               </p>
             </div>
           </div>
@@ -106,7 +106,7 @@ export const DescriptionPage = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24">
+      <section className="px-4 md:px-0 py-16 md:py-24">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">

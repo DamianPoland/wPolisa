@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="mx-4 md:mx-0 py-16 md:py-24">
       <div className="container m-auto">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-hero p-8 md:p-12 lg:p-16">
           {/* Background decoration */}
@@ -26,7 +26,7 @@ const CTASection = () => {
                 </Link>
               </Button>
               <Button variant="hero-outline" asChild>
-                <a href="tel:+48123456789">
+                <a href="tel:+48607034911">
                   <Phone className="mr-2 h-5 w-5" />
                   Zadzwoń teraz
                 </a>
