@@ -1,17 +1,14 @@
 "use client";
-<<<<<<< Updated upstream
-import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
-=======
 import { Phone, Mail, MapPin } from "lucide-react";
->>>>>>> Stashed changes
 import Link from "next/link";
 import Logo from "@/components/logo/Logo";
 import { Icon } from "@/utils/types";
+import { socialLinks } from "@/utils/constants";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
-      <div className="container py-12 md:py-16 m-auto">
+      <div className="container px-4 md:px-0 py-12 md:py-16 m-auto">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Description */}
           <div className="space-y-4">
@@ -88,11 +85,11 @@ const Footer = () => {
                 <span>Lipnowska 17/1, Gdynia</span>
               </a>
               <a
-                href="tel:+48123456789"
+                href="tel:+48607034911"
                 className="flex items-center gap-2 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 <Phone className="h-4 w-4" />
-                <span>+48 123 456 789</span>
+                <span>+48 607 034 911</span>
               </a>
               <a
                 href="mailto:kontakt@wpolisa.pl"
@@ -103,22 +100,17 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex gap-3 pt-2">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-foreground/10 transition-colors hover:bg-accent"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-foreground/10 transition-colors hover:bg-accent"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-primary-foreground/10 transition-colors ${social.color}`}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
-import { MapPin, Phone, Mail, Clock, Facebook, Linkedin, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { socialLinks } from "@/utils/constants";
 
 const contactInfo = [
   {
@@ -12,8 +13,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telefon",
-    value: "+48 123 456 789",
-    href: "tel:+48123456789",
+    value: "+48 607 034 911",
+    href: "tel:+48607034911",
   },
   {
     icon: Mail,
@@ -29,32 +30,11 @@ const contactInfo = [
   },
 ];
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    icon: Facebook,
-    href: "https://facebook.com",
-    color: "hover:bg-[#1877F2]",
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com",
-    color: "hover:bg-[#0A66C2]",
-  },
-  {
-    name: "WhatsApp",
-    icon: MessageCircle,
-    href: "https://wa.me/48123456789",
-    color: "hover:bg-[#25D366]",
-  },
-];
-
 export const ContactPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Skontaktuj się z nami.</h1>
@@ -72,7 +52,7 @@ export const ContactPage = () => {
         </div>
       </section>
       {/* Contact Info */}
-      <section className="py-12 md:py-16">
+      <section className="px-4 md:px-0 py-12 md:py-16">
         <div className="container m-auto">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {contactInfo.map((info, index) => (
@@ -105,7 +85,7 @@ export const ContactPage = () => {
         </div>
       </section>
       {/* Map & Social */}
-      <section className="bg-muted/50 py-12 md:py-16">
+      <section className="bg-muted/50 px-4 md:px-0 py-12 md:py-16">
         <div className="container m-auto">
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Map */}
