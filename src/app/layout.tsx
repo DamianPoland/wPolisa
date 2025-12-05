@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { plusJakartaSans } from "@/utils/constants";
+import { ToastContainer } from "react-toastify";
 
 // TODO poprawoć opisy metadata
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <ToastContainer />
       </body>
     </html>
   );

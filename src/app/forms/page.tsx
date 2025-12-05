@@ -1,78 +1,73 @@
-"use client";
-import { useState, useEffect } from "react";
-import { Heart, Shield, Plane, Home, Building2, Package, Send, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useSearchParams } from "next/navigation";
+'use client';
+import { useState, useEffect } from 'react';
+import { Heart, Shield, Plane, Home, Building2, Package, Send, CheckCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import { IDBUser } from '@/utils/types';
+import axios from 'axios';
 
 const insuranceVariants = [
-  { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
-  { id: "zycie", title: "Ubezpieczenie Życia", icon: Shield },
-  { id: "podroze", title: "Ubezpieczenie Podróży", icon: Plane },
-  { id: "dom", title: "Ubezpieczenie Domu", icon: Home },
-  { id: "firma", title: "Ubezpieczenie Firmy", icon: Building2 },
-  { id: "inne", title: "Pozostałe Ubezpieczenia", icon: Package },
+  { id: 'medyczny', title: 'Pakiet Medyczny', icon: Heart },
+  { id: 'zycie', title: 'Ubezpieczenie Życia', icon: Shield },
+  { id: 'podroze', title: 'Ubezpieczenie Podróży', icon: Plane },
+  { id: 'dom', title: 'Ubezpieczenie Domu', icon: Home },
+  { id: 'firma', title: 'Ubezpieczenie Firmy', icon: Building2 },
+  { id: 'inne', title: 'Pozostałe Ubezpieczenia', icon: Package },
 ];
 
 export const FormPage = () => {
-  const searchParams = useSearchParams();
-  // const { toast } = useToast();
-  const [selectedType, setSelectedType] = useState(searchParams.get("variant") || "");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    description: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<Partial<IDBUser>>({
+    defaultValues: {
+      name: '',
+      surname: '',
+      email: '',
+      phone_number: '',
+      pesel: '',
+      description: '',
+      note: '',
+    },
   });
 
+  const [selectedVariant, setSelectedVariant] = useState('');
+
   useEffect(() => {
-    const type = searchParams.get("type");
-    if (type) {
-      setSelectedType(type);
-      // Scroll to form
-      setTimeout(() => {
-        document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+    const searchParams = new URLSearchParams(window.location.search);
+    const variant = searchParams.get('variant');
+    if (variant) {
+      setSelectedVariant(variant);
+      setTimeout(() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' }), 100); // Scroll to form
     }
-  }, [searchParams]);
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const onSubmit = async (data: Partial<IDBUser>) => {
+    if (!selectedVariant) {
+      toast.info('Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.');
+      return;
+    }
+
+    try {
+      const response = await axios.post('/api/users', data);
+      console.log(`User created successfully: ${response.data}`);
+      reset();
+      setSelectedVariant('');
+      toast.success('Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.');
+    } catch (error: any) {
+      console.error('Error submitting form:', error);
+      toast.error(error?.response?.data?.error || error.message || 'Failed to submit form');
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // if (!selectedType) {
-    //   toast({
-    //     title: "Wybierz rodzaj ubezpieczenia",
-    //     description: "Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.",
-    //     variant: "destructive",
-    //   });
-    //   return;
-    // }
-
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // toast({
-    //   title: "Formularz wysłany! 🎉",
-    //   description: "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
-    // });
-
-    setFormData({ name: "", phone: "", email: "", description: "" });
-    setSelectedType("");
-    setIsSubmitting(false);
-  };
-
-  const selectedInsurance = insuranceVariants.find((t) => t.id === selectedType);
+  const selectedInsurance = insuranceVariants.find((t) => t.id === selectedVariant);
 
   return (
     <main>
@@ -88,7 +83,7 @@ export const FormPage = () => {
             </p>
             <p
               className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
-              style={{ animationDelay: "0.1s" }}
+              style={{ animationDelay: '0.1s' }}
             >
               🛡️ Zrób pierwszy krok w minutę - my zrobimy pozostałe 99.
             </p>
@@ -96,33 +91,33 @@ export const FormPage = () => {
         </div>
       </section>
 
-      {/* Insurance Type Selection */}
+      {/* Insurance Variant Selection */}
       <section className="px-4 md:px-0 py-12">
         <div className="container m-auto">
           <h2 className="mb-8 text-center text-2xl font-bold text-foreground">Wybierz rodzaj ubezpieczenia</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {insuranceVariants.map((type) => {
-              const isSelected = selectedType === type.id;
+            {insuranceVariants.map((variant) => {
+              const isSelected = selectedVariant === variant.id;
               return (
                 <button
-                  key={type.id}
-                  onClick={() => setSelectedType(type.id)}
+                  key={variant.id}
+                  onClick={() => setSelectedVariant(variant.id)}
                   className={`group flex items-center gap-4 rounded-xl border-2 p-4 text-left transition-all ${
-                    isSelected ? "border-accent bg-accent/5" : "border-border bg-card hover:border-accent/50"
+                    isSelected ? 'border-accent bg-accent/5' : 'border-border bg-card hover:border-accent/50'
                   }`}
                 >
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${
                       isSelected
-                        ? "bg-accent text-accent-foreground"
-                        : "bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent"
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent'
                     }`}
                   >
-                    <type.icon className="h-6 w-6" />
+                    <variant.icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className={`font-semibold ${isSelected ? "text-accent" : "text-foreground"}`}>
-                      {type.title}
+                    <div className={`font-semibold ${isSelected ? 'text-accent' : 'text-foreground'}`}>
+                      {variant.title}
                     </div>
                     {isSelected && (
                       <div className="flex items-center gap-1 text-sm text-accent">
@@ -150,66 +145,91 @@ export const FormPage = () => {
                     {selectedInsurance.title}
                   </>
                 ) : (
-                  "Formularz kontaktowy"
+                  'Formularz kontaktowy'
                 )}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Imię i Nazwisko *</Label>
+                    <Label htmlFor="name">Imię*</Label>
                     <Input
                       id="name"
-                      name="name"
-                      placeholder="Jan Kowalski"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
+                      {...register('name', {
+                        required: 'Imię jest wymagane',
+                      })}
+                      type="text"
+                      placeholder="Wpisz imię"
                     />
+                    {errors.name && <span className="text-red-600 text-sm">{errors.name.message}</span>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Numer telefonu *</Label>
+                    <Label htmlFor="surname">Nazwisko *</Label>
                     <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+48 123 456 789"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
+                      id="surname"
+                      {...register('surname', {
+                        required: 'Nazwisko jest wymagane',
+                      })}
+                      type="text"
+                      placeholder="Wpisz nazwisko"
                     />
+                    {errors.surname && <span className="text-red-600 text-sm">{errors.surname.message}</span>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Adres email *</Label>
+                    <Input
+                      id="email"
+                      {...register('email', {
+                        required: 'Adres e-mail jest wymagany',
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: 'Nieprawidłowy format adresu e-mail',
+                        },
+                      })}
+                      type="email"
+                      placeholder="Wpisz adres e-mail"
+                    />
+                    {errors.email && <span className="text-red-600 text-sm">{errors.email.message}</span>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone_number">Numer telefonu (opcjonalny)</Label>
+                    <Input
+                      id="phone_number"
+                      {...register('phone_number')}
+                      type="tel"
+                      placeholder="Wpisz numer telefonu"
+                    />
+                    {errors.phone_number && <span className="text-red-600 text-sm">{errors.phone_number.message}</span>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="pesel">PESEL *</Label>
+                    <Input
+                      id="pesel"
+                      {...register('pesel', {
+                        required: 'PESEL jest wymagany',
+                      })}
+                      type="text"
+                      placeholder="Wpisz PESEL"
+                    />
+                    {errors.pesel && <span className="text-red-600 text-sm">{errors.pesel.message}</span>}
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Adres email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="jan@example.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="description">Krótki opis potrzeb (opcjonalnie)</Label>
+                  <Label htmlFor="description">Krótki opis (opcjonalny)</Label>
                   <Textarea
                     id="description"
-                    name="description"
-                    placeholder="Opisz, czego potrzebujesz lub jakie masz pytania..."
-                    rows={4}
-                    value={formData.description}
-                    onChange={handleInputChange}
+                    {...register('description')}
+                    placeholder="Wpisz opis"
+                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows={3}
                   />
                 </div>
 
                 <Button type="submit" variant="accent" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? (
-                    "Wysyłanie..."
+                    'Wysyłanie...'
                   ) : (
                     <>
                       <Send className="mr-2 h-5 w-5" />
