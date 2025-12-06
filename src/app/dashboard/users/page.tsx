@@ -72,7 +72,7 @@ const PageUsers: React.FC = () => {
                     <td className="px-4 py-2 text-sm text-gray-700">{u.name}</td>
                     <td className="px-4 py-2 text-sm text-gray-700">{u.surname}</td>
                     <td className="px-4 py-2 text-sm text-gray-700">{u.email}</td>
-                    <td className="px-4 py-2 text-sm text-gray-700">{u.phone_number ?? "-"}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700">{u.phone ?? "-"}</td>
                     <td className="px-4 py-2 text-sm text-gray-700">{u.description ?? "-"}</td>
                     <td className="px-4 py-2 text-sm text-gray-700">{u.note ?? "-"}</td>
                     <td className="px-4 py-2 text-sm text-gray-700">{u.created_at ?? "-"}</td>
