@@ -8,7 +8,7 @@ import { IDBUser } from "@/utils/types";
 //   name VARCHAR(255) NOT NULL,
 //   surname VARCHAR(255) NOT NULL,
 //   email VARCHAR(255) NOT NULL,
-//   phone_number VARCHAR(25),
+//   phone VARCHAR(25),
 //   description VARCHAR(255),
 //   note TEXT,
 //   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -20,14 +20,14 @@ export async function createUser(
   name: string,
   surname: string,
   email: string,
-  phone_number?: string,
+  phone?: string,
   description?: string,
   note?: string
 ): Promise<IDBUser> {
   const result = await sql`
-    INSERT INTO users (pesel, name, surname, email, phone_number, description, note)
-    VALUES (${pesel}, ${name}, ${surname}, ${email}, ${phone_number || null}, ${description || null}, ${note || null})
-    RETURNING id, pesel, name, surname, email, phone_number, description, note, created_at
+    INSERT INTO users (pesel, name, surname, email, phone, description, note)
+    VALUES (${pesel}, ${name}, ${surname}, ${email}, ${phone || null}, ${description || null}, ${note || null})
+    RETURNING id, pesel, name, surname, email, phone, description, note, created_at
   `;
 
   return result[0] as IDBUser;
@@ -36,7 +36,7 @@ export async function createUser(
 //get all users from db
 export async function getAllUsers(): Promise<IDBUser[]> {
   const result = await sql`
-    SELECT id, pesel, name, surname, email, phone_number, description, note, created_at
+    SELECT id, pesel, name, surname, email, phone, description, note, created_at
     FROM users
     ORDER BY created_at DESC
   `;
@@ -47,7 +47,7 @@ export async function getAllUsers(): Promise<IDBUser[]> {
 // get user from db by id
 export async function getUserById(id: string): Promise<IDBUser | null> {
   const result = await sql`
-    SELECT id, pesel, name, surname, email, phone_number, description, note, created_at
+    SELECT id, pesel, name, surname, email, phone, description, note, created_at
     FROM users
     WHERE id = ${id}
   `;
@@ -60,7 +60,7 @@ export async function updateUser(
   id: string,
   updates: Partial<Omit<IDBUser, "id" | "created_at">>
 ): Promise<IDBUser | null> {
-  const { pesel, name, surname, email, phone_number, description, note } = updates;
+  const { pesel, name, surname, email, phone, description, note } = updates;
 
   const result = await sql`
     UPDATE users
@@ -69,11 +69,11 @@ export async function updateUser(
       name = COALESCE(${name || null}, name),
       surname = COALESCE(${surname || null}, surname),
       email = COALESCE(${email || null}, email),
-      phone_number = COALESCE(${phone_number || null}, phone_number),
+      phone = COALESCE(${phone || null}, phone),
       description = COALESCE(${description || null}, description),
       note = COALESCE(${note || null}, note)
     WHERE id = ${id}
-    RETURNING id, pesel, name, surname, email, phone_number, description, note, created_at
+    RETURNING id, pesel, name, surname, email, phone, description, note, created_at
   `;
 
   return result.length > 0 ? (result[0] as IDBUser) : null;

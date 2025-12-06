@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { pesel, name, surname, email, phone_number, description, note } = body;
+  const { pesel, name, surname, email, phone, description, note } = body;
 
   // Validation
   if (!pesel || !name || !surname || !email) {
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const user = await createUser(pesel, name, surname, email, phone_number, description, note);
+    const user = await createUser(pesel, name, surname, email, phone, description, note);
 
     return NextResponse.json({
       ok: true,
