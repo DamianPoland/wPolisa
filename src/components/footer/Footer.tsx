@@ -115,8 +115,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/10 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/50">© 2025 wPolisa. Wszystkie prawa zastrzeżone.</p>
+        <div className="mt-12 border-t border-primary-foreground/10 pt-8">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
+            <p className="text-sm text-primary-foreground/50">© 2025 wPolisa. Wszystkie prawa zastrzeżone.</p>
+            <div className="flex gap-4">
+              <Link href="/terms" className="text-sm text-primary-foreground/50 transition-colors hover:text-accent">
+                Regulamin
+              </Link>
+              <Link href="/cookies" className="text-sm text-primary-foreground/50 transition-colors hover:text-accent">
+                Polityka cookies
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
