@@ -4,6 +4,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { plusJakartaSans } from "@/utils/constants";
 import { ToastContainer } from "react-toastify";
+import CookiePopup from "@/components/cookiePopup/CookiePopup";
 
 // TODO poprawoć opisy metadata
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <ToastContainer />
+        <CookiePopup />
       </body>
     </html>
   );
