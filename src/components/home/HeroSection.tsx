@@ -78,9 +78,9 @@ const HeroSection = () => {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+        <svg viewBox="0 0 1440 124" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path
-            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 70L1440 65V124H1380C1320 124 1200 124 1080 124C960 124 840 124 720 124C600 124 480 124 360 124C240 124 124 124 60 124H0Z"
             fill="hsl(0 0% 97%)"
           />
         </svg>
