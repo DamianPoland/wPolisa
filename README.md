@@ -1,109 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# wPolisa - Platforma Ubezpieczeniowa
 
-## NOTES // TODO - remove
+Nowoczesna strona internetowa dla agencji ubezpieczeniowej wPolisa, umożliwiająca użytkownikom przeglądanie oferty ubezpieczeń i składanie zapytań o wycenę.
 
-Prietter
+## 🎯 Funkcjonalności
 
-jeśli w global.css
-@theme - Unknown at rule @theme
-to
-Zainstaluj i włącz rozszerzenie „Tailwind CSS IntelliSense” oraz ustaw tryb języka na „Tailwind CSS” dla pliku .css (Command Palette → „Change Language Mode” → „Tailwind CSS”).
+- **Strona główna** z prezentacją oferty i partnerów
+- **Interaktywne kafelki ubezpieczeń** - szybki dostęp do formularzy zapytań
+- **System formularzy** - składanie zapytań o różne typy ubezpieczeń
+- **Strony informacyjne** - O nas, Kontakt
+- **Zgodność z RODO** - Regulamin i Polityka Prywatności
+- **Cookie Consent** - Banner zgody na pliki cookies
+- **Responsywny design** - optymalizacja dla wszystkich urządzeń
 
-## Getting Started
+## 🛠️ Technologie
 
-First, run the development server:
+| Technologia                                     | Opis                                         |
+| ----------------------------------------------- | -------------------------------------------- |
+| [Next.js](https://nextjs.org)                   | Biblioteka do budowy interfejsów użytkownika |
+| [TypeScript](https://www.typescriptlang.org/)   | Typowany JavaScript                          |
+| [Tailwind CSS](https://tailwindcss.com/)        | Utility-first framework CSS                  |
+| [shadcn/ui](https://ui.shadcn.com/)             | Komponenty UI oparte na Radix UI             |
+| [React Hook Form](https://react-hook-form.com/) | Zarządzanie formularzami                     |
+| [Lucide React](https://lucide.dev/)             | Ikony                                        |
+
+## 📁 Struktura projektu
+
+```
+src/
+├── app/              # strony aplikacji
+│   ├── api/          # backend
+│   ├── contact/      # strona kontaktu
+│   ├── cookies/      # strona cookies
+│   ├── description/  # strona o nas
+│   ├── forms/        # strona z formularzami
+│   ├── terms/        # strona terms & conditions
+│   ├── global.css    # Style globalne
+│   ├── layout.tsx    # layout główny
+│   ├── not-found.tsx # strona not found
+│   └── page.tsx      # strona główna
+├── assets/           # images, icons
+├── components/       # header, footer, ...
+│   └── ui/           # komponenty shadcn/ui
+└── utils/            # utilities
+```
+
+## 🎨 System kolorów
+
+Projekt wykorzystuje spójny system kolorów zdefiniowany w Tailwind:
+
+- **basicBright** (`#f8f8f8`) - jasne tła
+- **basicMiddle** (`#9ba4af`) - tekst drugorzędny
+- **basicDark** (`#1c3757`) - główny tekst, ciemne sekcje
+- **accentBright** (`#e67a2c`) - przyciski CTA
+- **accentDark** (`#d45c10`) - stany hover
+
+## 🚀 Uruchomienie lokalne
 
 ```bash
+# Instalacja zależności
+npm install
+
+# Uruchomienie serwera deweloperskiego
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Budowanie produkcyjne
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 Strony
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Ścieżka       | Opis                               |
+| ------------- | ---------------------------------- |
+| `/`           | Strona główna                      |
+| `/o-nas`      | Informacje o firmie                |
+| `/formularze` | Formularze zapytań o ubezpieczenia |
+| `/kontakt`    | Dane kontaktowe                    |
+| `/regulamin`  | Regulamin serwisu                  |
+| `/cookies`    | Polityka prywatności i cookies     |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 Responsywność
 
-## Learn More
+Strona jest w pełni responsywna i zoptymalizowana dla:
 
-To learn more about Next.js, take a look at the following resources:
+- Urządzeń mobilnych (320px+)
+- Tabletów (768px+)
+- Desktopów (1024px+)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚖️ Zgodność prawna
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Regulamin zgodny z polskim prawem
+- Polityka prywatności zgodna z RODO
+- Banner cookie consent
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Database Setup — Neon (Serverless Postgres)
-
-This project uses a serverless PostgreSQL database hosted on [Neon](https://neon.tech) to store contact form submissions.
-
-### Setup Instructions
-
-#### 1. Create a Neon account and project
-- Go to https://neon.tech
-- Sign up with email or GitHub
-- Create a new project (choose your region, e.g., `eu-west-1` for Europe)
-- Neon will create a default database `neondb` with user `neondb_owner`
-
-#### 2. Get your connection string
-- In the Neon dashboard → your project → **SQL Editor** tab
-- Look for "Connection string" at the top right
-- Copy the PostgreSQL connection string (looks like: `postgresql://user:password@host/dbname`)
-
-#### 3. Create the contacts table
-- In the SQL Editor, run this query:
-
-```sql
-CREATE TABLE contacts (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  message TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-#### 4. Add DATABASE_URL to `.env.local`
-- Create `.env.local` in the project root (copy from `.env.example`)
-- Paste your connection string as `DATABASE_URL`:
-
-```
-DATABASE_URL=postgresql://user:password@host/dbname
-```
-
-#### 5. Test the connection
-- Run the dev server:
-
-```bash
-npm run dev
-```
-
-- Send a test request to the form endpoint (PowerShell):
-
-```powershell
-$body = @{ name='Damian'; email='damian@example.com'; message='Test' } | ConvertTo-Json
-Invoke-RestMethod -Uri http://localhost:3000/api/form -Method POST -Body $body -ContentType 'application/json'
-```
-
-- Check if the record was saved in Neon SQL Editor:
-
-```sql
-SELECT * FROM contacts;
-```
-
-### Notes
-- Do **not** commit `.env.local` to git — add it to `.gitignore` (already configured by Next.js)
-- Connection string contains credentials — keep it secret
-- For production, use environment variables in your hosting platform (Vercel, Netlify, etc.)
-- Neon offers a generous free tier (sufficient for this project)
+Zbudowane z ❤️ przy użyciu [Lovable](https://lovable.dev)
