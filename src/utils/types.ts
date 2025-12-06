@@ -4,10 +4,12 @@ export interface IDBUser {
   name: string;
   surname: string;
   email: string;
-  phone_number?: string;
-  description?: string;
-  note?: string;
-  created_at?: string;
+  phone: string;
+  description: string;
+  variant: string;
+  note: string;
+  created_at: string;
+  history: string;
 }
 
 export type MenuItem = {

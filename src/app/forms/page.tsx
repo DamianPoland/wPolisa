@@ -1,23 +1,23 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { Heart, Shield, Plane, Home, Building2, Package, Send, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { toast } from 'react-toastify';
-import { useForm } from 'react-hook-form';
-import { IDBUser } from '@/utils/types';
-import axios from 'axios';
+"use client";
+import { useState, useEffect } from "react";
+import { Heart, Shield, Plane, Home, Building2, Package, Send, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { IDBUser } from "@/utils/types";
+import axios from "axios";
 
 const insuranceVariants = [
-  { id: 'medyczny', title: 'Pakiet Medyczny', icon: Heart },
-  { id: 'zycie', title: 'Ubezpieczenie Życia', icon: Shield },
-  { id: 'podroze', title: 'Ubezpieczenie Podróży', icon: Plane },
-  { id: 'dom', title: 'Ubezpieczenie Domu', icon: Home },
-  { id: 'firma', title: 'Ubezpieczenie Firmy', icon: Building2 },
-  { id: 'inne', title: 'Pozostałe Ubezpieczenia', icon: Package },
+  { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
+  { id: "zycie", title: "Ubezpieczenie Życia", icon: Shield },
+  { id: "podroze", title: "Ubezpieczenie Podróży", icon: Plane },
+  { id: "dom", title: "Ubezpieczenie Domu", icon: Home },
+  { id: "firma", title: "Ubezpieczenie Firmy", icon: Building2 },
+  { id: "inne", title: "Pozostałe Ubezpieczenia", icon: Package },
 ];
 
 export const FormPage = () => {
@@ -28,43 +28,56 @@ export const FormPage = () => {
     reset,
   } = useForm<Partial<IDBUser>>({
     defaultValues: {
-      name: '',
-      surname: '',
-      email: '',
-      phone_number: '',
-      pesel: '',
-      description: '',
-      note: '',
+      name: "",
+      email: "",
+      phone: "",
+      description: "",
     },
   });
 
-  const [selectedVariant, setSelectedVariant] = useState('');
+  const [selectedVariant, setSelectedVariant] = useState("");
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const variant = searchParams.get('variant');
+    const variant = searchParams.get("variant");
     if (variant) {
       setSelectedVariant(variant);
-      setTimeout(() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' }), 100); // Scroll to form
+      setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 100); // Scroll to form
     }
   }, []);
 
   const onSubmit = async (data: Partial<IDBUser>) => {
     if (!selectedVariant) {
-      toast.info('Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.');
+      toast.info("Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.");
       return;
     }
 
-    try {
-      const response = await axios.post('/api/users', data);
-      console.log(`User created successfully: ${response.data}`);
-      reset();
-      setSelectedVariant('');
-      toast.success('Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.');
-    } catch (error: any) {
-      console.error('Error submitting form:', error);
-      toast.error(error?.response?.data?.error || error.message || 'Failed to submit form');
-    }
+    const dataToSend: IDBUser = {
+      id: "",
+      pesel: "00000000000",
+      name: data.name || "",
+      surname: "",
+      email: data.email || "",
+      phone: data.phone || "",
+      description: data.description || "",
+      variant: selectedVariant,
+      note: "",
+      created_at: new Date().toISOString(),
+      history: document.referrer ? new URL(document.referrer).hostname : "brak danych",
+    };
+    console.log("dataToSend:", dataToSend);
+    console.log(window.history);
+
+    // try {
+    //   const response = await axios.post("/api/users", data);
+    //   console.log(`User created successfully: ${response.data}`);
+    //   reset();
+    //   setSelectedVariant("");
+    //   toast.success("Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.");
+    // } catch (error: any) {
+    //   console.error("Error submitting form:", error);
+    //   toast.error(error?.response?.data?.error || error.message || "Failed to submit form");
+    // }
   };
 
   const selectedInsurance = insuranceVariants.find((t) => t.id === selectedVariant);
@@ -83,7 +96,7 @@ export const FormPage = () => {
             </p>
             <p
               className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
-              style={{ animationDelay: '0.1s' }}
+              style={{ animationDelay: "0.1s" }}
             >
               🛡️ Zrób pierwszy krok w minutę - my zrobimy pozostałe 99.
             </p>
@@ -103,20 +116,20 @@ export const FormPage = () => {
                   key={variant.id}
                   onClick={() => setSelectedVariant(variant.id)}
                   className={`group flex items-center gap-4 rounded-xl border-2 p-4 text-left transition-all ${
-                    isSelected ? 'border-accent bg-accent/5' : 'border-border bg-card hover:border-accent/50'
+                    isSelected ? "border-accent bg-accent/5" : "border-border bg-card hover:border-accent/50"
                   }`}
                 >
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${
                       isSelected
-                        ? 'bg-accent text-accent-foreground'
-                        : 'bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent'
+                        ? "bg-accent text-accent-foreground"
+                        : "bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent"
                     }`}
                   >
                     <variant.icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className={`font-semibold ${isSelected ? 'text-accent' : 'text-foreground'}`}>
+                    <div className={`font-semibold ${isSelected ? "text-accent" : "text-foreground"}`}>
                       {variant.title}
                     </div>
                     {isSelected && (
@@ -145,7 +158,7 @@ export const FormPage = () => {
                     {selectedInsurance.title}
                   </>
                 ) : (
-                  'Formularz kontaktowy'
+                  "Formularz kontaktowy"
                 )}
               </CardTitle>
             </CardHeader>
@@ -156,8 +169,8 @@ export const FormPage = () => {
                     <Label htmlFor="name">Imię*</Label>
                     <Input
                       id="name"
-                      {...register('name', {
-                        required: 'Imię jest wymagane',
+                      {...register("name", {
+                        required: "Imię jest wymagane",
                       })}
                       type="text"
                       placeholder="Wpisz imię"
@@ -165,26 +178,14 @@ export const FormPage = () => {
                     {errors.name && <span className="text-red-600 text-sm">{errors.name.message}</span>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="surname">Nazwisko *</Label>
-                    <Input
-                      id="surname"
-                      {...register('surname', {
-                        required: 'Nazwisko jest wymagane',
-                      })}
-                      type="text"
-                      placeholder="Wpisz nazwisko"
-                    />
-                    {errors.surname && <span className="text-red-600 text-sm">{errors.surname.message}</span>}
-                  </div>
-                  <div className="space-y-2">
                     <Label htmlFor="email">Adres email *</Label>
                     <Input
                       id="email"
-                      {...register('email', {
-                        required: 'Adres e-mail jest wymagany',
+                      {...register("email", {
+                        required: "Adres e-mail jest wymagany",
                         pattern: {
                           value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                          message: 'Nieprawidłowy format adresu e-mail',
+                          message: "Nieprawidłowy format adresu e-mail",
                         },
                       })}
                       type="email"
@@ -193,26 +194,9 @@ export const FormPage = () => {
                     {errors.email && <span className="text-red-600 text-sm">{errors.email.message}</span>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone_number">Numer telefonu (opcjonalny)</Label>
-                    <Input
-                      id="phone_number"
-                      {...register('phone_number')}
-                      type="tel"
-                      placeholder="Wpisz numer telefonu"
-                    />
-                    {errors.phone_number && <span className="text-red-600 text-sm">{errors.phone_number.message}</span>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="pesel">PESEL *</Label>
-                    <Input
-                      id="pesel"
-                      {...register('pesel', {
-                        required: 'PESEL jest wymagany',
-                      })}
-                      type="text"
-                      placeholder="Wpisz PESEL"
-                    />
-                    {errors.pesel && <span className="text-red-600 text-sm">{errors.pesel.message}</span>}
+                    <Label htmlFor="phone">Numer telefonu (opcjonalny)</Label>
+                    <Input id="phone" {...register("phone")} type="tel" placeholder="Wpisz numer telefonu" />
+                    {errors.phone && <span className="text-red-600 text-sm">{errors.phone.message}</span>}
                   </div>
                 </div>
 
@@ -220,7 +204,7 @@ export const FormPage = () => {
                   <Label htmlFor="description">Krótki opis (opcjonalny)</Label>
                   <Textarea
                     id="description"
-                    {...register('description')}
+                    {...register("description")}
                     placeholder="Wpisz opis"
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     rows={3}
@@ -229,7 +213,7 @@ export const FormPage = () => {
 
                 <Button type="submit" variant="accent" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? (
-                    'Wysyłanie...'
+                    "Wysyłanie..."
                   ) : (
                     <>
                       <Send className="mr-2 h-5 w-5" />
