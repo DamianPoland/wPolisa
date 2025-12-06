@@ -91,7 +91,3 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - Regulamin zgodny z polskim prawem
 - Polityka prywatności zgodna z RODO
 - Banner cookie consent
-
----
-
-Zbudowane z ❤️ przy użyciu [Lovable](https://lovable.dev)
