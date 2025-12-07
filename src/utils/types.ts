@@ -10,6 +10,8 @@ export interface IDBUser {
   note: string;
   created_at: string;
   history: string;
+  privacy_consent: boolean;
+  marketing_consent: boolean;
 }
 
 export type MenuItem = {

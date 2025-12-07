@@ -6,10 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "react-toastify";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { IDBUser } from "@/utils/types";
 import axios from "axios";
+import Link from "next/link";
 
 const insuranceVariants = [
   { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
@@ -26,12 +28,16 @@ export const FormPage = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    watch,
+    setValue,
   } = useForm<Partial<IDBUser>>({
     defaultValues: {
       name: "",
       email: "",
       phone: "",
       description: "",
+      privacy_consent: false,
+      marketing_consent: true,
     },
   });
 
@@ -64,20 +70,20 @@ export const FormPage = () => {
       note: "",
       created_at: new Date().toISOString(),
       history: document.referrer ? new URL(document.referrer).hostname : "brak danych",
+      privacy_consent: data.privacy_consent || false,
+      marketing_consent: data.marketing_consent || false,
     };
     console.log("dataToSend:", dataToSend);
-    console.log(window.history);
 
-    // try {
-    //   const response = await axios.post("/api/users", data);
-    //   console.log(`User created successfully: ${response.data}`);
-    //   reset();
-    //   setSelectedVariant("");
-    //   toast.success("Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.");
-    // } catch (error: any) {
-    //   console.error("Error submitting form:", error);
-    //   toast.error(error?.response?.data?.error || error.message || "Failed to submit form");
-    // }
+    try {
+      const response = await axios.post("/api/users", dataToSend);
+      reset();
+      setSelectedVariant("");
+      toast.success("Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.");
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      toast.error(error?.response?.data?.error || error.message || "Failed to submit form");
+    }
   };
 
   const selectedInsurance = insuranceVariants.find((t) => t.id === selectedVariant);
@@ -211,7 +217,92 @@ export const FormPage = () => {
                   />
                 </div>
 
-                <Button type="submit" variant="accent" size="lg" className="w-full" disabled={isSubmitting}>
+                {/* RODO Consents */}
+                <div className="space-y-3 rounded-lg border border-border bg-muted/30 p-4">
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="consent-required"
+                      checked={watch("privacy_consent") || false}
+                      onCheckedChange={(checked) => setValue("privacy_consent", checked === true)}
+                      className="mt-0.5 rounded-none border-2"
+                    />
+                    <div className="text-sm leading-relaxed">
+                      <Label
+                        htmlFor="consent-required"
+                        className="font-normal cursor-pointer whitespace-normal wrap-break-word"
+                      >
+                        <div className="flex flex-wrap gap-1">
+                          <span className="text-destructive">*</span>
+                          <span>Akceptuję</span>
+                          <span>
+                            <Link
+                              href="/terms"
+                              className="text-accent underline hover:text-accent-hover"
+                              target="_blank"
+                            >
+                              Regulamin
+                            </Link>
+                          </span>
+                          <span>i</span>
+                          <span>
+                            <Link
+                              href="/cookies"
+                              className="text-accent underline hover:text-accent-hover"
+                              target="_blank"
+                            >
+                              Politykę Prywatności
+                            </Link>
+                          </span>
+                          <span>oraz wyrażam zgodę</span>
+                          <span>na przetwarzanie</span>
+                          <span>danych osobowych.</span>
+                        </div>
+                      </Label>
+                      <details className="mt-2">
+                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
+                          Pokaż pełną treść zgody
+                        </summary>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Wyrażam zgodę na przetwarzanie moich danych osobowych przez wPolisa w celu przedstawienia
+                          oferty ubezpieczeniowej oraz zawarcia umowy ubezpieczenia, zgodnie z art. 6 ust. 1 lit. a i b
+                          RODO.
+                        </p>
+                      </details>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="consent-marketing"
+                      checked={watch("marketing_consent") || false}
+                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
+                      className="mt-0.5 rounded-none border-2"
+                    />
+                    <div className="text-sm leading-relaxed">
+                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
+                        <p className="leading-[18px]">Zgadzam się na kontakt marketingowy (opcjonalne)</p>
+                      </Label>
+                      <details className="mt-2">
+                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
+                          Pokaż pełną treść zgody
+                        </summary>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
+                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
+                          telekomunikacyjnym. Zgoda może być wycofana w każdym czasie.
+                        </p>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+
+                <Button
+                  type="submit"
+                  variant="accent"
+                  size="lg"
+                  className="w-full"
+                  disabled={isSubmitting || !watch("privacy_consent")}
+                >
                   {isSubmitting ? (
                     "Wysyłanie..."
                   ) : (
