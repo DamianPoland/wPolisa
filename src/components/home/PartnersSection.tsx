@@ -5,7 +5,6 @@ import warta from "@/assets/images/warta.png";
 import wartaHDI from "@/assets/images/warta-hdi.png";
 import hestia from "@/assets/images/hestia.png";
 import tuZdrowie from "@/assets/images/tu-zdrowie.png";
-import tuZdrowieIcon from "@/assets/images/tu-zdrowie-icon.png"; // TO_DO: remove one of variants
 import unum from "@/assets/images/unum.png";
 import generali from "@/assets/images/generali.png";
 import compensa from "@/assets/images/compensa.png";
@@ -26,7 +25,6 @@ const insurers: Insurer[] = [
   { name: "Warta HDI", logo: wartaHDI },
   { name: "Hestia", logo: hestia },
   { name: "TU Zdrowie", logo: tuZdrowie },
-  { name: "TU Zdrowie", logo: tuZdrowieIcon }, // TO_DO: remove one of variants
   { name: "Unum", logo: unum },
   { name: "Generali", logo: generali },
   { name: "Compensa", logo: compensa },
