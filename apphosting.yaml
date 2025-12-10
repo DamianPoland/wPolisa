@@ -23,6 +23,7 @@ runConfig:
   #   secret: mySecretRef
 env:
   - variable: HUBSPOT_ACCESS_TOKEN
+    value: mybucket.firebasestorage.app
     secret: HUBSPOT_ACCESS_TOKEN
     availability:
       - BUILD
