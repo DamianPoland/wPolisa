@@ -91,3 +91,15 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - Regulamin zgodny z polskim prawem
 - Polityka prywatności zgodna z RODO
 - Banner cookie consent
+
+## DEVELOPMENT
+
+1. Release and build
+
+- Kod jest na GitHub koncie DamianPoland, Główny branch to main
+- Jeśli kod jest mergowany do main to automatycznie uruchamia się build i release na Firebase. W App Hosting Firebase jest dodana domena wPolisa.pl
+- W .env jest HUBSPOT_ACCESS_TOKEN. Ustawienie secret HUBSPOT_ACCESS_TOKEN w App Hosting:
+  - npm install -g firebase-tools // dodanie firebase globalnie - tylko raz na początku
+  - firebase login // zalogować się di firebase na konto wPolisa.pl
+  - firebase init apphosting // podpięcie projektu do istniejącego w App Hosting // tylko raz na początku projektu
+  - firebase apphosting:secrets:set NAZWA_TWOJEGO_SEKRETU => prod => grand permisions => add to apphosting.yaml
