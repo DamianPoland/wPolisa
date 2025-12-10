@@ -37,15 +37,17 @@ export async function POST(request: NextRequest) {
       hs_lead_status: body.hs_lead_status, // hubSpot standard field,  allowed options: [NEW, OPEN, IN_PROGRESS, OPEN_DEAL, UNQUALIFIED, ATTEMPTED_TO_CONTACT, CONNECTED, BAD_TIMING]
     },
   };
+  const auth = `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`;
 
   console.log("_________________---------------Dostępne zmienne środowiskowe process.env:", process.env);
   console.log("_________________---------------process.env.HUBSPOT_ACCESS_TOKEN:", process.env.HUBSPOT_ACCESS_TOKEN);
   console.log("_________________---------------hubSpotUrlApiContacts:", hubSpotUrlApiContacts);
+  console.log("_________________---------------auth:", auth);
 
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
-        Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`,
+        Authorization: auth,
         "Content-Type": "application/json",
       },
     });
@@ -58,7 +60,11 @@ export async function POST(request: NextRequest) {
     });
   } catch (error: any) {
     if (error.response) {
-      console.error("Błąd API:", error.response.status, error.response.data);
+      console.error("___Błąd API error:", error);
+      console.error("___Błąd API response:", error.response);
+      console.error("___Błąd API response data:", error.response.data);
+      console.error("___Błąd API response status:", error.response.status);
+      console.error("___Błąd API response headers:", error.response.headers);
     } else {
       console.error("Błąd:", error.message);
     }
