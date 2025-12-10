@@ -38,6 +38,10 @@ export async function POST(request: NextRequest) {
     },
   };
 
+  console.log("_________________---------------Dostępne zmienne środowiskowe process.env:", process.env);
+  console.log("_________________---------------process.env.HUBSPOT_ACCESS_TOKEN:", process.env.HUBSPOT_ACCESS_TOKEN);
+  console.log("_________________---------------hubSpotUrlApiContacts:", hubSpotUrlApiContacts);
+
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
