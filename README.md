@@ -101,5 +101,5 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - W .env jest HUBSPOT_ACCESS_TOKEN. Ustawienie secret HUBSPOT_ACCESS_TOKEN w App Hosting:
   - npm install -g firebase-tools // dodanie firebase globalnie - tylko raz na początku
   - firebase login // zalogować się di firebase na konto wPolisa.pl
-  - firebase init apphosting // podpięcie projektu do istniejącego w App Hosting // tylko raz na początku projektu
-  - firebase apphosting:secrets:set NAZWA_TWOJEGO_SEKRETU => prod => grand permisions => add to apphosting.yaml
+  - firebase init apphosting // podpięcie projektu do istniejącego w App Hosting tylko raz na początku projektu - utworzy plik apphosting.yaml w którym trzeba dodać secret
+  - firebase apphosting:secrets:set NAZWA_TWOJEGO_SEKRETU => prod => grand permisions => add to apphosting.yaml // dodaje secret do Cloud Secret Manager (można też to zrobić bezpośrednio w konsoli Google: https://console.cloud.google.com/security/secret-manager?project=wpolisa-pl )
