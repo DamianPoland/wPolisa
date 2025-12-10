@@ -25,5 +25,5 @@ env:
   - variable: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
     secret: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
     # availability:
-    #   - BUILD
-    #   - RUNTIME
+    #   - BUILD //default option
+    #   - RUNTIME //default option

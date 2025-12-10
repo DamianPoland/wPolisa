@@ -23,6 +23,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "First name, and email are required" }, { status: 400 });
   }
   const hubSpotUrlApiContacts = "https://api.hubapi.com/crm/v3/objects/contacts";
+
   const payload: HubSpotCreateContactRequest = {
     properties: {
       firstname: body.firstname,
@@ -38,18 +39,15 @@ export async function POST(request: NextRequest) {
     },
   };
 
-  console.error("__________HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS:", process.env.HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS);
-
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
-        Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS}`,
+        Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS}`, // from .env, firebase take it from Google Cloud Cloud Secret Manager
         "Content-Type": "application/json",
       },
     });
 
     return NextResponse.json({
-      ok: true,
       message: "User saved successfully",
       hubspotResponse: response.data,
       timestamp: new Date().toISOString(),

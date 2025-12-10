@@ -99,7 +99,7 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - Kod jest na GitHub koncie DamianPoland, Główny branch to main
 - Jeśli kod jest mergowany do main to automatycznie uruchamia się build i release na Firebase. W App Hosting Firebase jest dodana domena wPolisa.pl
 - W .env jest NAZWA_TWOJEGO_SEKRETU. Ustawienie secret NAZWA_TWOJEGO_SEKRETU w App Hosting:
-  - npm install -g firebase-tools // dodanie firebase globalnie - tylko raz na początku
+  - npm install -g firebase-tools // dodanie firebase globalnie - TYLKO raz na początku
   - firebase login // zalogować się do firebase na konto wPolisa.pl
-  - firebase init apphosting // podpięcie projektu do istniejącego w App Hosting tylko raz na początku projektu - utworzy plik apphosting.yaml w którym trzeba dodać secret
-  - firebase apphosting:secrets:set NAZWA_TWOJEGO_SEKRETU => prod => grand permisions => add to apphosting.yaml // dodaje secret do Cloud Secret Manager (można też to zrobić bezpośrednio w konsoli Google: https://console.cloud.google.com/security/secret-manager?project=wpolisa-pl )
+  - firebase init apphosting // podpięcie projektu do istniejącego w App Hosting TYLKO raz na początku projektu - utworzy plik apphosting.yaml w którym trzeba dodać secret z env
+  - firebase apphosting:secrets:set NAZWA_TWOJEGO_SEKRETU => wkleić wartość secret (UWAGA nie widać co się wkleja i można wkleić dwa razy przez pomyłkę) => production => grand access => add to apphosting.yaml // dodaje secret do Google Cloud Cloud Secret Manager (można też to zrobić/sprawdzić bezpośrednio w konsoli Google: https://console.cloud.google.com/security/secret-manager?project=wpolisa-pl musi być wybrane w przeglądarce login wPolisa a jak nie to zmienić na wPolisa => wybierz projekt wPolisa.pl => security/secret manager)
