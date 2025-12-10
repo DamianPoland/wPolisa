@@ -58,7 +58,6 @@ export const FormPage = () => {
       toast.info("Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.");
       return;
     }
-    console.log("data: ", process.env.HUBSPOT_ACCESS_TOKEN);
 
     const dataToSend: HubSpotContactPropertiesInputApi = {
       firstname: data.firstname || "",

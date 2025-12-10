@@ -17,7 +17,7 @@ interface HubSpotCreateContactResponse {
 
 export async function POST(request: NextRequest) {
   const body: HubSpotContactPropertiesInputApi = await request.json();
-
+  console.log("Dostępne zmienne środowiskowe:", process.env);
   // Validation
   if (!body.firstname || !body.email) {
     return NextResponse.json({ error: "First name, and email are required" }, { status: 400 });
