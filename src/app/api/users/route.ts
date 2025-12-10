@@ -37,17 +37,17 @@ export async function POST(request: NextRequest) {
       hs_lead_status: body.hs_lead_status, // hubSpot standard field,  allowed options: [NEW, OPEN, IN_PROGRESS, OPEN_DEAL, UNQUALIFIED, ATTEMPTED_TO_CONTACT, CONNECTED, BAD_TIMING]
     },
   };
-  const auth = `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`;
+  const env = "pat-eu1-70c27775-e1a5-47ac-90fa-5f9a4b28e4d8";
+  const authEnv = `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`;
+  const authLocal = `Bearer ${env}`;
 
-  console.log("_________________---------------Dostępne zmienne środowiskowe process.env:", process.env);
-  console.log("_________________---------------process.env.HUBSPOT_ACCESS_TOKEN:", process.env.HUBSPOT_ACCESS_TOKEN);
-  console.log("_________________---------------hubSpotUrlApiContacts:", hubSpotUrlApiContacts);
-  console.log("_________________---------------auth:", auth);
+  console.log("---------------authEnv:", authEnv);
+  console.log("---------------authLocal:", authLocal);
 
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
-        Authorization: auth,
+        Authorization: authLocal,
         "Content-Type": "application/json",
       },
     });
@@ -60,11 +60,8 @@ export async function POST(request: NextRequest) {
     });
   } catch (error: any) {
     if (error.response) {
-      console.error("___Błąd API error:", error);
-      console.error("___Błąd API response:", error.response);
-      console.error("___Błąd API response data:", error.response.data);
-      console.error("___Błąd API response status:", error.response.status);
-      console.error("___Błąd API response headers:", error.response.headers);
+      console.error("--------Błąd API error.response.status:", error.response.status);
+      console.error("--------Błąd API error.response.data:", error.response.data);
     } else {
       console.error("Błąd:", error.message);
     }
