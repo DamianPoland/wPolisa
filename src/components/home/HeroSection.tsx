@@ -6,7 +6,7 @@ import Image from "next/image";
 import shieldColor from "@/assets/images/shield-color-32.png";
 
 const HeroSection = () => {
-  const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatne doradztwo i pomoc", "Szybka obsługa online"];
+  const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatna obsługa i pomoc", "Szybka obsługa online"];
 
   return (
     <section className="relative overflow-hidden bg-gradient-hero px-4 md:px-0">
