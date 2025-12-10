@@ -41,7 +41,6 @@ export async function POST(request: NextRequest) {
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
-        // Authorization: `Bearer pat-eu1-70c27775-e1a5-47ac-90fa-5f9a4b28e4d8`,
         Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`,
         "Content-Type": "application/json",
       },
