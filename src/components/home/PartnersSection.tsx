@@ -1,18 +1,43 @@
-const insurers = [
-  "PZU Życie",
-  "PZU SA",
-  "Warta Życie",
-  "Warta HD",
-  "Hestia",
-  "TU Zdrowie",
-  "Unum",
-  "Generali",
-  "Compensa",
-  "Saltus",
-  "Allianz",
+import Image, { StaticImageData } from "next/image";
+import pzu from "@/assets/images/pzu.png";
+import pzuZycie from "@/assets/images/pzu-zycie.png";
+import warta from "@/assets/images/warta.png";
+import wartaHDI from "@/assets/images/warta-hdi.png";
+import hestia from "@/assets/images/hestia.png";
+import tuZdrowie from "@/assets/images/tu-zdrowie.png";
+import tuZdrowieIcon from "@/assets/images/tu-zdrowie-icon.png"; // TO_DO: remove one of variants
+import unum from "@/assets/images/unum.png";
+import generali from "@/assets/images/generali.png";
+import compensa from "@/assets/images/compensa.png";
+import saltus from "@/assets/images/saltus.png";
+import allianz from "@/assets/images/allianz.png";
+import luxmed from "@/assets/images/luxmed.png";
+import medicover from "@/assets/images/medicover.png";
+
+type Insurer = {
+  name: string;
+  logo: StaticImageData;
+};
+
+const insurers: Insurer[] = [
+  { name: "PZU Życie", logo: pzu },
+  { name: "PZU SA", logo: pzuZycie },
+  { name: "Warta Życie", logo: warta },
+  { name: "Warta HDI", logo: wartaHDI },
+  { name: "Hestia", logo: hestia },
+  { name: "TU Zdrowie", logo: tuZdrowie },
+  { name: "TU Zdrowie", logo: tuZdrowieIcon }, // TO_DO: remove one of variants
+  { name: "Unum", logo: unum },
+  { name: "Generali", logo: generali },
+  { name: "Compensa", logo: compensa },
+  { name: "Saltus", logo: saltus },
+  { name: "Allianz", logo: allianz },
 ];
 
-const medicalPartners = ["Luxmed", "Medicover"];
+const medicalPartners = [
+  { name: "Luxmed", logo: luxmed },
+  { name: "Medicover", logo: medicover },
+];
 
 const PartnersSection = () => {
   return (
@@ -32,11 +57,16 @@ const PartnersSection = () => {
           </h3>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {insurers.map((partner) => (
-              <div
-                key={partner}
-                className="flex h-14 items-center justify-center rounded-lg border border-border bg-card px-6 text-sm font-medium text-foreground shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
-              >
-                {partner}
+              <div key={partner.name} className="flex flex-col items-center gap-1 md:gap-2">
+                <div className="w-24 h-20 flex items-center justify-center rounded-lg border border-border bg-card p-3 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
+                  <Image src={partner.logo} alt={`${partner.name} logo`} />
+                </div>
+                <div
+                  key={partner.name}
+                  className="flex items-center justify-center text-sm font-medium text-foreground"
+                >
+                  {partner.name}
+                </div>
               </div>
             ))}
           </div>
@@ -49,11 +79,13 @@ const PartnersSection = () => {
           </h3>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {medicalPartners.map((partner) => (
-              <div
-                key={partner}
-                className="flex h-14 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 px-8 text-sm font-semibold text-accent shadow-sm transition-all hover:bg-accent/10 hover:shadow-md"
-              >
-                {partner}
+              <div key={partner.name} className="flex flex-col items-center gap-1 md:gap-2">
+                <div className="w-24 h-20 flex items-center justify-center rounded-lg border border-border bg-card p-3 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
+                  <Image src={partner.logo} alt={`${partner.name} logo`} />
+                </div>
+                <div key={partner.name} className="flex items-center justify-center text-sm font-medium text-accent">
+                  {partner.name}
+                </div>
               </div>
             ))}
           </div>
