@@ -8,8 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "react-toastify";
-import { set, useForm } from "react-hook-form";
-import { IDBUser } from "@/utils/types";
+import { useForm } from "react-hook-form";
+import { HubSpotContactPropertiesInputApi } from "@/utils/types";
 import axios from "axios";
 import Link from "next/link";
 
@@ -30,9 +30,10 @@ export const FormPage = () => {
     reset,
     watch,
     setValue,
-  } = useForm<Partial<IDBUser>>({
+  } = useForm<Partial<HubSpotContactPropertiesInputApi>>({
     defaultValues: {
-      name: "",
+      firstname: "",
+      lastname: "",
       email: "",
       phone: "",
       description: "",
@@ -52,28 +53,24 @@ export const FormPage = () => {
     }
   }, []);
 
-  const onSubmit = async (data: Partial<IDBUser>) => {
+  const onSubmit = async (data: Partial<HubSpotContactPropertiesInputApi>) => {
     if (!selectedVariant) {
       toast.info("Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.");
       return;
     }
 
-    const dataToSend: IDBUser = {
-      id: "",
-      pesel: "00000000000",
-      name: data.name || "",
-      surname: "",
+    const dataToSend: HubSpotContactPropertiesInputApi = {
+      firstname: data.firstname || "",
+      lastname: data.lastname || "",
       email: data.email || "",
       phone: data.phone || "",
       description: data.description || "",
-      variant: selectedVariant,
-      note: "",
-      created_at: new Date().toISOString(),
+      variant: insuranceVariants.find((v) => v.id === selectedVariant)?.title || "",
       history: document.referrer ? new URL(document.referrer).hostname : "brak danych",
       privacy_consent: data.privacy_consent || false,
       marketing_consent: data.marketing_consent || false,
+      hs_lead_status: "NEW",
     };
-    console.log("dataToSend:", dataToSend);
 
     try {
       const response = await axios.post("/api/users", dataToSend);
@@ -172,16 +169,16 @@ export const FormPage = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Imię*</Label>
+                    <Label htmlFor="firstname">Imię*</Label>
                     <Input
-                      id="name"
-                      {...register("name", {
+                      id="firstname"
+                      {...register("firstname", {
                         required: "Imię jest wymagane",
                       })}
                       type="text"
                       placeholder="Wpisz imię"
                     />
-                    {errors.name && <span className="text-red-600 text-sm">{errors.name.message}</span>}
+                    {errors.firstname && <span className="text-red-600 text-sm">{errors.firstname.message}</span>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Adres email *</Label>

@@ -1,17 +1,14 @@
-export interface IDBUser {
-  id: string;
-  pesel: string;
-  name: string;
-  surname: string;
+export interface HubSpotContactPropertiesInputApi {
+  firstname: string;
+  lastname: string;
   email: string;
   phone: string;
   description: string;
   variant: string;
-  note: string;
-  created_at: string;
   history: string;
   privacy_consent: boolean;
   marketing_consent: boolean;
+  hs_lead_status: string;
 }
 
 export type MenuItem = {
