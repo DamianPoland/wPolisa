@@ -17,7 +17,7 @@ interface HubSpotCreateContactResponse {
 
 export async function POST(request: NextRequest) {
   const body: HubSpotContactPropertiesInputApi = await request.json();
-  console.log("Dostępne zmienne środowiskowe:", process.env);
+
   // Validation
   if (!body.firstname || !body.email) {
     return NextResponse.json({ error: "First name, and email are required" }, { status: 400 });
@@ -37,17 +37,13 @@ export async function POST(request: NextRequest) {
       hs_lead_status: body.hs_lead_status, // hubSpot standard field,  allowed options: [NEW, OPEN, IN_PROGRESS, OPEN_DEAL, UNQUALIFIED, ATTEMPTED_TO_CONTACT, CONNECTED, BAD_TIMING]
     },
   };
-  const env = "pat-eu1-70c27775-e1a5-47ac-90fa-5f9a4b28e4d8";
-  const authEnv = `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`;
-  const authLocal = `Bearer ${env}`;
 
-  console.log("---------------authEnv:", authEnv);
-  console.log("---------------authLocal:", authLocal);
+  console.error("__________HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS:", process.env.HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS);
 
   try {
     const response: AxiosResponse<HubSpotCreateContactResponse> = await axios.post(hubSpotUrlApiContacts, payload, {
       headers: {
-        Authorization: authLocal,
+        Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS}`,
         "Content-Type": "application/json",
       },
     });
@@ -60,10 +56,9 @@ export async function POST(request: NextRequest) {
     });
   } catch (error: any) {
     if (error.response) {
-      console.error("--------Błąd API error.response.status:", error.response.status);
-      console.error("--------Błąd API error.response.data:", error.response.data);
+      console.error("__________Błąd API error.response.data:", error.response.data);
     } else {
-      console.error("Błąd:", error.message);
+      console.error("__________Błąd error.message:", error.message);
     }
     return NextResponse.json({ error: "Failed to save user", detail: String(error) }, { status: 500 });
   }

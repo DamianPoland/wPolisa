@@ -22,8 +22,8 @@ runConfig:
   # - variable: MY_SECRET
   #   secret: mySecretRef
 env:
-  - variable: HUBSPOT_ACCESS_TOKEN
-    secret: HUBSPOT_ACCESS_TOKEN
+  - variable: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
+    secret: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
     # availability:
     #   - BUILD
     #   - RUNTIME
