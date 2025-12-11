@@ -55,9 +55,10 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     if (error.response) {
       console.error("__________Błąd API error.response.data:", error.response.data);
+      return NextResponse.json({ error: "Failed to save user", detail: String(error), message: String(error.response.data?.message), category: String(error.response.data?.category) }, { status: 500 });
     } else {
       console.error("__________Błąd error.message:", error.message);
+      return NextResponse.json({ error: "Failed to save user", detail: String(error), message: String(error?.message) }, { status: 500 });
     }
-    return NextResponse.json({ error: "Failed to save user", detail: String(error) }, { status: 500 });
   }
 }
