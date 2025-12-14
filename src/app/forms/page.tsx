@@ -38,7 +38,7 @@ export const FormPage = () => {
       phone: "",
       description: "",
       privacy_consent: false,
-      marketing_consent: true,
+      marketing_consent: false,
     },
   });
 
@@ -277,7 +277,7 @@ export const FormPage = () => {
                     />
                     <div className="text-sm leading-relaxed">
                       <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
-                        <p className="leading-[18px]">Zgadzam się na kontakt marketingowy (opcjonalne)</p>
+                        <p className="leading-[18px]">Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej chwili.</p>
                       </Label>
                       <details className="mt-2">
                         <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
@@ -286,7 +286,7 @@ export const FormPage = () => {
                         <p className="text-xs text-muted-foreground mt-1">
                           Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
                           telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
-                          telekomunikacyjnym. Zgoda może być wycofana w każdym czasie.
+                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
                         </p>
                       </details>
                     </div>
