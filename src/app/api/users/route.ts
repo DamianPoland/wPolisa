@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "reCAPTCHA token missing" }, { status: 400 });
   }
 
+  // Execute reCaptcha
   try {
     // Only use this bypass in local development to skip verification (env variable)
     const skipVerify = process.env.RECAPTCHA_SKIP_VERIFY_IN_DEV === "true";
@@ -38,117 +39,65 @@ export async function POST(request: NextRequest) {
       }
 
       const recaptchaResponse = await axios.post("https://www.google.com/recaptcha/api/siteverify", null, {
-        params: {
-          secret,
-          response: recaptchaToken,
-        },
+        params: { secret: secret, response: recaptchaToken },
       });
 
-      const recaptchaResponseData = recaptchaResponse.data as any;
+      const recaptchaResData = recaptchaResponse.data as any;
 
-      // Check success and (optionally) score threshold for v3
-      const score = typeof recaptchaResponseData.score === "number" ? recaptchaResponseData.score : undefined;
+      // Check success and score
+      const score = typeof recaptchaResData.score === "number" ? recaptchaResData.score : undefined;
 
       // Reject when verification fails or score is too low
-      if (!recaptchaResponseData.success || (score !== undefined && score < RECAPTCHA_DATA_SCORE)) {
-        console.error("---------- ✗ reCAPTCHA verification details", recaptchaResponseData);
-        return NextResponse.json(
-          { error: "reCAPTCHA verification failed", details: recaptchaResponseData },
-          { status: 403 }
-        );
+      if (!recaptchaResData.success || (score !== undefined && score < RECAPTCHA_DATA_SCORE)) {
+        console.error("---------- ✗ reCAPTCHA verification details", recaptchaResData);
+        return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 403 });
       }
       console.log(
-        "---------- ✓ Successfully reCAPTCHA verified",
-        `score: ${recaptchaResponseData?.score}`,
-        `hostname: ${recaptchaResponseData.hostname}`
+        "---------- ✓ reCAPTCHA success",
+        `score: ${recaptchaResData?.score}`,
+        `hostname: ${recaptchaResData.hostname}`
       );
     }
-  } catch (err) {
-    console.error("---------- ✗ reCAPTCHA verification error", err);
-    console.error(
-      "---------- ✗ reCAPTCHA verification error message",
-      err && (err as any).message ? (err as any).message : "unknown"
-    );
+  } catch (err: any) {
+    console.error("---------- ✗ reCAPTCHA verification error", err, err?.message);
     return NextResponse.json({ error: "reCAPTCHA verification error" }, { status: 500 });
   }
 
-  const formatBodyText = (obj: Record<string, any>) =>
-    Object.entries(obj)
-      .map(([k, v]) => `${k}: ${v === undefined || v === null ? "" : v}`)
-      .join("\n");
-
-  // Execute both operations in parallel and wait for both to complete
-  const results = await Promise.allSettled([
-    sendEmail({
-      from: "wpolisa.pl@gmail.com",
-      to: "kontakt@wpolisa.pl",
-      subject: `NOWY FORM: ${body.email}, ${body.firstname}`,
-      text: formatBodyText(body),
-      html: "", // text will be ignored when html is not empty
-    }),
-    saveUserInHubSpot(body),
-  ]);
-
-  const emailResult = results[0];
-  const hubSpotResult = results[1];
-
-  const emailSuccess = emailResult.status === "fulfilled";
-  const hubSpotSuccess = hubSpotResult.status === "fulfilled";
-
-  const status = hubSpotSuccess && emailSuccess ? 200 : emailSuccess || hubSpotSuccess ? 202 : 500;
-
-  // Log email service results
-  if (emailSuccess) {
-    console.log("---------- ✓ Email sent successfully");
-  } else {
-    const reason: any = (emailResult as PromiseRejectedResult).reason;
-    console.error("---------- ✗ Email sending failed", {
-      service: "email",
-      to: "kontakt@wpolisa.pl",
-      subject: `NOWY FORM: ${body.email}, ${body.firstname}`,
-      message: reason?.message ?? String(reason),
-      code: reason?.code ?? null,
-      response: reason?.response ?? null,
-    });
-  }
-
-  // Log hubSpot service results
-  if (hubSpotSuccess) {
+  // Execute saveUserInHubSpot
+  try {
+    await saveUserInHubSpot(body);
     console.log("---------- ✓ HubSpot contact saved successfully");
-  } else {
-    const reason: any = (hubSpotResult as PromiseRejectedResult).reason;
-    console.error("---------- ✗ HubSpot save failed", {
-      service: "hubspot",
-      message: reason?.message ?? String(reason),
-      code: reason?.code ?? null,
-      axiosData: reason?.response?.data ?? null,
-    });
-  }
+    return NextResponse.json({ message: "Success" }, { status: 200 });
+  } catch (errHubSpot: any) {
+    console.error("---------- ✗ HubSpot contact saving failed", { message: errHubSpot?.message ?? String(errHubSpot) });
 
-  // If both failed, return error response
-  if (!emailSuccess && !hubSpotSuccess) {
-    return NextResponse.json(
-      {
-        error: "Nie udało się wysłać zapytania",
-        emailError: (emailResult as PromiseRejectedResult).reason?.message,
-        hubSpotError: (hubSpotResult as PromiseRejectedResult).reason?.message,
-      },
-      { status }
-    );
-  }
+    // if HubSpot save is error then try execute sendEmail
+    try {
+      const formatBodyText = (obj: Record<string, any>) =>
+        `HubSpot contact saving error: ${errHubSpot?.message ?? String(errHubSpot)}\n\n` + // add error + new lines
+        Object.entries(obj)
+          .map(([k, v]) => `${k}: ${v === undefined || v === null || k === "recaptchaToken" ? "" : v}`)
+          .join("\n");
 
-  // Return success or partial success response if at least one succeeded
-  return NextResponse.json(
-    {
-      message: hubSpotSuccess && emailSuccess ? "Success" : "Partial success",
-      emailResponse: emailSuccess ? (emailResult as PromiseFulfilledResult<any>).value?.response : null,
-      emailError: !emailSuccess ? (emailResult as PromiseRejectedResult).reason?.message : null,
-      spotResponse: hubSpotSuccess
-        ? (hubSpotResult as PromiseFulfilledResult<any>).value?.data?.properties?.email
-        : null,
-      spotError: !hubSpotSuccess ? (hubSpotResult as PromiseRejectedResult).reason?.message : null,
-      timestamp: new Date().toISOString(),
-    },
-    { status }
-  );
+      await sendEmail({
+        from: "wpolisa.pl@gmail.com",
+        to: "kontakt@wpolisa.pl",
+        subject: `Zapytanie z Formularza (HubSpot ERROR)`,
+        text: formatBodyText(body),
+        html: "", // text will be ignored when html is not empty
+      });
+      console.log("---------- ✓ Email sent successfully");
+      return NextResponse.json({ message: "Optional success" }, { status: 202 });
+    } catch (errSendEmail: any) {
+      console.error("---------- ✗ Email sending failed", { message: errSendEmail?.message ?? String(errSendEmail) });
+      return NextResponse.json(
+        {
+          error: "Nie udało się wysłać zapytania",
+          messageEmail: errSendEmail?.message ?? String(errSendEmail),
+          messageCRM: errHubSpot?.message ?? String(errHubSpot),
+        },
+        { status: 500 }
+      );
+    }
+  }
 }
