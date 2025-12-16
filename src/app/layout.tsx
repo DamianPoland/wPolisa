@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import { plusJakartaSans } from "@/utils/constants";
 import { ToastContainer } from "react-toastify";
 import CookiePopup from "@/components/cookiePopup/CookiePopup";
 
@@ -39,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className={plusJakartaSans.className}>
+    <html lang="pl">
       <body>
         <div className="flex min-h-screen flex-col">
           <Header />

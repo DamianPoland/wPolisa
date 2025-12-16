@@ -9,6 +9,7 @@
   --color-basicDark: #1c3757;
   --color-accentBright: #e67a2c;
   --color-accentDark: #d45c10;
+  --font-family-base-sans: 'Plus Jakarta Sans', 'Manrope', 'Figtree', 'Sansation', sans-serif;
 
   --color-background: hsl(0 0% 97%);
   --color-foreground: hsl(213 52% 22%);
@@ -109,8 +110,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    @apply bg-background text-foreground antialiased;
   }
 
   h1,
@@ -171,10 +171,12 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -184,6 +186,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -194,6 +197,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -205,25 +209,23 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-:root {
-  --font-montserrat: "Plus_Jakarta_Sans", sans-serif;
-}
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: var(--font-plus-jakarta-sans);
 }
 
 body {
   font-size: 100%;
   overflow-x: hidden;
   color: var(--color-basic-dark);
+  font-family: var(--font-family-base-sans);
 }

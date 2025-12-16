@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import shieldDark from "@/assets/images/shield-dark-64.png";
 import shieldLight from "@/assets/images/shield-light-64.png";
+import logoFullDark from "@/assets/images/wPolisa_agecja_tr-bg_light-text_h40.png"
+import logoFullLight from "@/assets/images/wPolisa_agecja_tr-bg_dark-text_h40.png"
 import { Icon } from "@/utils/types";
 
 type LogoType = {
@@ -18,13 +20,10 @@ const Logo = ({ logoVariant }: LogoType) => {
       >
         <Image src={isLogoLight ? shieldDark : shieldLight} alt="logo" />
       </div>
-      <div className="text-xl font-bold">
-        <span
-          className={`${isLogoLight ? "text-basic-bright" : "text-foreground"} inline-block transform rotate-25 -translate-y-0.5 -tracking-[4px]`}
-        >
-          w
-        </span>
-        <span className="text-accent">Polisa</span>
+      <div
+        className={`flex h-10 items-center justify-center`}
+      >
+        <Image src={isLogoLight ? logoFullDark : logoFullLight} alt="name" />
       </div>
     </Link>
   );
