@@ -1,6 +1,10 @@
 import { Plus_Jakarta_Sans, Figtree, Manrope } from "next/font/google";
 import { Facebook, Linkedin, MessageCircle } from "lucide-react";
 
+// Public site key for client-side reCAPTCHA v3
+export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
+export const RECAPTCHA_DATA_SCORE = 0.5;
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
