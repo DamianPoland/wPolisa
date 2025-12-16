@@ -92,6 +92,20 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - Polityka prywatności zgodna z RODO
 - Banner cookie consent
 
+## reCAPTCHA v3
+
+This project uses Google reCAPTCHA v3 to protect the contact forms from automated abuse. Quick setup steps:
+
+- **Create keys:** Go to https://www.google.com/recaptcha/admin and create a reCAPTCHA v3 key for your domain. You will get a Site Key and a Secret Key.
+- **Set environment variables:**
+  - const `PUBLIC_RECAPTCHA_SITE_KEY` — public key, used in the browser. Declared in constants.ts
+  - `RECAPTCHA_SECRET_KEY` — server-side secret, used to verify tokens. Keep this secret and do not commit it to the repo.
+- **How it works in this app:** the client loads the v3 script, executes `grecaptcha.execute(...)` on submit and sends `recaptchaToken` together with the form payload to the backend endpoint `POST /api/users`. The server verifies the token against Google's `siteverify` API and rejects requests that fail verification or have a low score.
+- **Score threshold:** Currently the server rejects tokens with `score < 0.5`. Adjust this threshold in `src/app/api/users/route.ts` if you need stricter or looser checks.
+- **Development bypass:** For local development you can bypass verification by setting `RECAPTCHA_SKIP_VERIFY_IN_DEV=true` in your `.env`. This is only for testing and should never be enabled in production.
+
+If you deploy to Firebase App Hosting, add `RECAPTCHA_SECRET_KEY` to your Cloud Secret Manager and map it to the app hosting environment as you do for other secrets.
+
 ## DEVELOPMENT
 
 1. Release and build
