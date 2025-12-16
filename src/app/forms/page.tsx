@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { HubSpotContactPropertiesInputApi } from "@/utils/types";
 import axios from "axios";
 import Link from "next/link";
+import { PUBLIC_RECAPTCHA_SITE_KEY } from "@/utils/constants";
 
 const insuranceVariants = [
   { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
@@ -44,18 +45,55 @@ export const FormPage = () => {
 
   const [selectedVariant, setSelectedVariant] = useState("");
 
+  // Scroll to form if variant is preselected via URL param
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const variant = searchParams.get("variant");
     if (variant) {
       setSelectedVariant(variant);
-      setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 100); // Scroll to form
+      setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 100);
     }
+  }, []);
+
+  // Load reCAPTCHA v3 script, site key is provided in constants.ts
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if ((window as any).grecaptcha) return;
+
+    const script = document.createElement("script");
+    script.id = "recaptcha-script";
+    script.src = `https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.head.appendChild(script);
   }, []);
 
   const onSubmit = async (data: Partial<HubSpotContactPropertiesInputApi>) => {
     if (!selectedVariant) {
       toast.info("Proszę wybrać rodzaj ubezpieczenia przed wysłaniem formularza.");
+      return;
+    }
+
+    // execute reCAPTCHA v3 and obtain token
+    let recaptchaToken = "";
+    try {
+      const grecaptcha = (window as any).grecaptcha;
+      if (!grecaptcha) throw new Error("grecaptcha not loaded");
+
+      recaptchaToken = await new Promise<string>((resolve, reject) => {
+        try {
+          grecaptcha.ready(() => {
+            grecaptcha
+              .execute(PUBLIC_RECAPTCHA_SITE_KEY, { action: "submit" })
+              .then((token: string) => resolve(token))
+              .catch((err: any) => reject(err));
+          });
+        } catch (e) {
+          reject(e);
+        }
+      });
+    } catch (error) {
+      console.error("reCAPTCHA execution failed:", error);
+      toast.error("Weryfikacja reCAPTCHA nie powiodła się. Spróbuj ponownie.");
       return;
     }
 
@@ -73,7 +111,8 @@ export const FormPage = () => {
     };
 
     try {
-      const response = await axios.post("/api/users", dataToSend);
+      // attach recaptcha token to request body
+      await axios.post("/api/users", { ...dataToSend, recaptchaToken });
       reset();
       setSelectedVariant("");
       toast.success("Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.");

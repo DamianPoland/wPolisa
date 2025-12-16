@@ -24,8 +24,7 @@ runConfig:
 env:
   - variable: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
     secret: HUBSPOT_ACCESS_TOKEN_W_POLISA_FORMS
-    # availability:
-    #   - BUILD //default option
-    #   - RUNTIME //default option
   - variable: GMAIL_PASS_W_POLISA_FORMS
     secret: GMAIL_PASS_W_POLISA_FORMS
+  - variable: RECAPTCHA_SECRET_KEY
+    secret: RECAPTCHA_SECRET_KEY

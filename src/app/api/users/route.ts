@@ -1,20 +1,71 @@
 import { HubSpotContactPropertiesInputApi } from "@/utils/types";
 import { NextRequest, NextResponse } from "next/server";
 import { saveUserInHubSpot, sendEmail } from "./services";
+import axios from "axios";
+import { RECAPTCHA_DATA_SCORE } from "@/utils/constants";
 
 export async function POST(request: NextRequest) {
   let body: HubSpotContactPropertiesInputApi;
 
-  // Parse JSON body checking for errors
+  // Validation - parse JSON body checking for errors
   try {
     body = await request.json();
   } catch (error: any) {
     return NextResponse.json({ error: "Invalid JSON payload", message: error?.message }, { status: 400 });
   }
 
-  // Validation checks for required fields
+  // Validation - checks for required fields
   if (!body.firstname || !body.email) {
     return NextResponse.json({ error: "First name, and email are required" }, { status: 400 });
+  }
+
+  // Validation - verify reCAPTCHA token (v3) before processing
+  const recaptchaToken = (body as any).recaptchaToken;
+  if (!recaptchaToken) {
+    return NextResponse.json({ error: "reCAPTCHA token missing" }, { status: 400 });
+  }
+
+  try {
+    // Only use this bypass in local development to skip verification (env variable)
+    const skipVerify = process.env.RECAPTCHA_SKIP_VERIFY_IN_DEV === "true";
+
+    if (skipVerify) {
+      console.warn("⚠️ Skipping reCAPTCHA verification (development mode)");
+    } else {
+      const secret = process.env.RECAPTCHA_SECRET_KEY;
+      if (!secret) {
+        return NextResponse.json({ error: "reCAPTCHA secret not configured" }, { status: 500 });
+      }
+
+      const recaptchaResponse = await axios.post("https://www.google.com/recaptcha/api/siteverify", null, {
+        params: {
+          secret,
+          response: recaptchaToken,
+        },
+      });
+
+      const recaptchaResponseData = recaptchaResponse.data as any;
+
+      // Check success and (optionally) score threshold for v3
+      const score = typeof recaptchaResponseData.score === "number" ? recaptchaResponseData.score : undefined;
+
+      // Reject when verification fails or score is too low
+      if (!recaptchaResponseData.success || (score !== undefined && score < RECAPTCHA_DATA_SCORE)) {
+        console.error("---------- ✗ reCAPTCHA verification details", recaptchaResponseData);
+        return NextResponse.json(
+          { error: "reCAPTCHA verification failed", details: recaptchaResponseData },
+          { status: 403 }
+        );
+      }
+      console.log("---------- ✓ Successfully reCAPTCHA verified", { recaptchaResponseData });
+    }
+  } catch (err) {
+    console.error("---------- ✗ reCAPTCHA verification error", err);
+    console.error(
+      "---------- ✗ reCAPTCHA verification error message",
+      err && (err as any).message ? (err as any).message : "unknown"
+    );
+    return NextResponse.json({ error: "reCAPTCHA verification error" }, { status: 500 });
   }
 
   const formatBodyText = (obj: Record<string, any>) =>
