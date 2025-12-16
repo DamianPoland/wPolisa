@@ -57,7 +57,11 @@ export async function POST(request: NextRequest) {
           { status: 403 }
         );
       }
-      console.log("---------- ✓ Successfully reCAPTCHA verified", { recaptchaResponseData });
+      console.log(
+        "---------- ✓ Successfully reCAPTCHA verified",
+        `score: ${recaptchaResponseData?.score}`,
+        `hostname: ${recaptchaResponseData.hostname}`
+      );
     }
   } catch (err) {
     console.error("---------- ✗ reCAPTCHA verification error", err);
@@ -99,18 +103,12 @@ export async function POST(request: NextRequest) {
   } else {
     const reason: any = (emailResult as PromiseRejectedResult).reason;
     console.error("---------- ✗ Email sending failed", {
-      at: new Date().toISOString(),
       service: "email",
       to: "kontakt@wpolisa.pl",
       subject: `NOWY FORM: ${body.email}, ${body.firstname}`,
       message: reason?.message ?? String(reason),
       code: reason?.code ?? null,
       response: reason?.response ?? null,
-      requestBodyPreview: {
-        firstname: body.firstname,
-        email: body.email,
-        phone: body.phone ?? null,
-      },
     });
   }
 
@@ -120,12 +118,10 @@ export async function POST(request: NextRequest) {
   } else {
     const reason: any = (hubSpotResult as PromiseRejectedResult).reason;
     console.error("---------- ✗ HubSpot save failed", {
-      at: new Date().toISOString(),
       service: "hubspot",
       message: reason?.message ?? String(reason),
       code: reason?.code ?? null,
       axiosData: reason?.response?.data ?? null,
-      requestBody: body,
     });
   }
 
