@@ -252,6 +252,22 @@ const FormPage = () => {
 
                 {/* RODO Consents */}
                 <div className="space-y-3 rounded-lg border border-border bg-muted/30 p-4">
+                  {/* Select All */}
+                  <div className="flex items-center gap-3 border-b border-border pb-3">
+                    <Checkbox
+                      id="consent-all"
+                      checked={(watch("marketing_consent") && watch("privacy_consent")) || false}
+                      onCheckedChange={(checked) => {
+                        setValue("marketing_consent", checked === true);
+                        setValue("privacy_consent", checked === true);
+                      }}
+                      className="rounded-none border-2"
+                    />
+                    <Label htmlFor="consent-all" className="font-medium cursor-pointer">
+                      Zaznacz wszystko
+                    </Label>
+                  </div>
+
                   <div className="flex items-start gap-3">
                     <Checkbox
                       id="consent-marketing"
