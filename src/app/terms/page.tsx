@@ -13,11 +13,11 @@ const TermsPage = () => {
             <ol className="list-decimal space-y-2 pl-6">
               <li>
                 Niniejszy Regulamin określa zasady korzystania z serwisu internetowego wPolisa, dostępnego pod adresem
-                wpolisa.pl (dalej: „Serwis").
+                wpolisa.pl (dalej: &ldquo;Serwis&rdquo;).
               </li>
               <li>
                 Właścicielem i administratorem Serwisu jest wPolisa z siedzibą w Gdyni (81-504), ul. Lipnowska 17/1,
-                NIP: [TODO], REGON: [TODO] (dalej: „Usługodawca" lub „Administrator").
+                NIP: [TODO], REGON: [TODO] (dalej: &ldquo;Usługodawca&rdquo; lub &ldquo;Administrator&rdquo;).
               </li>
               <li>
                 Usługodawca prowadzi działalność agencji ubezpieczeniowej na podstawie wpisu do Rejestru Agentów
@@ -168,7 +168,7 @@ const TermsPage = () => {
                 <ul className="list-disc mt-2 space-y-1 pl-6">
                   <li>dostępu do swoich danych osobowych,</li>
                   <li>sprostowania nieprawidłowych danych,</li>
-                  <li>usunięcia danych („prawo do bycia zapomnianym"),</li>
+                  <li>usunięcia danych (&ldquo;prawo do bycia zapomnianym&rdquo;),</li>
                   <li>ograniczenia przetwarzania,</li>
                   <li>przenoszenia danych,</li>
                   <li>wniesienia sprzeciwu wobec przetwarzania,</li>
