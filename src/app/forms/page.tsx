@@ -23,7 +23,7 @@ const insuranceVariants = [
   { id: "inne", title: "Pozostałe Ubezpieczenia", icon: Package },
 ];
 
-export const FormPage = () => {
+const FormPage = () => {
   const {
     register,
     handleSubmit,
@@ -127,19 +127,16 @@ export const FormPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-24">
         <div className="container m-auto">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">
+          <div className="animate-slide-up mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl pb-4">
               Zacznijmy od czegoś <span className="text-accent">prostego!</span>
             </h1>
             <p className="mt-6 text-primary-foreground/80 text-lg">
               Wybierz, czego potrzebujesz, a my odezwiemy się z gotowymi propozycjami.
             </p>
-            <p
-              className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
-              style={{ animationDelay: "0.1s" }}
-            >
+            <p className="mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl">
               🛡️ Zrób pierwszy krok w minutę - my zrobimy pozostałe 99.
             </p>
           </div>
@@ -257,6 +254,32 @@ export const FormPage = () => {
                 <div className="space-y-3 rounded-lg border border-border bg-muted/30 p-4">
                   <div className="flex items-start gap-3">
                     <Checkbox
+                      id="consent-marketing"
+                      checked={watch("marketing_consent") || false}
+                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
+                      className="mt-0.5 rounded-none border-2"
+                    />
+                    <div className="text-sm leading-relaxed">
+                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
+                        <p className="leading-[18px]">
+                          Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej
+                          chwili.
+                        </p>
+                      </Label>
+                      <details className="mt-2">
+                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
+                          Pokaż pełną treść zgody
+                        </summary>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
+                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
+                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
+                        </p>
+                      </details>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Checkbox
                       id="consent-required"
                       checked={watch("privacy_consent") || false}
                       onCheckedChange={(checked) => setValue("privacy_consent", checked === true)}
@@ -302,30 +325,6 @@ export const FormPage = () => {
                           Wyrażam zgodę na przetwarzanie moich danych osobowych przez wPolisa w celu przedstawienia
                           oferty ubezpieczeniowej oraz zawarcia umowy ubezpieczenia, zgodnie z art. 6 ust. 1 lit. a i b
                           RODO.
-                        </p>
-                      </details>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Checkbox
-                      id="consent-marketing"
-                      checked={watch("marketing_consent") || false}
-                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
-                      className="mt-0.5 rounded-none border-2"
-                    />
-                    <div className="text-sm leading-relaxed">
-                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
-                        <p className="leading-[18px]">Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej chwili.</p>
-                      </Label>
-                      <details className="mt-2">
-                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
-                          Pokaż pełną treść zgody
-                        </summary>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
-                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
-                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
                         </p>
                       </details>
                     </div>

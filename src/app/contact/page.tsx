@@ -30,22 +30,19 @@ const contactInfo = [
   },
 ];
 
-export const ContactPage = () => {
+const ContactPage = () => {
   return (
     <main>
       {/* Hero */}
       <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
         <div className="container m-auto">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Skontaktuj się z nami.</h1>
-            <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6">Jesteśmy bliżej, niż myślisz.</h1>
+            <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">Jesteśmy bliżej, niż myślisz.</h1>
             <p className="mt-6 text-lg text-primary-foreground/80">
               Masz pytania? Potrzebujesz pomocy? Jesteśmy tu, żeby Ci pomóc – osobiście, telefonicznie lub online.
             </p>
-            <p
-              className="animate-slide-up mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl"
-              style={{ animationDelay: "0.1s" }}
-            >
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-primary-foreground/80 md:text-xl">
               🛡️ Zadzwoń, napisz - dobra polisa czeka!
             </p>
           </div>

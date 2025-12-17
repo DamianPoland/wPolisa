@@ -5,19 +5,19 @@ import { Facebook, Linkedin, MessageCircle } from "lucide-react";
 export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
 export const RECAPTCHA_DATA_SCORE = 0.5;
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-plus-jakarta-sans",
 });
 
-const manrope = Manrope({
+export const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-manrope",
 });
 
-const figtree = Figtree({
+export const figtree = Figtree({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-figtree",
