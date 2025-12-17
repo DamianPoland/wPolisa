@@ -127,7 +127,7 @@ const FormPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-24">
+      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl pb-4">
@@ -144,7 +144,7 @@ const FormPage = () => {
       </section>
 
       {/* Insurance Variant Selection */}
-      <section className="px-4 md:px-0 py-12">
+      <section className="px-4 md:px-2 py-12">
         <div className="container m-auto">
           <h2 className="mb-8 text-center text-2xl font-bold text-foreground">Wybierz rodzaj ubezpieczenia</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -186,7 +186,7 @@ const FormPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="bg-muted/50 px-4 md:px-0 py-12 md:py-16">
+      <section id="contact-form" className="bg-muted/50 px-4 md:px-2 py-12 md:py-16">
         <div className="container m-auto">
           <Card className="mx-auto max-w-2xl border-border shadow-card">
             <CardHeader>

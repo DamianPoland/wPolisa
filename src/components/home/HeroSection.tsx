@@ -7,14 +7,14 @@ const HeroSection = () => {
   const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatna obsługa i pomoc", "Szybka obsługa online"];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-hero px-4 md:px-0">
+    <section className="relative overflow-hidden bg-gradient-hero px-4 md:px-2">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-accent blur-3xl" />
         <div className="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-accent blur-3xl" />
       </div>
 
-      <div className="container relative pt-20 pb-22 md:pb-28 lg:pb-30 m-auto">
+      <div className="container relative pt-20 pb-22 md:pb-28 lg:pb-40 xl:pb-46 m-auto">
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="animate-fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground backdrop-blur-sm">

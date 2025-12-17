@@ -34,7 +34,7 @@ const ContactPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-20">
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Skontaktuj się z nami.</h1>
@@ -49,7 +49,7 @@ const ContactPage = () => {
         </div>
       </section>
       {/* Contact Info */}
-      <section className="px-4 md:px-0 py-12 md:py-16">
+      <section className="px-4 md:px-2 py-12 md:py-16">
         <div className="container m-auto">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {contactInfo.map((info, index) => (
@@ -82,7 +82,7 @@ const ContactPage = () => {
         </div>
       </section>
       {/* Map & Social */}
-      <section className="bg-muted/50 px-4 md:px-0 py-12 md:py-16">
+      <section className="bg-muted/50 px-4 md:px-2 py-12 md:py-16">
         <div className="container m-auto">
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Map */}
@@ -91,8 +91,7 @@ const ContactPage = () => {
                 <iframe
                   title="Lokalizacja wPolisa"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.8468307847385!2d18.53358481589927!3d54.51847998025671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda73a81c0c1c5%3A0x5b0f5e7e8b8e8c8e!2sLipnowska%2017%2C%20Gdynia!5e0!3m2!1spl!2spl!4v1620000000000!5m2!1spl!2spl"
-                  width="100%"
-                  height="532"
+                  className="w-full max-h-[670px] aspect-square"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -103,7 +102,7 @@ const ContactPage = () => {
 
             {/* Social Media */}
             <div>
-              <Card className="border-border bg-card shadow-card">
+              <Card className="border-border bg-card shadow-card max-h-[670px] py-2 xl:py-6">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-bold text-foreground">Social Media</h2>
                   <p className="mt-2 text-muted-foreground">Śledź nas w mediach społecznościowych i bądź na bieżąco!</p>
@@ -115,7 +114,7 @@ const ContactPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-3 rounded-lg border border-border bg-background p-4 transition-all hover:border-transparent hover:text-white ${social.color}`}
+                        className={`flex items-center gap-3 rounded-lg border border-border bg-background p-4 transition-all  hover:text-white ${social.color} `}
                       >
                         <social.icon className="h-5 w-5" />
                         <span className="font-medium">{social.name}</span>
