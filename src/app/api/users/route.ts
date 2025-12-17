@@ -1,28 +1,56 @@
-import { HubSpotContactPropertiesInputApi } from "@/utils/types";
 import { NextRequest, NextResponse } from "next/server";
 import { saveUserInHubSpot, sendEmail } from "./services";
 import axios from "axios";
-import { RECAPTCHA_DATA_SCORE } from "@/utils/constants";
+import {
+  FORM_DESCRIPTION_MAX_LENGTH,
+  FORM_EMAIL_MAX_LENGTH,
+  FORM_FIRST_NAME_MAX_LENGTH,
+  FORM_PHONE_MAX_LENGTH,
+  FORM_RECAPTCHA_MAX_LENGTH,
+  RECAPTCHA_DATA_SCORE,
+} from "@/utils/constants";
+import { z } from "zod";
+import { HubSpotContactPropertiesInputApi } from "@/utils/types";
+
+// Zod schema for incoming request (matches type: HubSpotContactPropertiesInputApi)
+const UserSchema = z
+  .object({
+    firstname: z
+      .string()
+      .min(1, "Imię jest wymagane")
+      .max(FORM_FIRST_NAME_MAX_LENGTH, `Maksymalnie ${FORM_FIRST_NAME_MAX_LENGTH} znaków`),
+    email: z
+      .email("Nieprawidłowy adres e-mail")
+      .max(FORM_EMAIL_MAX_LENGTH, `Maksymalnie ${FORM_EMAIL_MAX_LENGTH} znaków`),
+    phone: z.string().max(FORM_PHONE_MAX_LENGTH, `Maksymalnie ${FORM_PHONE_MAX_LENGTH} znaków`).optional(),
+    description: z
+      .string()
+      .max(FORM_DESCRIPTION_MAX_LENGTH, `Maksymalnie ${FORM_DESCRIPTION_MAX_LENGTH} znaków`)
+      .optional(),
+    variant: z.string().max(100),
+    history: z.string().max(200).optional(),
+    privacy_consent: z.boolean().refine((v) => v === true, { message: "Zgoda jest wymagana" }),
+    marketing_consent: z.boolean().optional(),
+    hs_lead_status: z.string().max(100).default("NEW"),
+    recaptchaToken: z.string().min(10, "brak tokenu reCAPTCHA").max(FORM_RECAPTCHA_MAX_LENGTH, "Token jest za długi"),
+  })
+  .strict(); // .strict() returns error if extra fields are present
 
 export async function POST(request: NextRequest) {
-  let body: HubSpotContactPropertiesInputApi;
-
-  // Validation - parse JSON body checking for errors
+  // Execute Zod validation and parse request body, Zod - against attacks like XSS or invalid data
+  let hubspotPayload: HubSpotContactPropertiesInputApi;
   try {
-    body = await request.json();
+    const json = await request.json();
+    const result = UserSchema.safeParse(json);
+    if (!result.success) {
+      console.error("---------- ✗ Błąd walidacji", z.treeifyError(result.error));
+      return NextResponse.json({ error: "Błąd walidacji", issues: z.treeifyError(result.error) }, { status: 400 });
+    }
+    // Cast parsed Zod result to the HubSpot type we expect
+    hubspotPayload = result.data as unknown as HubSpotContactPropertiesInputApi;
   } catch (error: any) {
+    console.error("---------- ✗ Invalid JSON payload", error?.message);
     return NextResponse.json({ error: "Invalid JSON payload", message: error?.message }, { status: 400 });
-  }
-
-  // Validation - checks for required fields
-  if (!body.firstname || !body.email) {
-    return NextResponse.json({ error: "First name, and email are required" }, { status: 400 });
-  }
-
-  // Validation - verify reCAPTCHA token (v3) before processing
-  const recaptchaToken = (body as any).recaptchaToken;
-  if (!recaptchaToken) {
-    return NextResponse.json({ error: "reCAPTCHA token missing" }, { status: 400 });
   }
 
   // Execute reCaptcha
@@ -35,11 +63,12 @@ export async function POST(request: NextRequest) {
     } else {
       const secret = process.env.RECAPTCHA_SECRET_KEY;
       if (!secret) {
+        console.error("---------- ✗ reCAPTCHA secret not configured");
         return NextResponse.json({ error: "reCAPTCHA secret not configured" }, { status: 500 });
       }
 
       const recaptchaResponse = await axios.post("https://www.google.com/recaptcha/api/siteverify", null, {
-        params: { secret: secret, response: recaptchaToken },
+        params: { secret: secret, response: hubspotPayload.recaptchaToken },
       });
 
       const recaptchaResData = recaptchaResponse.data as any;
@@ -53,8 +82,8 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 403 });
       }
       console.log(
-        "---------- ✓ reCAPTCHA success",
-        `score: ${recaptchaResData?.score}`,
+        "---------- ✓ reCAPTCHA success,",
+        `score: ${recaptchaResData?.score},`,
         `hostname: ${recaptchaResData.hostname}`
       );
     }
@@ -65,16 +94,18 @@ export async function POST(request: NextRequest) {
 
   // Execute saveUserInHubSpot
   try {
-    await saveUserInHubSpot(body);
+    await saveUserInHubSpot(hubspotPayload);
     console.log("---------- ✓ HubSpot contact saved successfully");
     return NextResponse.json({ message: "Success" }, { status: 200 });
   } catch (errHubSpot: any) {
-    console.error("---------- ✗ HubSpot contact saving failed", { message: errHubSpot?.message ?? String(errHubSpot) });
+    console.error(
+      `---------- ✗ HubSpot contact saving failed, message: ${errHubSpot.response?.data?.message ?? errHubSpot?.message ?? String(errHubSpot)}`
+    );
 
     // if HubSpot save is error then try execute sendEmail
     try {
       const formatBodyText = (obj: Record<string, any>) =>
-        `HubSpot contact saving error: ${errHubSpot?.message ?? String(errHubSpot)}\n\n` + // add error + new lines
+        `HubSpot contact saving error: ${errHubSpot.response?.data?.message ?? errHubSpot?.message ?? String(errHubSpot)}\n\n` + // add error + lines
         Object.entries(obj)
           .map(([k, v]) => `${k}: ${v === undefined || v === null || k === "recaptchaToken" ? "" : v}`)
           .join("\n");
@@ -83,13 +114,13 @@ export async function POST(request: NextRequest) {
         from: "wpolisa.pl@gmail.com",
         to: "kontakt@wpolisa.pl",
         subject: `Zapytanie z Formularza (HubSpot ERROR)`,
-        text: formatBodyText(body),
+        text: formatBodyText(hubspotPayload),
         html: "", // text will be ignored when html is not empty
       });
       console.log("---------- ✓ Email sent successfully");
       return NextResponse.json({ message: "Optional success" }, { status: 202 });
     } catch (errSendEmail: any) {
-      console.error("---------- ✗ Email sending failed", { message: errSendEmail?.message ?? String(errSendEmail) });
+      console.error(`---------- ✗ Email sending failed, message: ${errSendEmail?.message ?? String(errSendEmail)}`);
       return NextResponse.json(
         {
           error: "Nie udało się wysłać zapytania",

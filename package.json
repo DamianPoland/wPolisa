@@ -23,7 +23,8 @@
     "react-dom": "19.2.0",
     "react-hook-form": "^7.67.0",
     "react-toastify": "^11.0.5",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
