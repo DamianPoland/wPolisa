@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <section className="mx-4 md:mx-0 py-16 md:py-24">
+    <section className="mx-4 md:mx-2 py-16 md:py-24">
       <div className="container m-auto">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-hero p-8 md:p-12 lg:p-16">
           {/* Background decoration */}

@@ -29,7 +29,7 @@ const insuranceVariants = [
   { id: "inne", title: "Pozostałe Ubezpieczenia", icon: Package },
 ];
 
-export const FormPage = () => {
+const FormPage = () => {
   const {
     register,
     handleSubmit,
@@ -131,19 +131,16 @@ export const FormPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">
+          <div className="animate-slide-up mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl pb-4">
               Zacznijmy od czegoś <span className="text-accent">prostego!</span>
             </h1>
             <p className="mt-6 text-primary-foreground/80 text-lg">
               Wybierz, czego potrzebujesz, a my odezwiemy się z gotowymi propozycjami.
             </p>
-            <p
-              className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl"
-              style={{ animationDelay: "0.1s" }}
-            >
+            <p className="mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl">
               🛡️ Zrób pierwszy krok w minutę - my zrobimy pozostałe 99.
             </p>
           </div>
@@ -151,7 +148,7 @@ export const FormPage = () => {
       </section>
 
       {/* Insurance Variant Selection */}
-      <section className="px-4 md:px-0 py-12">
+      <section className="px-4 md:px-2 py-12">
         <div className="container m-auto">
           <h2 className="mb-8 text-center text-2xl font-bold text-foreground">Wybierz rodzaj ubezpieczenia</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -193,7 +190,7 @@ export const FormPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="bg-muted/50 px-4 md:px-0 py-12 md:py-16">
+      <section id="contact-form" className="bg-muted/50 px-4 md:px-2 py-12 md:py-16">
         <div className="container m-auto">
           <Card className="mx-auto max-w-2xl border-border shadow-card">
             <CardHeader>
@@ -287,6 +284,48 @@ export const FormPage = () => {
 
                 {/* RODO Consents */}
                 <div className="space-y-3 rounded-lg border border-border bg-muted/30 p-4">
+                  {/* Select All */}
+                  <div className="flex items-center gap-3 border-b border-border pb-3">
+                    <Checkbox
+                      id="consent-all"
+                      checked={(watch("marketing_consent") && watch("privacy_consent")) || false}
+                      onCheckedChange={(checked) => {
+                        setValue("marketing_consent", checked === true);
+                        setValue("privacy_consent", checked === true);
+                      }}
+                      className="rounded-none border-2"
+                    />
+                    <Label htmlFor="consent-all" className="font-medium cursor-pointer">
+                      Zaznacz wszystko
+                    </Label>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="consent-marketing"
+                      checked={watch("marketing_consent") || false}
+                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
+                      className="mt-0.5 rounded-none border-2"
+                    />
+                    <div className="text-sm leading-relaxed">
+                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
+                        <p className="leading-[18px]">
+                          Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej
+                          chwili.
+                        </p>
+                      </Label>
+                      <details className="mt-2">
+                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
+                          Pokaż pełną treść zgody
+                        </summary>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
+                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
+                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
+                        </p>
+                      </details>
+                    </div>
+                  </div>
                   <div className="flex items-start gap-3">
                     <Checkbox
                       id="consent-required"
@@ -338,7 +377,6 @@ export const FormPage = () => {
                       </details>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-3">
                     <Checkbox
                       id="consent-marketing"

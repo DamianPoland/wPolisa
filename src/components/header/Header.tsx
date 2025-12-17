@@ -11,6 +11,7 @@ import { Icon } from "@/utils/types";
 const navLinks = [
   { name: "Strona główna", path: "/" },
   { name: "O nas", path: "/description" },
+  { name: "Baza wiedzy", path: "/knowledge" },
   { name: "Formularze", path: "/forms" },
   { name: "Kontakt", path: "/contact" },
 ];
@@ -21,7 +22,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
-      <div className="container flex h-16 items-center justify-between md:h-20 m-auto px-4 md:px-0">
+      <div className="container flex h-16 gap-4 items-center justify-between md:h-20 m-auto px-4 md:px-2">
         <Logo logoVariant={Icon.DARK} />
 
         {/* Desktop Navigation */}

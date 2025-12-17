@@ -8,7 +8,7 @@ import { socialLinks } from "@/utils/constants";
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
-      <div className="container px-4 md:px-0 py-12 md:py-16 m-auto">
+      <div className="container px-4 md:px-2 py-12 md:py-16 m-auto">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Description */}
           <div className="space-y-4">

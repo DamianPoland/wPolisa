@@ -13,11 +13,11 @@ const CookiesPage = () => {
             <ol className="list-decimal space-y-2 pl-6">
               <li>
                 Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych
-                przez Użytkowników w związku z korzystaniem z serwisu wpolisa.pl (dalej: „Serwis").
+                przez Użytkowników w związku z korzystaniem z serwisu wpolisa.pl (dalej: &ldquo;Serwis&rdquo;).
               </li>
               <li>
                 Administratorem danych osobowych jest wPolisa z siedzibą w Gdyni (81-504), ul. Lipnowska 17/1, NIP:
-                [TODO], REGON: [TODO] (dalej: „Administrator").
+                [TODO], REGON: [TODO] (dalej: &ldquo;Administrator&rdquo;).
               </li>
               <li>
                 Administrator prowadzi działalność agencji ubezpieczeniowej na podstawie wpisu do Rejestru Agentów
@@ -207,7 +207,7 @@ const CookiesPage = () => {
                 niekompletnych danych.
               </li>
               <li>
-                <strong>Prawo do usunięcia danych („prawo do bycia zapomnianym")</strong> – możliwość żądania usunięcia
+                <strong>Prawo do usunięcia danych (&ldquo;prawo do bycia zapomnianym&rdquo;)</strong> – możliwość żądania usunięcia
                 danych, gdy nie są już niezbędne do celów, dla których zostały zebrane.
               </li>
               <li>
