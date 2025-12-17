@@ -377,32 +377,6 @@ const FormPage = () => {
                       </details>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Checkbox
-                      id="consent-marketing"
-                      checked={watch("marketing_consent") || false}
-                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
-                      className="mt-0.5 rounded-none border-2"
-                    />
-                    <div className="text-sm leading-relaxed">
-                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
-                        <p className="leading-[18px]">
-                          Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej
-                          chwili.
-                        </p>
-                      </Label>
-                      <details className="mt-2">
-                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
-                          Pokaż pełną treść zgody
-                        </summary>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
-                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
-                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
-                        </p>
-                      </details>
-                    </div>
-                  </div>
                 </div>
 
                 <Button
