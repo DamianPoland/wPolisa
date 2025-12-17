@@ -92,6 +92,44 @@ Strona jest w pełni responsywna i zoptymalizowana dla:
 - Polityka prywatności zgodna z RODO
 - Banner cookie consent
 
+## Implementacja Zabezpieczeń
+
+Projekt wykorzystuje strategię „Defense in Depth” (obrona wielowarstwowa), aby zapewnić integralność danych i ochronę przed atakami.
+
+1. Cloudflare (Warstwa Infrastruktury)
+   Chroni przed: atakami DDoS, próbami Brute-force oraz złośliwym ruchem botów.
+
+Konfiguracja:
+
+- Logowanie na cloudflare.com i ustawienie reguł.
+- Zmiana serwerów DNS w panelu OVH.
+
+Działanie: Cały ruch jest kierowany przez sieć Edge Cloudflare i sprawdzany pod kątem ataków; tylko bezpieczne żądania trafiają do domeny.
+Reguły WAF: Zastosowano niestandardowe limity zapytań (Rate Limiting) dla endpointów /api/ (np. maks. 5 żądań/minutę na jeden adres IP).
+SSL/TLS: Wymuszone pełne szyfrowanie "Full (Strict)" na trasie: użytkownik ↔ Cloudflare ↔ serwer źródłowy (Origin).
+
+2. reCAPTCHA v3 (Warstwa Behawioralna)
+   Chroni przed: automatycznym spamem z formularzy i skryptami typu headless browser.
+
+Konfiguracja:
+
+- Frontend (FE): Obsługa zdarzenia onSubmit w formularzach.
+- Backend (BE): Weryfikacja tokena na początku endpointu (jako strażnik/guard przed wykonaniem głównego kodu).
+- Bezpieczeństwo: Klucz RECAPTCHA_SECRET_KEY przechowywany w Google Cloud Secret Manager.
+
+Walidacja po stronie serwera: Trasy API weryfikują token klienta przy użyciu Google site-verify API.
+Próg wyniku (Score): Przetwarzane są tylko żądania z wynikiem > 0.5; podejrzany ruch jest automatycznie odrzucany.
+
+3. Zod (Warstwa Danych)
+   Chroni przed: atakami SQL/NoSQL Injection, atakami typu Mass Assignment oraz nieprawidłowymi strukturami danych (malformed payloads).
+
+Konfiguracja:
+
+- Backend (BE): Walidacja i parsowanie danych wejściowych na samym początku każdego endpointu.
+
+Rygorystyczna walidacja: Wszystkie przychodzące obiekty są sprawdzane przy użyciu schematów .strict(), co powoduje odrzucenie żądań zawierających nieznane pola.
+Bezpieczeństwo typów (Type Safety): Gwarantuje, że wszystkie dane (e-maile, ciągi znaków, liczby) spełniają określone wymogi formatu i długości przed dotarciem do bazy danych.
+
 ## reCAPTCHA v3
 
 This project uses Google reCAPTCHA v3 to protect the contact forms from automated abuse. Quick setup steps:

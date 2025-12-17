@@ -1,6 +1,5 @@
 export interface HubSpotContactPropertiesInputApi {
   firstname: string;
-  lastname: string;
   email: string;
   phone: string;
   description: string;
@@ -9,6 +8,7 @@ export interface HubSpotContactPropertiesInputApi {
   privacy_consent: boolean;
   marketing_consent: boolean;
   hs_lead_status: string;
+  recaptchaToken?: string;
 }
 
 export type MenuItem = {

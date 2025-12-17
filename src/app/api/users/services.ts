@@ -40,22 +40,21 @@ interface HubSpotCreateContactResponse {
 }
 
 export async function saveUserInHubSpot(
-  body: HubSpotContactPropertiesInputApi
+  hubspotPayload: HubSpotContactPropertiesInputApi
 ): Promise<AxiosResponse<HubSpotCreateContactResponse>> {
   const hubSpotUrlApiContacts = "https://api.hubapi.com/crm/v3/objects/contacts";
 
   const payload: HubSpotCreateContactRequest = {
     properties: {
-      firstname: body.firstname,
-      lastname: body.lastname,
-      email: body.email,
-      phone: body.phone,
-      description: body.description,
-      variant: body.variant,
-      history: body.history,
-      privacy_consent: body.privacy_consent,
-      marketing_consent: body.marketing_consent,
-      hs_lead_status: body.hs_lead_status, // hubSpot standard field,  allowed options: [NEW, OPEN, IN_PROGRESS, OPEN_DEAL, UNQUALIFIED, ATTEMPTED_TO_CONTACT, CONNECTED, BAD_TIMING]
+      firstname: hubspotPayload.firstname,
+      email: hubspotPayload.email,
+      phone: hubspotPayload.phone,
+      description: hubspotPayload.description,
+      variant: hubspotPayload.variant,
+      history: hubspotPayload.history,
+      privacy_consent: hubspotPayload.privacy_consent,
+      marketing_consent: hubspotPayload.marketing_consent,
+      hs_lead_status: hubspotPayload.hs_lead_status, // hubSpot standard field,  allowed options: [NEW, OPEN, IN_PROGRESS, OPEN_DEAL, UNQUALIFIED, ATTEMPTED_TO_CONTACT, CONNECTED, BAD_TIMING]
     },
   };
 

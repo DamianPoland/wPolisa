@@ -12,7 +12,13 @@ import { useForm } from "react-hook-form";
 import { HubSpotContactPropertiesInputApi } from "@/utils/types";
 import axios from "axios";
 import Link from "next/link";
-import { PUBLIC_RECAPTCHA_SITE_KEY } from "@/utils/constants";
+import {
+  FORM_DESCRIPTION_MAX_LENGTH,
+  FORM_EMAIL_MAX_LENGTH,
+  FORM_FIRST_NAME_MAX_LENGTH,
+  FORM_PHONE_MAX_LENGTH,
+  PUBLIC_RECAPTCHA_SITE_KEY,
+} from "@/utils/constants";
 
 const insuranceVariants = [
   { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
@@ -34,7 +40,6 @@ const FormPage = () => {
   } = useForm<Partial<HubSpotContactPropertiesInputApi>>({
     defaultValues: {
       firstname: "",
-      lastname: "",
       email: "",
       phone: "",
       description: "",
@@ -99,7 +104,6 @@ const FormPage = () => {
 
     const dataToSend: HubSpotContactPropertiesInputApi = {
       firstname: data.firstname || "",
-      lastname: data.lastname || "",
       email: data.email || "",
       phone: data.phone || "",
       description: data.description || "",
@@ -108,11 +112,11 @@ const FormPage = () => {
       privacy_consent: data.privacy_consent || false,
       marketing_consent: data.marketing_consent || false,
       hs_lead_status: "NEW",
+      recaptchaToken: recaptchaToken,
     };
 
     try {
-      // attach recaptcha token to request body
-      await axios.post("/api/users", { ...dataToSend, recaptchaToken });
+      await axios.post("/api/users", dataToSend);
       reset();
       setSelectedVariant("");
       toast.success("Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.");
@@ -210,7 +214,12 @@ const FormPage = () => {
                       id="firstname"
                       {...register("firstname", {
                         required: "Imię jest wymagane",
+                        maxLength: {
+                          value: FORM_FIRST_NAME_MAX_LENGTH,
+                          message: `Maksymalnie ${FORM_FIRST_NAME_MAX_LENGTH} znaków`,
+                        },
                       })}
+                      maxLength={FORM_FIRST_NAME_MAX_LENGTH}
                       type="text"
                       placeholder="Wpisz imię"
                     />
@@ -222,11 +231,16 @@ const FormPage = () => {
                       id="email"
                       {...register("email", {
                         required: "Adres e-mail jest wymagany",
+                        maxLength: {
+                          value: FORM_EMAIL_MAX_LENGTH,
+                          message: `Maksymalnie ${FORM_EMAIL_MAX_LENGTH} znaków`,
+                        },
                         pattern: {
                           value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                           message: "Nieprawidłowy format adresu e-mail",
                         },
                       })}
+                      maxLength={FORM_EMAIL_MAX_LENGTH}
                       type="email"
                       placeholder="Wpisz adres e-mail"
                     />
@@ -234,7 +248,18 @@ const FormPage = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Numer telefonu (opcjonalny)</Label>
-                    <Input id="phone" {...register("phone")} type="tel" placeholder="Wpisz numer telefonu" />
+                    <Input
+                      id="phone"
+                      {...register("phone", {
+                        maxLength: {
+                          value: FORM_PHONE_MAX_LENGTH,
+                          message: `Maksymalnie ${FORM_PHONE_MAX_LENGTH} znaków`,
+                        },
+                      })}
+                      maxLength={FORM_PHONE_MAX_LENGTH}
+                      type="tel"
+                      placeholder="Wpisz numer telefonu"
+                    />
                     {errors.phone && <span className="text-red-600 text-sm">{errors.phone.message}</span>}
                   </div>
                 </div>
@@ -243,11 +268,18 @@ const FormPage = () => {
                   <Label htmlFor="description">Krótki opis (opcjonalny)</Label>
                   <Textarea
                     id="description"
-                    {...register("description")}
+                    {...register("description", {
+                      maxLength: {
+                        value: FORM_DESCRIPTION_MAX_LENGTH,
+                        message: `Maksymalnie ${FORM_DESCRIPTION_MAX_LENGTH} znaków`,
+                      },
+                    })}
+                    maxLength={FORM_DESCRIPTION_MAX_LENGTH}
                     placeholder="Wpisz opis"
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     rows={3}
                   />
+                  {errors.description && <span className="text-red-600 text-sm">{errors.description.message}</span>}
                 </div>
 
                 {/* RODO Consents */}
@@ -341,6 +373,32 @@ const FormPage = () => {
                           Wyrażam zgodę na przetwarzanie moich danych osobowych przez wPolisa w celu przedstawienia
                           oferty ubezpieczeniowej oraz zawarcia umowy ubezpieczenia, zgodnie z art. 6 ust. 1 lit. a i b
                           RODO.
+                        </p>
+                      </details>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="consent-marketing"
+                      checked={watch("marketing_consent") || false}
+                      onCheckedChange={(checked) => setValue("marketing_consent", checked === true)}
+                      className="mt-0.5 rounded-none border-2"
+                    />
+                    <div className="text-sm leading-relaxed">
+                      <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
+                        <p className="leading-[18px]">
+                          Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej
+                          chwili.
+                        </p>
+                      </Label>
+                      <details className="mt-2">
+                        <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground">
+                          Pokaż pełną treść zgody
+                        </summary>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Wyrażam zgodę na otrzymywanie informacji handlowych drogą elektroniczną (e-mail, SMS) oraz
+                          telefoniczną, zgodnie z ustawą o świadczeniu usług drogą elektroniczną oraz Prawem
+                          telekomunikacyjnym. Zgoda może być wycofana w każdej chwili.
                         </p>
                       </details>
                     </div>
