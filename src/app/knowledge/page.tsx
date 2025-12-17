@@ -45,7 +45,7 @@ const KnowledgePage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-0 py-16 md:py-24">
+      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl pb-4">
@@ -62,7 +62,7 @@ const KnowledgePage = () => {
       </section>
 
       {/* FAQ */}
-      <section className="px-4 md:px-0 py-16 md:py-24">
+      <section className="px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">
