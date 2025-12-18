@@ -69,14 +69,15 @@ npm run build
 
 ## 📄 Strony
 
-| Ścieżka       | Opis                               |
-| ------------- | ---------------------------------- |
-| `/`           | Strona główna                      |
-| `/o-nas`      | Informacje o firmie                |
-| `/formularze` | Formularze zapytań o ubezpieczenia |
-| `/kontakt`    | Dane kontaktowe                    |
-| `/regulamin`  | Regulamin serwisu                  |
-| `/cookies`    | Polityka prywatności i cookies     |
+| Ścieżka        | Opis                               |
+| -------------- | ---------------------------------- |
+| `/`            | Strona główna                      |
+| `/description` | Informacje o firmie                |
+| `/knowledge`   | Baza wiedzy                        |
+| `/forms`       | Formularze zapytań o ubezpieczenia |
+| `/contact`     | Dane kontaktowe                    |
+| `/terms`       | Regulamin serwisu                  |
+| `/cookies`     | Polityka prywatności i cookies     |
 
 ## 📱 Responsywność
 
