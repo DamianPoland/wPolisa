@@ -58,8 +58,8 @@ const DescriptionPage = () => {
             </h2>
             <div className="mt-8 space-y-6 text-lg text-muted-foreground">
               <p>
-                Od lat działamy na rynku ubezpieczeń. Nie boimy się skomplikowanych przypadków, bo znamy branżę na
-                wylot. Profesjonalizm to nasza norma, nie dodatek.
+                Od ponad 10 lat działamy na rynku ubezpieczeń. Nie boimy się skomplikowanych przypadków, bo znamy branżę
+                na wylot. Profesjonalizm to nasza norma, nie dodatek.
               </p>
               <p>
                 Wiesz, że Twoje polisy są w rękach kogoś, kto potrafi odróżnić OWU od UFO? My potrafimy – i co więcej,
@@ -67,7 +67,7 @@ const DescriptionPage = () => {
               </p>
               <p>
                 Każdego klienta traktujemy indywidualnie. Twoje potrzeby są unikalne, więc i Twoje ubezpieczenie powinno
-                być dopasowane. Nie sprzedajemy &quot;produktów&quot; – szukamy rozwiązań.
+                być dopasowane. Nie sprzedajemy &quot;produktów ubezpieczeniowych&quot; – szukamy rozwiązań.
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ const DescriptionPage = () => {
       </section>
 
       {/* YouTube */}
-      <section className="px-4 md:px-2 py-16 md:py-24">
+      {/* <section className="px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent/20">
@@ -85,9 +85,9 @@ const DescriptionPage = () => {
               Wolisz <span className="text-accent">oglądać</span> niż czytać?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Rozumiemy. Dlatego prowadzimy kanał YouTube, gdzie tłumaczymy ubezpieczenia tak, jakbyśmy rozmawiali przy
-              kawie. Bez nudnych slajdów i korporacyjnego żargonu – tylko konkrety i odrobina humoru. Bo kto powiedział,
-              że ubezpieczenia muszą być nudne?
+              Rozumiemy. Dlatego prowadzimy kanał YouTube, na którym tłumaczymy ubezpieczenia tak, jakbyśmy rozmawiali
+              przy kawie. Bez nudnych slajdów i korporacyjnego żargonu – tylko konkrety i odrobina humoru. Bo kto
+              powiedział, że ubezpieczenia muszą być nudne?
             </p>
             <p className="mt-4 text-muted-foreground">
               Subskrybuj, jeśli chcesz wiedzieć więcej o ubezpieczeniach bez zasypiania przed ekranem.
@@ -100,7 +100,7 @@ const DescriptionPage = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };
