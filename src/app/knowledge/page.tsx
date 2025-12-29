@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, startTransition } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Search, Car, Home, Heart, Plane, Building2, HelpCircle } from "lucide-react";
@@ -54,11 +54,20 @@ const KnowledgePage = () => {
   }, [groupedByCategory]);
 
   // Auto-expand categories when searching
-  useMemo(() => {
+  useEffect(() => {
     if (searchQuery.trim()) {
-      setOpenCategories(sortedCategories);
+      startTransition(() => {
+        setOpenCategories((prev) => {
+          if (prev.length === sortedCategories.length && prev.every((v, i) => v === sortedCategories[i])) {
+            return prev;
+          }
+          return sortedCategories;
+        });
+      });
     } else {
-      setOpenCategories([]);
+      startTransition(() => {
+        setOpenCategories((prev) => (prev.length ? [] : prev));
+      });
     }
   }, [searchQuery, sortedCategories]);
 
@@ -138,9 +147,9 @@ const KnowledgePage = () => {
                       value={cat}
                       className="rounded-lg border border-border bg-card px-4 last:border"
                     >
-                      <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-accent hover:no-underline [&[data-state=open]>svg]:stroke-accent [&[data-state=closed]>svg]:stroke-accent">
+                      <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-accent data-[state=open]:text-accent hover:no-underline [&[data-state=open]>svg]:stroke-accent [&[data-state=closed]>svg]:stroke-accent  cursor-pointer">
                         <div className="flex items-center gap-3">
-                          <Icon className="h-5 w-5 text-accent" />
+                          <Icon className="h-5 w-5 min-w-5 text-accent" />
                           <span>{config?.label || cat}</span>
                           <span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 text-sm font-normal text-accent">
                             {items.length}
@@ -155,7 +164,7 @@ const KnowledgePage = () => {
                               value={`${cat}-${index}`}
                               className="border-b border-border/50 last:border-0"
                             >
-                              <AccordionTrigger className="text-base py-3 text-left font-semibold text-foreground hover:text-accent">
+                              <AccordionTrigger className="text-base py-3 text-left font-semibold text-foreground hover:text-accent cursor-pointer">
                                 {item.question}
                               </AccordionTrigger>
                               <AccordionContent className="text-[15px] pb-3 leading-relaxed text-muted-foreground">
