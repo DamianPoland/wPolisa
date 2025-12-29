@@ -57,9 +57,9 @@ const InsuranceTiles = () => {
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
             Nasze <span className="text-accent">Hity</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Zaufali nam najlepsi - i my im też.</p>
+          <p className="mt-4 text-muted-foreground">Zaufali nam najlepsi &ndash; i my im też.</p>
           <p className="mt-4 text-muted-foreground">
-            Wybierz rodzaj ubezpieczenia i wypełnij krótki formularz aby otrzymac najlepszą ofertę!
+            Wybierz rodzaj ubezpieczenia i wypełnij krótki formularz, aby otrzymać najlepszą ofertę!
           </p>
         </div>
 

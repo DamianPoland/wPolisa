@@ -17,6 +17,17 @@ export type MenuItem = {
   title: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+  category: string;
+};
+
+export type CategoryConfig = {
+  label: string;
+  icon: React.ElementType;
+};
+
 export enum Icon {
   DARK = "dark",
   LIGHT = "light",
