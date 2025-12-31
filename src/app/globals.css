@@ -9,7 +9,7 @@
   --color-basicDark: #1c3757;
   --color-accentBright: #e67a2c;
   --color-accentDark: #d45c10;
-  --font-family-base-sans: 'Plus Jakarta Sans', 'Manrope', 'Figtree', 'Sansation', sans-serif;
+  --font-family-base-sans: "Plus Jakarta Sans", "Manrope", "Figtree", "Sansation", sans-serif;
 
   --color-background: hsl(0 0% 97%);
   --color-foreground: hsl(213 52% 22%);
@@ -171,7 +171,6 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -215,7 +214,6 @@
     transform: scale(1);
   }
 }
-
 
 *,
 *::before,
