@@ -2,6 +2,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { socialLinks } from "@/utils/constants";
+import Image from "next/image";
 
 const contactInfo = [
   {
@@ -114,9 +115,9 @@ const ContactPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-3 rounded-lg border border-border bg-background p-4 transition-all  hover:text-white ${social.color} `}
+                        className={`flex items-center gap-3 rounded-lg border border-border bg-background p-4 transition-all   ${social.color}`}
                       >
-                        <social.icon className="h-5 w-5" />
+                        <Image src={social.icon} className={`h-6 w-6`} alt={social.name} />
                         <span className="font-medium">{social.name}</span>
                       </a>
                     ))}

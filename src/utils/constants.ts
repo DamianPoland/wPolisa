@@ -1,6 +1,11 @@
 import { Plus_Jakarta_Sans, Figtree, Manrope } from "next/font/google";
-import { Facebook, Linkedin, MessageCircle, Instagram, Youtube } from "lucide-react";
 import { FaqItem } from "@/utils/types";
+import Facebook from "@/assets/images/facebook-brands-solid-full.svg";
+import X from "@/assets/images/x-twitter-brands-solid-full.svg";
+import Linkedin from "@/assets/images/linkedin-brands-solid-full.svg";
+import Whatsapp from "@/assets/images/whatsapp-brands-solid-full.svg";
+import Instagram from "@/assets/images/instagram-brands-solid-full.svg";
+// import Youtube from "@/assets/images/youtube-brands-solid-full.svg";
 
 // Public site key for client-side reCAPTCHA v3
 export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
@@ -35,34 +40,40 @@ export const socialLinks = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://facebook.com",
-    color: "hover:bg-[#4267B2]",
+    href: "https://www.facebook.com/wPolisa",
+    color: "hover:text-white hover:bg-[#4267B2]",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com",
-    color: "hover:bg-[#0A66C2]",
+    href: "https://www.linkedin.com/company/wpolisa",
+    color: "hover:text-white hover:bg-[#0A66C2]",
   },
   {
-    name: "WhatsApp",
-    icon: MessageCircle,
-    href: "https://wa.me/48607034911",
-    color: "hover:bg-[#25D366]",
+    name: "Platforma X",
+    icon: X,
+    href: "https://x.com/wPolisa",
+    color: "hover:text-black hover:shadow-md hover:bg-white",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/wpolisa?igsh=bDdkcWpvbGYwMGo3",
     color:
-      "hover:bg-gradient-to-bl hover:from-[#833AB4] hover:via-[#C13584] hover:via-[#E1306C] hover:via-[#FD1D1D] hover:via-[#F56040] hover:via-[#777737] hover:via-[#FCAF45] hover:to-[#FFDC80]",
+      "hover:text-white hover:bg-gradient-to-bl hover:from-[#833AB4] hover:via-[#C13584] hover:via-[#E1306C] hover:via-[#FD1D1D] hover:via-[#F56040] hover:via-[#777737] hover:via-[#FCAF45] hover:to-[#FFDC80]",
   },
   {
-    name: "YouTube",
-    icon: Youtube,
-    href: "https://www.youtube.com/@wPolisa-ubezpieczenia",
-    color: "hover:bg-[#FF0000]",
+    name: "WhatsApp",
+    icon: Whatsapp,
+    href: "https://wa.me/48607034911",
+    color: "hover:text-white hover:bg-[#25D366]",
   },
+  // {
+  //   name: "YouTube",
+  //   icon: Youtube,
+  //   href: "https://www.youtube.com/@wPolisa-ubezpieczenia",
+  //   color: "hover:text-white hover:bg-[#FF0000]",
+  // },
 ];
 
 // Dane zoptymalizowane pod SEO i AI (Frazy kluczowe + Definicje)

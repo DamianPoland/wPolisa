@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "@/components/logo/Logo";
 import { Icon } from "@/utils/types";
 import { socialLinks } from "@/utils/constants";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -106,9 +107,9 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-primary-foreground/10 transition-colors ${social.color}`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-accent-foreground/50 transition-colors ${social.color}`}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <Image src={social.icon} className="h-6 w-6" alt={social.name} />
                 </a>
               ))}
             </div>
