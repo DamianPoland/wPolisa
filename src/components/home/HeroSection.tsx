@@ -4,7 +4,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const benefits = ["Porównujemy oferty 10+ ubezpieczycieli", "Bezpłatna obsługa i pomoc", "Szybka obsługa online"];
+  const benefits = [
+    "Porównujemy oferty 10+ ubezpieczycieli",
+    "Bezpłatne wsparcie i pomoc doradców",
+    "Szybka obsługa online",
+  ];
 
   return (
     <section className="relative overflow-hidden bg-gradient-hero px-4 md:px-2">
