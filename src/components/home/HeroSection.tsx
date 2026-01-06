@@ -6,7 +6,7 @@ import Link from "next/link";
 const HeroSection = () => {
   const benefits = [
     "Porównujemy oferty 10+ ubezpieczycieli",
-    "Bezpłatne wsparcie i pomoc doradców",
+    "Bezpłatne wsparcie i pomoc specjalistów",
     "Szybka obsługa online",
   ];
 
