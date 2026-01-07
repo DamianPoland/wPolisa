@@ -4,7 +4,7 @@ export interface HubSpotContactPropertiesInputApi {
   phone: string;
   description: string;
   variant: string;
-  history: string;
+  origin: string;
   privacy_consent: boolean;
   marketing_consent: boolean;
   hs_lead_status: string;

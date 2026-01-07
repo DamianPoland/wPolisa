@@ -4,6 +4,8 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import CookiePopup from "@/components/cookiePopup/CookiePopup";
+import { Suspense } from "react";
+import QueryParamsTracker from "@/components/queryParamsTracker/QueryParamsTracker";
 
 export const metadata: Metadata = {
   title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Życia, Zdrowotne",
@@ -47,6 +49,11 @@ export default function RootLayout({
         </div>
         <ToastContainer />
         <CookiePopup />
+        {/* Suspense jest wymagany przy używaniu useSearchParams w Next.js */}
+        <Suspense fallback={null}>
+          {/* Pobiera paramsy przy pierwszym odpaleniu aplikacji i zapisuje do local storage */}
+          <QueryParamsTracker />
+        </Suspense>
       </body>
     </html>
   );
