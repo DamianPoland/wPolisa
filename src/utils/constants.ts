@@ -14,6 +14,7 @@ export const RECAPTCHA_DATA_SCORE = 0.5;
 // Form fields max lengths
 export const FORM_FIRST_NAME_MAX_LENGTH = 100;
 export const FORM_EMAIL_MAX_LENGTH = 100;
+export const FORM_PHONE_MIN_LENGTH = 9;
 export const FORM_PHONE_MAX_LENGTH = 30;
 export const FORM_DESCRIPTION_MAX_LENGTH = 2000;
 export const FORM_RECAPTCHA_MAX_LENGTH = 5000;
