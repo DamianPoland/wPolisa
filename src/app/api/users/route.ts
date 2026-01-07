@@ -6,6 +6,7 @@ import {
   FORM_EMAIL_MAX_LENGTH,
   FORM_FIRST_NAME_MAX_LENGTH,
   FORM_PHONE_MAX_LENGTH,
+  FORM_PHONE_MIN_LENGTH,
   FORM_RECAPTCHA_MAX_LENGTH,
   RECAPTCHA_DATA_SCORE,
 } from "@/utils/constants";
@@ -20,9 +21,14 @@ const UserSchema = z
       .min(1, "Imię jest wymagane")
       .max(FORM_FIRST_NAME_MAX_LENGTH, `Maksymalnie ${FORM_FIRST_NAME_MAX_LENGTH} znaków`),
     email: z
-      .email("Nieprawidłowy adres e-mail")
-      .max(FORM_EMAIL_MAX_LENGTH, `Maksymalnie ${FORM_EMAIL_MAX_LENGTH} znaków`),
-    phone: z.string().max(FORM_PHONE_MAX_LENGTH, `Maksymalnie ${FORM_PHONE_MAX_LENGTH} znaków`).optional(),
+      .string() // 1. add when email is optional
+      // .email("Nieprawidłowy adres e-mail") // 2. delete when email is optional
+      .max(FORM_EMAIL_MAX_LENGTH, `Maksymalnie ${FORM_EMAIL_MAX_LENGTH} znaków`)
+      .optional(), // 3. add when email is optional
+    phone: z
+      .string()
+      .min(FORM_PHONE_MIN_LENGTH, "Numer telefonu jest za krótki")
+      .max(FORM_PHONE_MAX_LENGTH, `Maksymalnie ${FORM_PHONE_MAX_LENGTH} znaków`),
     description: z
       .string()
       .max(FORM_DESCRIPTION_MAX_LENGTH, `Maksymalnie ${FORM_DESCRIPTION_MAX_LENGTH} znaków`)

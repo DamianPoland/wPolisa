@@ -17,6 +17,7 @@ import {
   FORM_EMAIL_MAX_LENGTH,
   FORM_FIRST_NAME_MAX_LENGTH,
   FORM_PHONE_MAX_LENGTH,
+  FORM_PHONE_MIN_LENGTH,
   PUBLIC_RECAPTCHA_SITE_KEY,
 } from "@/utils/constants";
 
@@ -226,11 +227,10 @@ const FormPage = () => {
                     {errors.firstname && <span className="text-red-600 text-sm">{errors.firstname.message}</span>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Adres email *</Label>
+                    <Label htmlFor="email">Adres email (opcjonalny)</Label>
                     <Input
                       id="email"
                       {...register("email", {
-                        required: "Adres e-mail jest wymagany",
                         maxLength: {
                           value: FORM_EMAIL_MAX_LENGTH,
                           message: `Maksymalnie ${FORM_EMAIL_MAX_LENGTH} znaków`,
@@ -247,10 +247,15 @@ const FormPage = () => {
                     {errors.email && <span className="text-red-600 text-sm">{errors.email.message}</span>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Numer telefonu (opcjonalny)</Label>
+                    <Label htmlFor="phone">Numer telefonu *</Label>
                     <Input
                       id="phone"
                       {...register("phone", {
+                        required: "Numer telefonu jest wymagany",
+                        minLength: {
+                          value: FORM_PHONE_MIN_LENGTH,
+                          message: "Numer telefonu jest za krótki",
+                        },
                         maxLength: {
                           value: FORM_PHONE_MAX_LENGTH,
                           message: `Maksymalnie ${FORM_PHONE_MAX_LENGTH} znaków`,
@@ -310,8 +315,7 @@ const FormPage = () => {
                     <div className="text-sm leading-relaxed">
                       <Label htmlFor="consent-marketing" className="font-normal cursor-pointer">
                         <p className="leading-[18px]">
-                          Kontakt marketingowy. Bez spamu. Tylko promocje i SUPER oferty. Możesz wypisać się w każdej
-                          chwili.
+                          Kontakt marketingowy. BEZ spamu. Tylko SUPER oferty. Możesz wypisać się w każdej chwili.
                         </p>
                       </Label>
                       <details className="mt-2">
