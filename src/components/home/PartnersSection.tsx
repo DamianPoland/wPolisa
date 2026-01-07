@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import pzu from "@/assets/images/pzu.png";
 import pzuZycie from "@/assets/images/pzu-zycie.png";
+import pzuZdrowie from "@/assets/images/pzu-zdrowie.png";
 import warta from "@/assets/images/warta.png";
 import wartaHDI from "@/assets/images/warta-hdi.png";
 import hestia from "@/assets/images/hestia.png";
@@ -19,8 +20,9 @@ type Insurer = {
 };
 
 const insurers: Insurer[] = [
-  { name: "PZU Życie", logo: pzu },
-  { name: "PZU SA", logo: pzuZycie },
+  { name: "PZU SA", logo: pzu },
+  { name: "PZU Życie", logo: pzuZycie },
+  { name: "PZU Zdrowie", logo: pzuZdrowie },
   { name: "Warta Życie", logo: warta },
   { name: "Warta HDI", logo: wartaHDI },
   { name: "Hestia", logo: hestia },
@@ -39,7 +41,7 @@ const medicalPartners = [
 
 const PartnersSection = () => {
   return (
-    <section className="bg-muted/5 py-16 md:py-24 px-4 md:px-2">
+    <section className="bg-muted/5 py-16 md:py-24 px-4 md:px-2 hidden">
       <div className="container m-auto">
         <div className="mx-auto max-w-2xl  text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
