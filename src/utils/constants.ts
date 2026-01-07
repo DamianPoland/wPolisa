@@ -7,6 +7,9 @@ import Whatsapp from "@/assets/images/whatsapp-brands-solid-full.svg";
 import Instagram from "@/assets/images/instagram-brands-solid-full.svg";
 // import Youtube from "@/assets/images/youtube-brands-solid-full.svg";
 
+// query params
+export const QUERY_PARAM_ORIGIN = "origin";
+
 // Public site key for client-side reCAPTCHA v3
 export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
 export const RECAPTCHA_DATA_SCORE = 0.5;

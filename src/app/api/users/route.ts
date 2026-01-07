@@ -34,7 +34,7 @@ const UserSchema = z
       .max(FORM_DESCRIPTION_MAX_LENGTH, `Maksymalnie ${FORM_DESCRIPTION_MAX_LENGTH} znaków`)
       .optional(),
     variant: z.string().max(100),
-    history: z.string().max(200).optional(),
+    origin: z.string().max(300).optional(),
     privacy_consent: z.boolean().refine((v) => v === true, { message: "Zgoda jest wymagana" }),
     marketing_consent: z.boolean().optional(),
     hs_lead_status: z.string().max(100).default("NEW"),

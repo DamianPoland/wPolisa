@@ -19,6 +19,7 @@ import {
   FORM_PHONE_MAX_LENGTH,
   FORM_PHONE_MIN_LENGTH,
   PUBLIC_RECAPTCHA_SITE_KEY,
+  QUERY_PARAM_ORIGIN,
 } from "@/utils/constants";
 
 const insuranceVariants = [
@@ -109,7 +110,7 @@ const FormPage = () => {
       phone: data.phone || "",
       description: data.description || "",
       variant: insuranceVariants.find((v) => v.id === selectedVariant)?.title || "",
-      history: document.referrer ? new URL(document.referrer).hostname : "brak danych",
+      origin: `${localStorage.getItem(QUERY_PARAM_ORIGIN) ? `origin: ${localStorage.getItem(QUERY_PARAM_ORIGIN)},` : ""} referrer: ${document.referrer ? new URL(document.referrer).hostname : "brak"}`,
       privacy_consent: data.privacy_consent || false,
       marketing_consent: data.marketing_consent || false,
       hs_lead_status: "NEW",
