@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import CookiePopup from "@/components/cookiePopup/CookiePopup";
 import { Suspense } from "react";
 import QueryParamsTracker from "@/components/queryParamsTracker/QueryParamsTracker";
+import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 
 export const metadata: Metadata = {
   title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Życia, Zdrowotne",
@@ -48,11 +49,14 @@ export default function RootLayout({
           <Footer />
         </div>
         <ToastContainer />
+        {/* CookiePopup pyta o zgody i włącza Google Analytics jeśli użytkownik wyraził zgodę */}
         <CookiePopup />
         {/* Suspense jest wymagany przy używaniu useSearchParams w Next.js */}
         <Suspense fallback={null}>
-          {/* Pobiera paramsy przy pierwszym odpaleniu aplikacji i zapisuje do local storage */}
+          {/* QueryParamsTracker pobiera referrer(hostname) i paramsy przy pierwszym odpaleniu aplikacji i zapisuje do local storage */}
           <QueryParamsTracker />
+          {/* AnalyticsTracker włącza eventy na otwarcie każdej zkładki  */}
+          <AnalyticsTracker />
         </Suspense>
       </body>
     </html>

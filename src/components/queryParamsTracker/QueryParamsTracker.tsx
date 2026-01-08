@@ -2,18 +2,19 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { QUERY_PARAM_ORIGIN } from "@/utils/constants";
+import { ORIGIN_QUERY_PARAM, ORIGIN_QUERY_PARAM_URL, ORIGIN_REFERRER } from "@/utils/constants";
 
 export default function QueryParamsTracker() {
   const searchParams = useSearchParams();
 
+  // Wykona się tylko raz przy zamontowaniu aplikacji
   useEffect(() => {
-    // Wykona się tylko raz przy zamontowaniu aplikacji
-    const originParam = searchParams.get(QUERY_PARAM_ORIGIN);
+    localStorage.setItem(ORIGIN_REFERRER, document.referrer ? new URL(document.referrer).hostname : "noReferrer");
+    const originParam = searchParams.get(ORIGIN_QUERY_PARAM);
     if (originParam) {
-      localStorage.setItem(QUERY_PARAM_ORIGIN, originParam);
+      localStorage.setItem(ORIGIN_QUERY_PARAM_URL, originParam);
     } else {
-      localStorage.removeItem(QUERY_PARAM_ORIGIN);
+      localStorage.removeItem(ORIGIN_QUERY_PARAM_URL);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

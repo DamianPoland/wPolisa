@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Cookie, X } from "lucide-react";
 import Link from "next/link";
-
-const COOKIE_CONSENT_KEY = "wpolisa-cookie-consent";
+import { enableAnalytics, disableAnalytics } from "@/lib/analytics";
+import { COOKIE_CONSENT_ACCEPTED, COOKIE_CONSENT_DECLINED, COOKIE_CONSENT_KEY } from "@/utils/constants";
 
 const CookiePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,16 +15,21 @@ const CookiePopup = () => {
       // Małe opóźnienie dla lepszego UX
       const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
+    } else if (consent === COOKIE_CONSENT_ACCEPTED) {
+      // jeśli zgoda była wcześniej, załaduj Google Analytics
+      enableAnalytics();
     }
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
+    enableAnalytics();
     setIsVisible(false);
   };
 
   const declineCookies = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "declined");
+    localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_DECLINED);
+    disableAnalytics();
     setIsVisible(false);
   };
 
