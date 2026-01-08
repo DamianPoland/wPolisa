@@ -4,6 +4,8 @@ import {
   COOKIE_CONSENT_KEY,
   COOKIE_DECLINE_DATE_KEY,
   EVENT_NAME_OPEN_APP,
+  EVENT_NAME_OPEN_APP_ACCEPTED_COOKIES,
+  EVENT_NAME_OPEN_APP_DENY_COOKIES,
   ORIGIN_QUERY_PARAM_URL,
   ORIGIN_REFERRER,
 } from "@/utils/constants";
@@ -17,10 +19,10 @@ declare global {
 
 // Can be visible on FE TODO: for wPolisa.pl "G-4CWK2QT3K0", rest is "G-3DYKBD2L2Y"
 const GoogleAnalyticsID = "G-3DYKBD2L2Y";
-let isEventOpenAppSent = false;
 
-function loadGtagScript() {
+function initializeGtagScript() {
   if (!GoogleAnalyticsID || typeof window === "undefined" || !window.gtag) return;
+
   // Avoid injecting multiple times
   if (document.querySelector(`script[src*="${GoogleAnalyticsID}"]`)) return;
 
@@ -81,40 +83,29 @@ export function initConsentMode() {
     ad_personalization: "denied",
   });
 
-  const isAccepted = localStorage.getItem(COOKIE_CONSENT_KEY) === COOKIE_CONSENT_ACCEPTED;
-  updateGtagConsent(isAccepted);
-
-  // initialize gtag with dataLayer if not already done
-  loadGtagScript();
-
-  // Send the "open_app" event, if previously accepted with full info, if not only with referrer and origin
-  if (!isEventOpenAppSent) {
-    trackEvent(EVENT_NAME_OPEN_APP, {});
-    isEventOpenAppSent = true;
-  }
+  updateGtagConsent(localStorage.getItem(COOKIE_CONSENT_KEY) === COOKIE_CONSENT_ACCEPTED);
+  initializeGtagScript();
+  trackEvent(EVENT_NAME_OPEN_APP, {}); // fire open_app event on app start
 }
 
 export function enableAnalytics() {
   if (typeof window === "undefined") return;
   localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
   localStorage.removeItem(COOKIE_DECLINE_DATE_KEY); // Clear any previous decline date when user accepts
-  loadGtagScript();
+  initializeGtagScript();
   updateGtagConsent(true);
-  // fire initial app-open event after granting consent
-  if (!isEventOpenAppSent) {
-    trackEvent(EVENT_NAME_OPEN_APP, {});
-    isEventOpenAppSent = true;
-  }
+  trackEvent(EVENT_NAME_OPEN_APP_ACCEPTED_COOKIES, {}); // fire open_app_accepted_cookies event
 }
 
 export function disableAnalytics() {
   if (typeof window === "undefined") return;
   localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_DECLINED);
   localStorage.setItem(COOKIE_DECLINE_DATE_KEY, new Date().toISOString()); // Save decline timestamp so we can show the popup again after a week
+  updateGtagConsent(false);
+  trackEvent(EVENT_NAME_OPEN_APP_DENY_COOKIES, {}); // fire open_app_deny_cookies event
 
   // Update Consent Mode and try to clear cookies
   try {
-    updateGtagConsent(false);
     clearGACookies();
   } catch (e) {
     console.log(e);
@@ -126,7 +117,7 @@ export function isAnalyticsAllowed() {
   return localStorage.getItem(COOKIE_CONSENT_KEY) === COOKIE_CONSENT_ACCEPTED;
 }
 
-// track every added event e.g: trackEvent("page_view", { string: string });
+// track every added event with referrer and origin from local storage
 export function trackEvent(name: string, params: Record<string, string> = {}) {
   if (typeof window === "undefined" || !window.gtag) return;
   const referrerHostname = document?.referrer ? new URL(document?.referrer).hostname : "noReferrer";
