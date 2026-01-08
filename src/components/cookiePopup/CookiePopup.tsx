@@ -38,6 +38,14 @@ const CookiePopup = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleOpenCookieSettings = () => {
+      setIsVisible(true);
+    };
+    window.addEventListener("openCookieSettings", handleOpenCookieSettings);
+    return () => window.removeEventListener("openCookieSettings", handleOpenCookieSettings);
+  }, []);
+
   const acceptCookies = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
     localStorage.removeItem(COOKIE_DECLINE_DATE_KEY); // Usuń datę odmowy, bo użytkownik teraz zaakceptował
