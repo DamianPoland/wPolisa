@@ -55,7 +55,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           {/* QueryParamsTracker pobiera referrer(hostname) i paramsy przy pierwszym odpaleniu aplikacji i zapisuje do local storage */}
           <QueryParamsTracker />
-          {/* AnalyticsTracker włącza eventy na otwarcie każdej zkładki  */}
+          {/* AnalyticsTracker inicjalizuje Google Analytics(initConsentMode) z domyślnie WYŁĄCZONYM zbieraniem danych ("denied") oraz włącza eventy na otwarcie każdej zkładki(zadziałąją bez danych osobowych jeśli cookies NIE będzie accepted)  */}
           <AnalyticsTracker />
         </Suspense>
       </body>
