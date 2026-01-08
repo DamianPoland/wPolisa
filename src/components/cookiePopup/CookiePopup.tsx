@@ -4,31 +4,52 @@ import { Button } from "@/components/ui/button";
 import { Cookie, X } from "lucide-react";
 import Link from "next/link";
 import { enableAnalytics, disableAnalytics } from "@/lib/analytics";
-import { COOKIE_CONSENT_ACCEPTED, COOKIE_CONSENT_DECLINED, COOKIE_CONSENT_KEY } from "@/utils/constants";
+import {
+  COOKIE_CONSENT_ACCEPTED,
+  COOKIE_CONSENT_DECLINED,
+  COOKIE_CONSENT_KEY,
+  COOKIE_DECLINE_DATE_KEY,
+  COOKIE_ONE_WEEK_MS,
+} from "@/utils/constants";
 
 const CookiePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+
     if (!consent) {
-      // Małe opóźnienie dla lepszego UX
-      const timer = setTimeout(() => setIsVisible(true), 1000);
+      const timer = setTimeout(() => setIsVisible(true), 1000); // Małe opóźnienie dla lepszego UX
       return () => clearTimeout(timer);
     } else if (consent === COOKIE_CONSENT_ACCEPTED) {
-      // jeśli zgoda była wcześniej, załaduj Google Analytics
-      enableAnalytics();
+      enableAnalytics(); // jeśli zgoda była wcześniej, załaduj Google Analytics
+    } else if (consent === COOKIE_CONSENT_DECLINED) {
+      // Jeśli użytkownik wcześniej odmówił, pokaż popup ponownie dopiero po tygodniu
+      const declineDate = localStorage.getItem(COOKIE_DECLINE_DATE_KEY);
+      if (declineDate) {
+        const last = Date.parse(declineDate);
+        const now = Date.now();
+        if (!isNaN(last) && now - last >= COOKIE_ONE_WEEK_MS) {
+          const timer = setTimeout(() => setIsVisible(true), 1000);
+          return () => clearTimeout(timer);
+        }
+      } else {
+        // jeśli brak daty odmowy, ustaw ją teraz i nie pokazuj popupu od razu
+        localStorage.setItem(COOKIE_DECLINE_DATE_KEY, new Date().toISOString());
+      }
     }
   }, []);
 
   const acceptCookies = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
+    localStorage.removeItem(COOKIE_DECLINE_DATE_KEY); // Usuń datę odmowy, bo użytkownik teraz zaakceptował
     enableAnalytics();
     setIsVisible(false);
   };
 
   const declineCookies = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_DECLINED);
+    localStorage.setItem(COOKIE_DECLINE_DATE_KEY, new Date().toISOString()); // Zapisz datę odmowy, aby móc ponownie pokazać popup po tygodniu
     disableAnalytics();
     setIsVisible(false);
   };

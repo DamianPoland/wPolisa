@@ -16,6 +16,8 @@ export const ORIGIN_REFERRER = "origin-referrer-hostname";
 export const COOKIE_CONSENT_KEY = "wpolisa-cookie-consent";
 export const COOKIE_CONSENT_ACCEPTED = "wpolisa-cookie-accepted";
 export const COOKIE_CONSENT_DECLINED = "wpolisa-cookie-declined";
+export const COOKIE_DECLINE_DATE_KEY = "wpolisa-cookie-decline-date";
+export const COOKIE_ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000; // show popup after 7 days (in milliseconds)
 export const EVENT_NAME_OPEN_APP = "open_app";
 export const EVENT_NAME_OPEN_TAB = "open_tab";
 
