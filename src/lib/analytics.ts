@@ -2,6 +2,7 @@ import {
   COOKIE_CONSENT_ACCEPTED,
   COOKIE_CONSENT_DECLINED,
   COOKIE_CONSENT_KEY,
+  COOKIE_DECLINE_DATE_KEY,
   EVENT_NAME_OPEN_APP,
   ORIGIN_QUERY_PARAM_URL,
   ORIGIN_REFERRER,
@@ -18,8 +19,6 @@ declare global {
 const GoogleAnalyticsID = "G-3DYKBD2L2Y";
 
 function loadGtag() {
-  console.log("loadGtag called");
-
   if (!GoogleAnalyticsID || typeof window === "undefined") return;
   // Avoid injecting multiple times
   if (document.querySelector(`script[src*="${GoogleAnalyticsID}"]`)) return;
@@ -44,18 +43,16 @@ function loadGtag() {
 }
 
 export function enableAnalytics() {
-  console.log("enableAnalytics called");
-
   if (typeof window === "undefined") return;
   localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
+  localStorage.removeItem(COOKIE_DECLINE_DATE_KEY); // Clear any previous decline date when user accepts
   loadGtag();
 }
 
 export function disableAnalytics() {
-  console.log("disableAnalytics called");
-
   if (typeof window === "undefined") return;
   localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_DECLINED);
+  localStorage.setItem(COOKIE_DECLINE_DATE_KEY, new Date().toISOString()); // Save decline timestamp so we can show the popup again after a week
   // Prevent further calls
   try {
     window.gtag = undefined;
@@ -72,11 +69,6 @@ export function isAnalyticsAllowed() {
 // track every added event e.g: trackEvent(EVENT_NAME_OPEN_TAB, { tab: pathName });
 export function trackEvent(name: string, params: Record<string, string> = {}) {
   if (!isAnalyticsAllowed() || typeof window === "undefined" || !window.gtag) return;
-  console.log("trackEvent called, name:", name, "params:", {
-    ...params,
-    referrer: localStorage.getItem(ORIGIN_REFERRER) || "noReferrer",
-    origin: localStorage.getItem(ORIGIN_QUERY_PARAM_URL) || "noOrigin",
-  });
   window.gtag("event", name, {
     ...params,
     referrer: localStorage.getItem(ORIGIN_REFERRER) || "noReferrer",
