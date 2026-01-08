@@ -8,7 +8,16 @@ import Instagram from "@/assets/images/instagram-brands-solid-full.svg";
 // import Youtube from "@/assets/images/youtube-brands-solid-full.svg";
 
 // query params
-export const QUERY_PARAM_ORIGIN = "origin";
+export const ORIGIN_QUERY_PARAM = "origin";
+export const ORIGIN_QUERY_PARAM_URL = "origin-param-url-name";
+export const ORIGIN_REFERRER = "origin-referrer-hostname";
+
+// Cookie and Google analitycs
+export const COOKIE_CONSENT_KEY = "wpolisa-cookie-consent";
+export const COOKIE_CONSENT_ACCEPTED = "wpolisa-cookie-accepted";
+export const COOKIE_CONSENT_DECLINED = "wpolisa-cookie-declined";
+export const EVENT_NAME_OPEN_APP = "open_app";
+export const EVENT_NAME_OPEN_TAB = "open_tab";
 
 // Public site key for client-side reCAPTCHA v3
 export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
