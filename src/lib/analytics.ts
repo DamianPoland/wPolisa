@@ -30,8 +30,9 @@ function loadGtag() {
   document.head.appendChild(s);
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function (...args: any[]) {
-    window.dataLayer!.push(args);
+  window.gtag = function (): void {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
   };
   window.gtag("js", new Date());
   // disable automatic page_view, in SPA rotings we will track manually
