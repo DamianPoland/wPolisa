@@ -126,6 +126,14 @@ const Footer = () => {
               <Link href="/cookies" className="text-sm text-primary-foreground/50 transition-colors hover:text-accent">
                 Polityka cookies
               </Link>
+              <button
+                onClick={() => {
+                  window.dispatchEvent(new Event("openCookieSettings"));
+                }}
+                className="text-sm text-primary-foreground/50 transition-colors hover:text-accent cursor-pointer"
+              >
+                Ustawienia cookies
+              </button>
             </div>
           </div>
         </div>
