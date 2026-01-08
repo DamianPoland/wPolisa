@@ -21,8 +21,6 @@ const CookiePopup = () => {
     if (!consent) {
       const timer = setTimeout(() => setIsVisible(true), 1000); // Małe opóźnienie dla lepszego UX
       return () => clearTimeout(timer);
-    } else if (consent === COOKIE_CONSENT_ACCEPTED) {
-      enableAnalytics(); // jeśli zgoda była wcześniej, załaduj Google Analytics
     } else if (consent === COOKIE_CONSENT_DECLINED) {
       // Jeśli użytkownik wcześniej odmówił, pokaż popup ponownie dopiero po tygodniu
       const declineDate = localStorage.getItem(COOKIE_DECLINE_DATE_KEY);

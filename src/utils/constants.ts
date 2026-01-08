@@ -19,6 +19,8 @@ export const COOKIE_CONSENT_DECLINED = "wpolisa-cookie-declined";
 export const COOKIE_DECLINE_DATE_KEY = "wpolisa-cookie-decline-date";
 export const COOKIE_ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000; // show popup after 7 days (in milliseconds)
 export const EVENT_NAME_OPEN_APP = "open_app";
+export const EVENT_NAME_OPEN_APP_ACCEPTED_COOKIES = "open_app_accepted_cookies";
+export const EVENT_NAME_OPEN_APP_DENY_COOKIES = "open_app_deny_cookies";
 
 // Public site key for client-side reCAPTCHA v3
 export const PUBLIC_RECAPTCHA_SITE_KEY = "6LcWWy0sAAAAAH0nUHhyq2Gm_0edmokfERJbJNvH";
