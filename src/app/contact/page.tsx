@@ -8,14 +8,14 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adres",
-    value: "Lipnowska 17/1, Gdynia",
-    href: "https://maps.google.com/?q=Lipnowska+17/1,+Gdynia,+Poland",
+    value: "Świętojańska 118, Gdynia",
+    href: "https://maps.google.com/?q=Swietojanska+118,+Gdynia,+Poland",
   },
   {
     icon: Phone,
     title: "Telefon",
-    value: "+48 607 034 911",
-    href: "tel:+48607034911",
+    value: "+48 222 444 666",
+    href: "tel:+48222444666",
   },
   {
     icon: Mail,
@@ -91,7 +91,7 @@ const ContactPage = () => {
               <div className="overflow-hidden rounded-xl border border-border bg-card shadow-card">
                 <iframe
                   title="Lokalizacja wPolisa"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.8468307847385!2d18.53358481589927!3d54.51847998025671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda73a81c0c1c5%3A0x5b0f5e7e8b8e8c8e!2sLipnowska%2017%2C%20Gdynia!5e0!3m2!1spl!2spl!4v1620000000000!5m2!1spl!2spl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2321.4326510375685!2d18.529362777174696!3d54.508182987130255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda72689622d4f%3A0xc604b998344e451b!2s%C5%9Awi%C4%99toja%C5%84ska%20118%2C%2081-388%20Gdynia!5e0!3m2!1spl!2spl!4v1705058000000!5m2!1spl!2spl"
                   className="w-full max-h-[670px] aspect-square"
                   style={{ border: 0 }}
                   allowFullScreen

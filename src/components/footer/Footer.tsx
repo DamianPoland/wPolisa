@@ -77,20 +77,20 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Kontakt</h3>
             <div className="flex flex-col gap-3">
               <a
-                href="https://maps.google.com/?q=Lipnowska+17/1,+Gdynia"
+                href="https://maps.google.com/?q=Swietojanska+118,+Gdynia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>Lipnowska 17/1, Gdynia</span>
+                <span>Świętojańska 118, Gdynia</span>
               </a>
               <a
-                href="tel:+48607034911"
+                href="tel:+48222444666"
                 className="flex items-center gap-2 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 <Phone className="h-4 w-4" />
-                <span>+48 607 034 911</span>
+                <span>+48 222 444 666</span>
               </a>
               <a
                 href="mailto:kontakt@wpolisa.pl"

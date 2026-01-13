@@ -16,8 +16,8 @@ const CookiesPage = () => {
                 przez Użytkowników w związku z korzystaniem z serwisu wpolisa.pl (dalej: &quot;Serwis&quot;).
               </li>
               <li>
-                Administratorem danych osobowych jest wPolisa z siedzibą w Gdyni (81-xxx), ul. Lipnowska 17/1, NIP: [do
-                uzupełnienia], REGON: [do uzupełnienia] (dalej: &quot;Administrator&quot;).
+                Administratorem danych osobowych jest wPolisa z siedzibą w Gdyni (81-388), ul. Świętojańska 118, NIP:
+                5862425740, REGON: 54367189200000 (dalej: &quot;Administrator&quot;).
               </li>
               <li>
                 Administrator prowadzi działalność agencji ubezpieczeniowej na podstawie wpisu do Rejestru Agentów
@@ -27,8 +27,8 @@ const CookiesPage = () => {
                 Kontakt z Administratorem w sprawach ochrony danych osobowych:
                 <ul className="list-disc mt-2 space-y-1 pl-6">
                   <li>Email: kontakt@wpolisa.pl</li>
-                  <li>Adres: ul. Lipnowska 17/1, 81-xxx Gdynia</li>
-                  <li>Telefon: +48 123 456 789</li>
+                  <li>Adres: ul. Lipnowska 17/1, 81-504 Gdynia</li>
+                  <li>Telefon: +48 222 444 666</li>
                 </ul>
               </li>
               <li>
@@ -714,13 +714,13 @@ const CookiesPage = () => {
                 <strong>Administrator danych:</strong> wPolisa
               </li>
               <li>
-                <strong>Adres:</strong> ul. Lipnowska 17/1, 81-xxx Gdynia
+                <strong>Adres:</strong> ul. Lipnowska 17/1, 81-504 Gdynia
               </li>
               <li>
                 <strong>Email:</strong> kontakt@wpolisa.pl
               </li>
               <li>
-                <strong>Telefon:</strong> +48 123 456 789
+                <strong>Telefon:</strong> +48 222 444 666
               </li>
             </ul>
             <p className="mt-4 text-sm">
