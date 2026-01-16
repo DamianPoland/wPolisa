@@ -86,11 +86,11 @@ const Footer = () => {
                 <span>Świętojańska 118, Gdynia</span>
               </a>
               <a
-                href="tel:+48222444666"
+                href="tel:+48888970510"
                 className="flex items-center gap-2 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 <Phone className="h-4 w-4" />
-                <span>+48 222 444 666</span>
+                <span>+48 888 970 510</span>
               </a>
               <a
                 href="mailto:kontakt@wpolisa.pl"

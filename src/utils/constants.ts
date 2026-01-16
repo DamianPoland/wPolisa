@@ -81,7 +81,7 @@ export const socialLinks = [
   {
     name: "WhatsApp",
     icon: Whatsapp,
-    href: "https://wa.me/48607034911",
+    href: "https://wa.me/48888970510",
     color: "hover:text-white hover:bg-[#25D366]",
   },
   // {

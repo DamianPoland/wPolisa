@@ -26,13 +26,13 @@ const Header = () => {
         <Logo logoVariant={Icon.DARK} />
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 md:flex md:text-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               href={link.path}
               className={cn(
-                "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                "rounded-lg px-2 lg:px-4 py-2 text-sm font-medium transition-colors",
                 pathname === link.path
                   ? "bg-muted text-foreground"
                   : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
