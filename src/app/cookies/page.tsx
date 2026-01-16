@@ -16,8 +16,8 @@ const CookiesPage = () => {
                 przez Użytkowników w związku z korzystaniem z serwisu wpolisa.pl (dalej: &quot;Serwis&quot;).
               </li>
               <li>
-                Administratorem danych osobowych jest wPolisa z siedzibą w Gdyni (81-388), ul. Świętojańska 118, NIP:
-                5862425740, REGON: 54367189200000 (dalej: &quot;Administrator&quot;).
+                Administratorem danych osobowych jest wPolisa sp. z o.o. z siedzibą w Gdyni (81-388), ul. Świętojańska
+                118, NIP: 5862425740, REGON: 54367189200000 (dalej: &quot;Administrator&quot;).
               </li>
               <li>
                 Administrator prowadzi działalność agencji ubezpieczeniowej na podstawie wpisu do Rejestru Agentów
@@ -27,8 +27,8 @@ const CookiesPage = () => {
                 Kontakt z Administratorem w sprawach ochrony danych osobowych:
                 <ul className="list-disc mt-2 space-y-1 pl-6">
                   <li>Email: kontakt@wpolisa.pl</li>
-                  <li>Adres: ul. Lipnowska 17/1, 81-504 Gdynia</li>
-                  <li>Telefon: +48 222 444 666</li>
+                  <li>Adres korespondencyjny: ul. Lipnowska 17/1, 81-504 Gdynia</li>
+                  <li>Telefon: +48 888 970 510</li>
                 </ul>
               </li>
               <li>
@@ -214,9 +214,9 @@ const CookiesPage = () => {
             <p className="mb-4">Dane osobowe mogą być przekazywane następującym kategoriom odbiorców:</p>
             <ul className="list-disc space-y-2 pl-6">
               <li>
-                <strong>Zakłady ubezpieczeń</strong> – współpracujące z wPolisa, w celu przygotowania oferty i zawarcia
-                umowy ubezpieczenia (m.in. PZU, Warta, Ergo Hestia, Generali, Allianz, Compensa, Unum, TU Zdrowie,
-                Saltus).
+                <strong>Zakłady ubezpieczeń</strong> – współpracujące z wPolisa sp. z o.o., w celu przygotowania oferty
+                i zawarcia umowy ubezpieczenia (m.in. PZU, Warta, Ergo Hestia, Generali, Allianz, Compensa, Unum, TU
+                Zdrowie, Saltus).
               </li>
               <li>
                 <strong>Placówki medyczne</strong> – w przypadku ubezpieczeń zdrowotnych (m.in. Luxmed, Medicover).
@@ -711,16 +711,16 @@ const CookiesPage = () => {
             </p>
             <ul className="list-none space-y-1">
               <li>
-                <strong>Administrator danych:</strong> wPolisa
+                <strong>Administrator danych:</strong> wPolisa sp. z o.o.
               </li>
               <li>
-                <strong>Adres:</strong> ul. Lipnowska 17/1, 81-504 Gdynia
+                <strong>Adres korespondencyjny:</strong> ul. Lipnowska 17/1, 81-504 Gdynia
               </li>
               <li>
                 <strong>Email:</strong> kontakt@wpolisa.pl
               </li>
               <li>
-                <strong>Telefon:</strong> +48 222 444 666
+                <strong>Telefon:</strong> +48 888 970 510
               </li>
             </ul>
             <p className="mt-4 text-sm">
@@ -745,7 +745,7 @@ const CookiesPage = () => {
             </Link>
           </p>
 
-          <p className="mt-4 text-sm text-muted-foreground">Ostatnia aktualizacja: 8.01.2026</p>
+          <p className="mt-4 text-sm text-muted-foreground">Ostatnia aktualizacja: 19.01.2026</p>
         </div>
       </div>
     </section>

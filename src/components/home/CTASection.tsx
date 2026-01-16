@@ -26,7 +26,7 @@ const CTASection = () => {
                 </Link>
               </Button>
               <Button variant="hero-outline" asChild>
-                <a href="tel:+48222444666">
+                <a href="tel:+48888970510">
                   <Phone className="mr-2 h-5 w-5" />
                   Zadzwoń teraz
                 </a>

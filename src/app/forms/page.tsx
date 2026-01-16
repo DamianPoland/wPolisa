@@ -376,9 +376,9 @@ const FormPage = () => {
                           Pokaż pełną treść zgody
                         </summary>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Wyrażam zgodę na przetwarzanie moich danych osobowych przez wPolisa w celu przedstawienia
-                          oferty ubezpieczeniowej oraz zawarcia umowy ubezpieczenia, zgodnie z art. 6 ust. 1 lit. a i b
-                          RODO.
+                          Wyrażam zgodę na przetwarzanie moich danych osobowych przez wPolisa sp. z o.o. w celu
+                          przedstawienia oferty ubezpieczeniowej oraz zawarcia umowy ubezpieczenia, zgodnie z art. 6
+                          ust. 1 lit. a i b RODO.
                         </p>
                       </details>
                     </div>

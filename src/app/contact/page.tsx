@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telefon",
-    value: "+48 222 444 666",
-    href: "tel:+48222444666",
+    value: "+48 888 970 510",
+    href: "tel:+48888970510",
   },
   {
     icon: Mail,

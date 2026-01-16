@@ -18,9 +18,9 @@ const TermsPage = () => {
                 Usługodawcy oraz Użytkowników.
               </li>
               <li>
-                Właścicielem i administratorem Serwisu jest wPolisa z siedzibą w Gdyni (81-388), ul. Świętojańska 118,
-                NIP: 5862425740, REGON: 54367189200000 (dalej: &ldquo;Usługodawca&rdquo; lub &ldquo;Dystrybutor
-                Ubezpieczeń&rdquo;).
+                Właścicielem i administratorem Serwisu jest wPolisa sp. z o.o. z siedzibą w Gdyni (81-388), ul.
+                Świętojańska 118, NIP: 5862425740, REGON: 54367189200000 (dalej: &ldquo;Usługodawca&rdquo; lub
+                &ldquo;Dystrybutor Ubezpieczeń&rdquo;).
               </li>
               <li>
                 Usługodawca jest agentem ubezpieczeniowym wpisanym do Rejestru Agentów Ubezpieczeniowych prowadzonego
@@ -89,7 +89,7 @@ const TermsPage = () => {
                 działalnością gospodarczą lub zawodową.
               </li>
               <li>
-                <strong>Usługodawca / Dystrybutor Ubezpieczeń</strong> – wPolisa z siedzibą w Gdyni, ul. Świętojańska
+                <strong>Usługodawca / Dystrybutor Ubezpieczeń</strong> – wPolisa sp. z o.o. z siedzibą w Gdyni, ul. Świętojańska
                 118, prowadzący działalność w zakresie dystrybucji ubezpieczeń jako agent ubezpieczeniowy.
               </li>
               <li>
@@ -267,9 +267,9 @@ const TermsPage = () => {
               <li>
                 Reklamacje można składać:
                 <ul className="list-disc mt-2 space-y-1 pl-6">
-                  <li>pisemnie na adres: wPolisa, ul. Lipnowska 17/1, 81-504 Gdynia,</li>
+                  <li>pisemnie na adres: wPolisa sp. z o.o., ul. Lipnowska 17/1, 81-504 Gdynia,</li>
                   <li>elektronicznie na adres e-mail: kontakt@wpolisa.pl,</li>
-                  <li>telefonicznie pod numerem: +48 222 444 666.</li>
+                  <li>telefonicznie pod numerem: +48 888 970 510.</li>
                 </ul>
               </li>
               <li>
@@ -322,7 +322,7 @@ const TermsPage = () => {
             <h2 className="mb-4 text-xl font-semibold text-primary">§6. Ochrona danych osobowych</h2>
             <ol className="list-decimal space-y-2 pl-6">
               <li>
-                Administratorem danych osobowych Użytkowników jest wPolisa z siedzibą w Gdyni, ul. Świętojańska 118,
+                Administratorem danych osobowych Użytkowników jest wPolisa sp. z o.o. z siedzibą w Gdyni, ul. Świętojańska 118,
                 81-388 Gdynia.
               </li>
               <li>
@@ -445,7 +445,7 @@ const TermsPage = () => {
             <h2 className="mb-4 text-xl font-semibold text-primary">Dane Usługodawcy / Kontakt</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground">wPolisa</h3>
+                <h3 className="font-semibold text-foreground">wPolisa sp. z o.o.</h3>
                 <ul className="list-none space-y-1 mt-2">
                   <li>
                     <strong>Adres siedziby:</strong> ul. Świętojańska 118, 81-388 Gdynia
@@ -468,7 +468,7 @@ const TermsPage = () => {
                     <strong>E-mail:</strong> kontakt@wpolisa.pl
                   </li>
                   <li>
-                    <strong>Telefon:</strong> +48 222 444 666
+                    <strong>Telefon:</strong> +48 888 970 510
                   </li>
                 </ul>
               </div>
@@ -488,9 +488,7 @@ const TermsPage = () => {
             </div>
           </div>
 
-          <p className="mt-8 text-sm text-muted-foreground">
-            Ostatnia aktualizacja: {new Date().toLocaleDateString("pl-PL")}
-          </p>
+          <p className="mt-8 text-sm text-muted-foreground">Ostatnia aktualizacja: 19.01.2026</p>
         </div>
       </div>
     </section>
