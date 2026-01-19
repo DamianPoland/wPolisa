@@ -32,7 +32,7 @@ const Header = () => {
               key={link.path}
               href={link.path}
               className={cn(
-                "rounded-lg px-2 lg:px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2",
+                "rounded-lg px-2 lg:px-4 py-2 text-sm font-medium transition-colors focus:outline-none",
                 pathname === link.path
                   ? "bg-muted text-foreground"
                   : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
@@ -77,7 +77,7 @@ const Header = () => {
                 href={link.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2",
+                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors focus:outline-none",
                   pathname === link.path
                     ? "bg-muted text-foreground"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
