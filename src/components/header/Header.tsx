@@ -32,7 +32,7 @@ const Header = () => {
               key={link.path}
               href={link.path}
               className={cn(
-                "rounded-lg px-2 lg:px-4 py-2 text-sm font-medium transition-colors",
+                "rounded-lg px-2 lg:px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2",
                 pathname === link.path
                   ? "bg-muted text-foreground"
                   : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
@@ -50,14 +50,26 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Otwórz menu nawigacji"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+        >
           {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="animate-fade-in border-t border-border/50 bg-background md:hidden">
+        <div
+          id="mobile-menu"
+          role="navigation"
+          className="animate-fade-in border-t border-border/50 bg-background md:hidden"
+        >
           <nav className="container flex flex-col gap-1 px-4 py-4 w-full m-auto">
             {navLinks.map((link) => (
               <Link
@@ -65,8 +77,8 @@ const Header = () => {
                 href={link.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors",
-                  location.pathname === link.path
+                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2",
+                  pathname === link.path
                     ? "bg-muted text-foreground"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 )}

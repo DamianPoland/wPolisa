@@ -1,0 +1,26 @@
+{
+  "name": "wPolisa - Multiagencja Ubezpieczeniowa",
+  "short_name": "wPolisa",
+  "description": "Ubezpieczenia bez bólu głowy. Zamiast szukać, po prostu nas zapytaj.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1c3757",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/shield-dark-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/shield-color-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "finance"]
+}

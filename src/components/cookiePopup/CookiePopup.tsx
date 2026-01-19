@@ -63,13 +63,19 @@ const CookiePopup = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+      role="region"
+      aria-label="Cookies banner"
+      aria-live="polite"
+    >
       <div className="container max-w-4xl mx-auto m-auto">
         <div className="relative rounded-xl border border-border bg-card p-4 shadow-lg md:p-6">
           <button
             onClick={declineCookies}
-            className="absolute right-3 top-3 rounded-lg p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
-            aria-label="Zamknij"
+            className="absolute right-3 top-3 rounded-lg p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+            aria-label="Zamknij banner cookies"
+            type="button"
           >
             <X className="h-5 w-5" />
           </button>
@@ -96,10 +102,19 @@ const CookiePopup = () => {
                 size="sm"
                 onClick={declineCookies}
                 className="flex-1 md:flex-none cursor-pointer"
+                aria-label="Odrzuć cookies i pliki śledzące"
+                type="button"
               >
                 Odrzuć
               </Button>
-              <Button variant="accent" size="sm" onClick={acceptCookies} className="flex-1 md:flex-none cursor-pointer">
+              <Button
+                variant="accent"
+                size="sm"
+                onClick={acceptCookies}
+                className="flex-1 md:flex-none cursor-pointer"
+                aria-label="Zaakceptuj wszystkie cookies"
+                type="button"
+              >
                 Akceptuję
               </Button>
             </div>
