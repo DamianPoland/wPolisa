@@ -1,4 +1,3 @@
-"use client";
 import { Heart, Shield, Plane, Home, Building2, Package, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";

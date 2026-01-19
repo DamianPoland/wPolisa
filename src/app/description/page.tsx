@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Clock, Shield, Youtube } from "lucide-react";
 

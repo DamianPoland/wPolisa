@@ -1,4 +1,3 @@
-"use client";
 import CTASection from "@/components/home/CTASection";
 import HeroSection from "@/components/home/HeroSection";
 import InsuranceTiles from "@/components/home/InsuranceTiles";
