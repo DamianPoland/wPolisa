@@ -17,7 +17,7 @@ const CookiesPage = () => {
               </li>
               <li>
                 Administratorem danych osobowych jest wPolisa sp. z o.o. z siedzibą w Gdyni (81-388), ul. Świętojańska
-                118, NIP: 5862425740, REGON: 54367189200000 (dalej: &quot;Administrator&quot;).
+                118, NIP: 5862425740, REGON: 543671892 (dalej: &quot;Administrator&quot;).
               </li>
               <li>
                 Administrator prowadzi działalność agencji ubezpieczeniowej na podstawie wpisu do Rejestru Agentów

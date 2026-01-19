@@ -18,7 +18,7 @@ const TermsPage = () => {
               </li>
               <li>
                 Właścicielem i administratorem Serwisu jest wPolisa sp. z o.o. z siedzibą w Gdyni (81-388), ul.
-                Świętojańska 118, NIP: 5862425740, REGON: 54367189200000 (dalej: &ldquo;Usługodawca&rdquo; lub
+                Świętojańska 118, NIP: 5862425740, REGON: 543671892 (dalej: &ldquo;Usługodawca&rdquo; lub
                 &ldquo;Dystrybutor Ubezpieczeń&rdquo;).
               </li>
               <li>
@@ -453,7 +453,7 @@ const TermsPage = () => {
                     <strong>NIP:</strong> 5862425740
                   </li>
                   <li>
-                    <strong>REGON:</strong> 54367189200000
+                    <strong>REGON:</strong> 543671892
                   </li>
                   {/* <li>
                     <strong>Numer RAU (KNF):</strong> [TO_DO]
