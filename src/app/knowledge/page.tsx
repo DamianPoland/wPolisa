@@ -121,7 +121,7 @@ const KnowledgePage = () => {
               <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Np. tanie OC, ubezpieczenie mieszkania..."
+                placeholder="Np. ubezpieczenie OC"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 h-12 text-lg shadow-sm"
