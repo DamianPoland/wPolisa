@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -8,16 +8,43 @@ import { Suspense } from "react";
 import QueryParamsTracker from "@/components/queryParamsTracker/QueryParamsTracker";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.wpolisa.pl"),
   title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Życia, Zdrowotne",
-  keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
   description:
     "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
+  keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
+
+  // Manifest & Web App
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "wPolisa",
+  },
+
+  // Format Detection
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
+
+  // Open Graph
   openGraph: {
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
     type: "website",
     url: "https://www.wpolisa.pl",
+    siteName: "wPolisa",
+    locale: "pl_PL",
     images: [
       {
         url: "/images/shield-light-64.png",
@@ -27,11 +54,34 @@ export const metadata: Metadata = {
       },
     ],
   },
+
+  // Twitter
   twitter: {
     card: "summary_large_image",
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
+    creator: "@wpolisa",
     images: ["/images/shield-light-64.png"],
+  },
+
+  // SEO
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // Icons
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -42,6 +92,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+      </head>
       <body>
         <div className="flex min-h-screen flex-col">
           <Header />
@@ -49,13 +104,9 @@ export default function RootLayout({
           <Footer />
         </div>
         <ToastContainer />
-        {/* CookiePopup pyta o zgody i włącza Google Analytics jeśli użytkownik wyraził zgodę */}
         <CookiePopup />
-        {/* Suspense jest wymagany przy używaniu useSearchParams w Next.js */}
         <Suspense fallback={null}>
-          {/* QueryParamsTracker pobiera referrer(hostname) i paramsy przy pierwszym odpaleniu aplikacji i zapisuje do local storage */}
           <QueryParamsTracker />
-          {/* AnalyticsTracker inicjalizuje Google Analytics(initConsentMode) z domyślnie WYŁĄCZONYM zbieraniem danych ("denied") oraz włącza eventy na otwarcie każdej zkładki(zadziałąją bez danych osobowych jeśli cookies NIE będzie accepted)  */}
           <AnalyticsTracker />
         </Suspense>
       </body>
