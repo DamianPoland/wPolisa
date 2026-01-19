@@ -24,7 +24,7 @@ const TermsPage = () => {
               </li>
               <li>
                 Usługodawca jest agentem ubezpieczeniowym wpisanym do Rejestru Agentów Ubezpieczeniowych prowadzonego
-                przez Komisję Nadzoru Finansowego pod numerem RAU: [TO_DO]. Wpis można zweryfikować pod adresem:{" "}
+                przez Komisję Nadzoru Finansowego{/* pod numerem RAU: [TO_DO] */}. Wpis można zweryfikować pod adresem:{" "}
                 <a
                   href="https://rpu.knf.gov.pl"
                   target="_blank"
@@ -89,8 +89,8 @@ const TermsPage = () => {
                 działalnością gospodarczą lub zawodową.
               </li>
               <li>
-                <strong>Usługodawca / Dystrybutor Ubezpieczeń</strong> – wPolisa sp. z o.o. z siedzibą w Gdyni, ul. Świętojańska
-                118, prowadzący działalność w zakresie dystrybucji ubezpieczeń jako agent ubezpieczeniowy.
+                <strong>Usługodawca / Dystrybutor Ubezpieczeń</strong> – wPolisa sp. z o.o. z siedzibą w Gdyni, ul.
+                Świętojańska 118, prowadzący działalność w zakresie dystrybucji ubezpieczeń jako agent ubezpieczeniowy.
               </li>
               <li>
                 <strong>Zakład Ubezpieczeń</strong> – przedsiębiorca prowadzący działalność ubezpieczeniową na podstawie
@@ -322,8 +322,8 @@ const TermsPage = () => {
             <h2 className="mb-4 text-xl font-semibold text-primary">§6. Ochrona danych osobowych</h2>
             <ol className="list-decimal space-y-2 pl-6">
               <li>
-                Administratorem danych osobowych Użytkowników jest wPolisa sp. z o.o. z siedzibą w Gdyni, ul. Świętojańska 118,
-                81-388 Gdynia.
+                Administratorem danych osobowych Użytkowników jest wPolisa sp. z o.o. z siedzibą w Gdyni, ul.
+                Świętojańska 118, 81-388 Gdynia.
               </li>
               <li>
                 Dane osobowe Użytkowników przetwarzane są zgodnie z:
@@ -456,9 +456,9 @@ const TermsPage = () => {
                   <li>
                     <strong>REGON:</strong> 54367189200000
                   </li>
-                  <li>
+                  {/* <li>
                     <strong>Numer RAU (KNF):</strong> [TO_DO]
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div>
