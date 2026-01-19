@@ -79,9 +79,9 @@ export const metadata: Metadata = {
 
   // Icons
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/icons/favicon.ico",
+    shortcut: "/icons/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
   },
 };
 
