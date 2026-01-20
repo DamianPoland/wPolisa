@@ -11,10 +11,11 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(3, "120 s"), // Limit definition: 3 requests per 120 seconds
+  limiter: Ratelimit.slidingWindow(3, "300 s"), // Limit definition: 3 requests per 300 seconds
   analytics: true, // Optional statistics in Upstash Dashboard
 });
 
+// Middleware function to handle rate limiting
 export async function middleware(request: NextRequest) {
   // Add your endpoints filtering logic here
   if (request.nextUrl.pathname.startsWith("/api/users")) {
@@ -27,7 +28,7 @@ export async function middleware(request: NextRequest) {
 
     const { success, limit, reset, remaining } = await ratelimit.limit(ip);
 
-    // Over the limit logic
+    // If over the limit - return rate limit response
     if (!success) {
       return NextResponse.json(
         {
@@ -49,7 +50,7 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-// 5. matcher config to apply middleware to specific routes
+// matcher config to apply middleware to specific routes
 export const config = {
   matcher: "/api/:path*",
 };
