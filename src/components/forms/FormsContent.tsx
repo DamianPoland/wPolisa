@@ -67,13 +67,22 @@ const FormsContent = () => {
   // Load reCAPTCHA v3 script, site key is provided in constants.ts
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if ((window as any).grecaptcha) return;
 
-    const script = document.createElement("script");
-    script.id = "recaptcha-script";
-    script.src = `https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    document.head.appendChild(script);
+    const timer = setTimeout(() => {
+      if ((window as any).grecaptcha || document.getElementById("recaptcha-script")) {
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.id = "recaptcha-script";
+      script.src = `https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_SITE_KEY}`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      console.log("reCAPTCHA loaded after delay");
+    }, 5000); // Opóźnienie 5 sekund aby nie blokować szybkiego renderowania strony
+
+    return () => clearTimeout(timer);
   }, []);
 
   const onSubmit = async (data: Partial<HubSpotContactPropertiesInputApi>) => {
