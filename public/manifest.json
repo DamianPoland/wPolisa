@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "name": "wPolisa - Multiagencja Ubezpieczeniowa",
   "short_name": "wPolisa",
   "description": "Ubezpieczenia bez bólu głowy. Zamiast szukać, po prostu nas zapytaj.",
@@ -47,5 +48,21 @@
       "purpose": "any"
     }
   ],
-  "categories": ["business", "finance"]
+  "categories": ["business", "finance"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Strona główna wPolisa na komputerze"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Aplikacja mobilna wPolisa"
+    }
+  ]
 }
