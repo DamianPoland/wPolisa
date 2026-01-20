@@ -28,9 +28,9 @@ const HeroSection = () => {
           <h1 className="animate-slide-up text-4xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
             Życie jest nieprzewidywalne.
           </h1>
-          <h1 className="animate-slide-up text-4xl font-bold leading-tight text-accent md:text-5xl lg:text-6xl">
+          <h2 className="animate-slide-up text-4xl font-bold leading-tight text-accent md:text-5xl lg:text-6xl">
             My jesteśmy!
-          </h1>
+          </h2>
 
           {/* Subheading */}
           <p className="animate-slide-up mx-auto mt-6 max-w-3xl text-primary-foreground/80 text-lg md:text-xl">
