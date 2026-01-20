@@ -2,6 +2,19 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { socialLinks } from "@/utils/constants";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kontakt | wPolisa - Skontaktuj się z nami",
+  description:
+    "Zadzwoń, napisz lub przyjdź do naszego biura. Jesteśmy tu, aby pomóc Ci znaleźć najlepszą polisę ubezpieczeniową.",
+  openGraph: {
+    title: "Kontakt - wPolisa",
+    description: "Skontaktuj się z naszym zespołem specjalistów ubezpieczeniowych.",
+    type: "website",
+    url: "https://www.wpolisa.pl/contact",
+  },
+};
 
 const contactInfo = [
   {
@@ -38,7 +51,7 @@ const ContactPage = () => {
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Skontaktuj się z nami.</h1>
-            <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">Jesteśmy bliżej, niż myślisz.</h1>
+            <h2 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">Jesteśmy bliżej, niż myślisz.</h2>
             <p className="mt-6 text-lg text-primary-foreground/80">
               Masz pytania? Potrzebujesz pomocy? Jesteśmy tu, żeby Ci pomóc – osobiście, telefonicznie lub online.
             </p>

@@ -7,6 +7,7 @@ import CookiePopup from "@/components/cookiePopup/CookiePopup";
 import { Suspense } from "react";
 import QueryParamsTracker from "@/components/queryParamsTracker/QueryParamsTracker";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
+import SchemaScripts from "@/components/schemas/SchemaScripts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     images: [
       {
-        url: "/images/shield-light-64.png",
+        url: "/icons/shield-dark-64.png",
         width: 64,
         height: 64,
         alt: "wPolisa - Multiagencja Ubezpieczeniowa",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
     creator: "@wpolisa",
-    images: ["/images/shield-light-64.png"],
+    images: ["/icons/shield-dark-64.png"],
   },
 
   // SEO
@@ -87,6 +88,15 @@ export const metadata: Metadata = {
     shortcut: "/icons/favicon.ico",
     apple: "/icons/apple-touch-icon.png",
   },
+
+  // GEO & Language
+  alternates: {
+    canonical: "https://www.wpolisa.pl",
+    languages: {
+      "pl-PL": "https://www.wpolisa.pl",
+      pl: "https://www.wpolisa.pl",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -97,6 +107,16 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        {/* Language & GEO */}
+        <meta name="Content-Language" content="pl-PL" />
+        <meta name="geo.region" content="PL-POM" />
+        <meta name="geo.placename" content="Gdynia" />
+        <link rel="alternate" hrefLang="pl-PL" href="https://www.wpolisa.pl" />
+        <link rel="alternate" hrefLang="pl" href="https://www.wpolisa.pl" />
+
+        {/* Schema.org Structured Data */}
+        <SchemaScripts />
+
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />

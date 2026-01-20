@@ -1,5 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, Clock, Shield, Youtube } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "O nas | wPolisa - 10+ lat doświadczenia",
+  description:
+    "Poznaj zespół wPolisa. Multiagencja ubezpieczeniowa z 10+ latami doświadczenia, 1000+ zadowolonych klientów.",
+  openGraph: {
+    title: "O nas - wPolisa",
+    description: "Zespół pasjonatów, którzy naprawdę chcą Ci pomóc w wyborze ubezpieczenia.",
+    type: "website",
+    url: "https://www.wpolisa.pl/description",
+  },
+};
 
 const stats = [
   { icon: Users, value: "1000+", label: "Zadowolonych klientów" },
@@ -16,7 +29,7 @@ const DescriptionPage = () => {
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Po pierwsze, jesteśmy ludźmi.</h1>
-            <h1 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">Po drugie, ekspertami.</h1>
+            <h2 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">Po drugie, ekspertami.</h2>
             <p className="mt-6 text-primary-foreground/80 text-lg">
               Jesteśmy zespołem pasjonatów, którzy naprawdę chcą Ci pomóc.
             </p>

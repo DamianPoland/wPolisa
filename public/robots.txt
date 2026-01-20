@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /private
-Disallow: /*.json$
 Disallow: /api
+
+Crawl-delay: 1
 
 Sitemap: https://www.wpolisa.pl/sitemap.xml

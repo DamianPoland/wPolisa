@@ -38,18 +38,21 @@ export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-plus-jakarta-sans",
+  display: "swap",
 });
 
 export const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-manrope",
+  display: "swap",
 });
 
 export const figtree = Figtree({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
   variable: "--font-figtree",
+  display: "swap",
 });
 
 export const socialLinks = [
