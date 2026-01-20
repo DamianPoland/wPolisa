@@ -11,7 +11,7 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(1, "60 s"), // Limit definition: 3 requests per 60 seconds
+  limiter: Ratelimit.slidingWindow(3, "120 s"), // Limit definition: 3 requests per 120 seconds
   analytics: true, // Optional statistics in Upstash Dashboard
 });
 
