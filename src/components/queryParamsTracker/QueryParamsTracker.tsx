@@ -9,7 +9,7 @@ export default function QueryParamsTracker() {
 
   // Wykona się tylko raz przy zamontowaniu aplikacji
   useEffect(() => {
-    localStorage.setItem(ORIGIN_REFERRER, document.referrer ? new URL(document.referrer).hostname : "noReferrer");
+    localStorage.setItem(ORIGIN_REFERRER, document.referrer ? new URL(document.referrer).hostname : "");
     const originParam = searchParams.get(ORIGIN_QUERY_PARAM);
     if (originParam) {
       localStorage.setItem(ORIGIN_QUERY_PARAM_URL, originParam);

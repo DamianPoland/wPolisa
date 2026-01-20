@@ -106,13 +106,19 @@ const FormsContent = () => {
       return;
     }
 
+    const originReferrer = localStorage.getItem(ORIGIN_QUERY_PARAM_URL)
+      ? (localStorage.getItem(ORIGIN_QUERY_PARAM_URL) as string)
+      : localStorage.getItem(ORIGIN_REFERRER)
+        ? `referrer: ${localStorage.getItem(ORIGIN_REFERRER)}`
+        : "brak danych";
+
     const dataToSend: HubSpotContactPropertiesInputApi = {
       firstname: data.firstname || "",
       email: data.email || "",
       phone: data.phone || "",
       description: data.description || "",
       variant: insuranceVariants.find((v) => v.id === selectedVariant)?.title || "",
-      origin: `${localStorage.getItem(ORIGIN_QUERY_PARAM_URL) ? `origin: ${localStorage.getItem(ORIGIN_QUERY_PARAM_URL)},` : ""} referrer: ${localStorage.getItem(ORIGIN_REFERRER)}`,
+      origin: originReferrer,
       privacy_consent: data.privacy_consent || false,
       marketing_consent: data.marketing_consent || false,
       hs_lead_status: "NEW",
