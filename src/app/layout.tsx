@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     images: [
       {
-        url: "/icons/shield-dark-64.png",
+        url: "/icons/shield-dark-168.png",
         width: 64,
         height: 64,
         alt: "wPolisa - Multiagencja Ubezpieczeniowa",
