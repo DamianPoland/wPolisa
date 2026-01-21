@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
     creator: "@wpolisa",
-    images: ["/icons/shield-dark-64.png"],
+    images: ["/icons/shield-dark-168.png"],
   },
 
   // SEO
