@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Heart, Shield, Plane, Home, Building2, Package, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,6 +35,8 @@ const insuranceVariants = [
 ];
 
 const FormsContent = () => {
+  const searchParams = useSearchParams();
+
   const {
     register,
     handleSubmit,
@@ -56,13 +59,12 @@ const FormsContent = () => {
 
   // Scroll to form if variant is preselected via URL param
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
     const variant = searchParams.get("variant");
-    if (variant) {
+    if (variant && insuranceVariants.some((v) => v.id === variant)) {
       setSelectedVariant(variant);
       setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 100);
     }
-  }, []);
+  }, [searchParams]);
 
   // Load reCAPTCHA v3 script, site key is provided in constants.ts
   useEffect(() => {
