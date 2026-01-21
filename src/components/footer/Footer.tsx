@@ -32,6 +32,12 @@ const Footer = () => {
               >
                 O nas
               </Link>
+              <Link
+                href="/knowledge"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                Baza wiedzy
+              </Link>
               <Link href="/forms" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
                 Formularze
               </Link>
@@ -68,6 +74,18 @@ const Footer = () => {
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Domu
+              </Link>
+              <Link
+                href="/forms?variant=firma"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                Ubezpieczenie Firmy
+              </Link>
+              <Link
+                href="/forms?variant=inne"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                Pozostałe Ubezpieczenia
               </Link>
             </nav>
           </div>
