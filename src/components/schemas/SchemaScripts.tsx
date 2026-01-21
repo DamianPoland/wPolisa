@@ -1,6 +1,6 @@
 export default function SchemaScripts() {
   const websiteUrl = "https://www.wpolisa.pl";
-  const logoUrl = `${websiteUrl}/icons/shield-dark-64.png`;
+  const logoUrl = `${websiteUrl}/icons/shield-dark-168.png`;
 
   const schemaGraph = {
     "@context": "https://schema.org",
