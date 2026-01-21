@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import FormsContent from "@/components/forms/FormsContent";
 import type { Metadata } from "next";
 
@@ -31,7 +32,10 @@ const FormPage = () => {
           </div>
         </div>
       </section>
-      <FormsContent />
+      {/* Need Suspense because of useSearchParams in FormsContent */}
+      <Suspense fallback={<div />}>
+        <FormsContent />
+      </Suspense>
     </main>
   );
 };
