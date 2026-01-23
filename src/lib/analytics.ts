@@ -17,8 +17,7 @@ declare global {
   }
 }
 
-// Can be visible on FE TODO: for wPolisa.pl "G-4CWK2QT3K0", rest is "G-3DYKBD2L2Y"
-const GoogleAnalyticsID = "G-3DYKBD2L2Y";
+const GoogleAnalyticsID = "G-4CWK2QT3K0"; // Measurement Id ONLY for stream url https://wPolisa.pl
 
 function initializeGtagScript() {
   if (!GoogleAnalyticsID || typeof window === "undefined" || !window.gtag) return;
