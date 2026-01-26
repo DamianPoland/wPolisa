@@ -268,7 +268,7 @@ export const faqItems: FaqItem[] = [
     category: "Zdrowie i Życie",
     question: "Czy prywatne ubezpieczenie zdrowotne jest lepsze niż NFZ?",
     answer:
-      "Prywatne ubezpieczenie zdrowotne zapewnia szybki dostęp do lekarzy specjalistów i badań diagnostycznych bez kolejek typowych dla publicznego systemu (NFZ). Główne korzyści to nowoczesna infrastruktura, krótki czas oczekiwania na wizytę oraz szeroki zakres profilaktyki.",
+      "Prywatne ubezpieczenie zdrowotne zapewnia szybki dostęp do lekarzy specjalistów i badań diagnostycznych bez kolejek typowych dla publicznego systemu (NFZ). Główne korzyści to nowoczesna infrastruktura, krótki czas oczekiwania na wizytę oraz szeroki zakres profilaktyki. Należy je jednak traktować jako wartościowe uzupełnienie świadczeń NFZ. Połączenie obu systemów daje pełne poczucie bezpieczeństwa: prywatny pakiet dba o Twoją wygodę i szybką diagnostykę, a publiczny system pozostaje fundamentem w przypadku skomplikowanych operacji czy długotrwałej hospitalizacji.",
   },
   {
     category: "Zdrowie i Życie",
@@ -292,7 +292,7 @@ export const faqItems: FaqItem[] = [
     category: "Zdrowie i Życie",
     question: "Czym różni się ubezpieczenie indywidualne od grupowego?",
     answer:
-      "Ubezpieczenie grupowe (zazwyczaj w pracy) ma niższą składkę i uproszczone formalności, ale oferuje uśrednione sumy ubezpieczenia. Ubezpieczenie indywidualne pozwala na precyzyjne dopasowanie zakresu i bardzo wysokich sum wypłaty do Twoich osobistych potrzeb. Indywidualna polisa jest zazwyczaj droższa, ale gwarantuje znacznie szerszą i pewniejszą ochronę finansową.",
+      "Ubezpieczenie grupowe (zazwyczaj w pracy) ma niższą składkę i uproszczone formalności, ale oferuje uśrednione sumy ubezpieczenia. Ubezpieczenie indywidualne pozwala na precyzyjne dopasowanie zakresu i bardzo wysokich sum wypłaty do Twoich osobistych potrzeb. Indywidualna polisa jest zazwyczaj droższa, ale gwarantuje dopasowanie sum i zakresu ubezpieczenia pod Twoje konkretne potrzeby.",
   },
   {
     category: "Zdrowie i Życie",
@@ -394,7 +394,7 @@ export const faqItems: FaqItem[] = [
     category: "Wiedza Ogólna",
     question: "Co to jest regres ubezpieczeniowy i kiedy występuje?",
     answer:
-      "Regres ubezpieczeniowy to roszczenie ubezpieczyciela do sprawcy o zwrot wypłaconego odszkodowania. Występuje, gdy sprawca prowadził pod wpływem alkoholu, nie posiadał uprawnień lub zbiegł z miejsca zdarzenia. Polisa chroni poszkodowanego, ale sprawca pokrywa koszty z własnej kieszeni.",
+      "Regres ubezpieczeniowy to roszczenie ubezpieczyciela do sprawcy o zwrot wypłaconego odszkodowania. Najczęściej występuje, gdy sprawca prowadził pod wpływem alkoholu, nie posiadał uprawnień lub zbiegł z miejsca zdarzenia. Polisa chroni poszkodowanego, ale sprawca pokrywa koszty z własnej kieszeni.",
   },
   {
     category: "Wiedza Ogólna",
@@ -408,12 +408,12 @@ export const faqItems: FaqItem[] = [
     answer:
       "Większość ofert przygotowujemy w czasie rzeczywistym podczas rozmowy, a porównania mailowe wysyłamy w ciągu 24-48 godzin. W sytuacjach pilnych działamy w trybie ekspresowym – wystarczy skontaktować się z naszym agentem telefonicznie.",
   },
-  {
-    category: "Wiedza Ogólna",
-    question: "Czym różni się udział własny od franszyzy redukcyjnej?",
-    answer:
-      "Udział własny to określona część szkody, którą pokrywasz z własnej kieszeni (np. 500 zł). Franszyza redukcyjna to kwota, o którą ubezpieczyciel pomniejsza każde odszkodowanie. Stosowanie tych mechanizmów pozwala na znaczne obniżenie składki za polisę.",
-  },
+  // {
+  //   category: "Wiedza Ogólna",
+  //   question: "Czym różni się udział własny od franszyzy redukcyjnej?",
+  //   answer:
+  //     "Udział własny to określona część szkody, którą pokrywasz z własnej kieszeni (np. 500 zł). Franszyza redukcyjna to kwota, o którą ubezpieczyciel pomniejsza każde odszkodowanie. Stosowanie tych mechanizmów pozwala na znaczne obniżenie składki za polisę.",
+  // },
   {
     category: "Wiedza Ogólna",
     question: "Co to jest suma ubezpieczenia i jak ją określić?",
@@ -424,7 +424,7 @@ export const faqItems: FaqItem[] = [
     category: "Wiedza Ogólna",
     question: "Kiedy ubezpieczyciel może odmówić wypłaty odszkodowania?",
     answer:
-      "Odmowa może nastąpić w przypadku rażącego niedbalstwa (np. kluczyki w stacyjce), działania umyślnego lub bycia pod wpływem środków odurzających. Dokładna lista wyłączeń znajduje się zawsze w OWU – pomagamy je analizować, abyś znał zakres swojej ochrony.",
+      "Odmowa może nastąpić w przypadku rażącego niedbalstwa (np. kluczyki w stacyjce podczas kradzieży auta), działania umyślnego lub bycia pod wpływem środków odurzających. Dokładna lista wyłączeń znajduje się zawsze w OWU – pomagamy je analizować, abyś znał zakres swojej ochrony.",
   },
   // {
   //   category: "Wiedza Ogólna",
@@ -454,7 +454,7 @@ export const faqItems: FaqItem[] = [
     category: "Wiedza Ogólna",
     question: "Co zrobić, gdy agent ubezpieczeniowy popełnił błąd?",
     answer:
-      "Jeśli błąd agenta (np. błędne dane w polisie) doprowadził do szkody lub braku wypłaty odszkodowania, możesz żądać naprawienia szkody z polisy OC zawodowego agenta. Każdy agent ubezpieczeniowy w Polsce musi posiadać obowiązkowe ubezpieczenie OC, które chroni klientów przed skutkami jego pomyłek lub niedopatrzeń.",
+      "Jeśli błąd agenta (np. błędne dane w polisie) doprowadził do szkody lub braku wypłaty odszkodowania, możesz żądać naprawienia szkody z polisy OC zawodowego agenta. Każdy multiagent ubezpieczeniowy w Polsce musi posiadać obowiązkowe ubezpieczenie OC, które chroni klientów przed skutkami jego pomyłek lub niedopatrzeń.",
   },
   {
     category: "Wiedza Ogólna",
@@ -484,6 +484,6 @@ export const faqItems: FaqItem[] = [
     category: "Wiedza Ogólna",
     question: "Czy polisa ubezpieczeniowa odnawia się automatycznie?",
     answer:
-      "Automatycznie odnawia się tylko obowiązkowe ubezpieczenie OC posiadaczy pojazdów mechanicznych (o ile nie zostało wypowiedziane). Inne polisy, takie jak AC, ubezpieczenie nieruchomości czy podróżne, wygasają z końcem okresu ochrony. Zawsze przypominamy naszym klientom o kończących się polisach, aby zachować ciągłość ochrony bez ryzyka kary z UFG.",
+      "Automatycznie odnawia się OC posiadaczy pojazdów mechanicznych oraz OC Rolne. Zapisy w OWU o automatycznym przedłużeniu na kolejne 12 miesięcy mogą mieć także inne rodzaje ubezpieczeń (np. grupowe ubezpieczenia na życie). Inne polisy, takie jak AC, ubezpieczenie nieruchomości czy podróżne, wygasają z końcem okresu ochrony. Zawsze przypominamy naszym klientom o kończących się polisach, aby zachować ciągłość ochrony bez ryzyka kary z UFG.",
   },
 ];
