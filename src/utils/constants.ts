@@ -484,6 +484,6 @@ export const faqItems: FaqItem[] = [
     category: "Wiedza Ogólna",
     question: "Czy polisa ubezpieczeniowa odnawia się automatycznie?",
     answer:
-      "Automatycznie odnawia się OC posiadaczy pojazdów mechanicznych oraz OC Rolne. Zapisy w OWU o automatycznym przedłużeniu na kolejne 12 miesięcy mogą mieć także inne rodzaje ubezpieczeń (np. grupowe ubezpieczenia na życie). Inne polisy, takie jak AC, ubezpieczenie nieruchomości czy podróżne, wygasają z końcem okresu ochrony. Zawsze przypominamy naszym klientom o kończących się polisach, aby zachować ciągłość ochrony bez ryzyka kary z UFG.",
+      "Automatycznie odnawia się OC posiadaczy pojazdów mechanicznych oraz OC rolne. Zapisy w OWU o automatycznym przedłużeniu na kolejne 12 miesięcy mogą mieć także inne rodzaje ubezpieczeń (np. grupowe ubezpieczenia na życie). Inne polisy, takie jak AC, ubezpieczenie nieruchomości czy podróżne, wygasają z końcem okresu ochrony. Zawsze przypominamy naszym klientom o kończących się polisach, aby zachować ciągłość ochrony bez ryzyka kary z UFG.",
   },
 ];
