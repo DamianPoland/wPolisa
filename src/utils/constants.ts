@@ -84,7 +84,7 @@ export const socialLinks = [
   {
     name: "WhatsApp",
     icon: Whatsapp,
-    href: "https://wa.me/48888970510",
+    href: "https://wa.me/48888970510?text=Czesc!%20Mam%20pytanie%20o%20ubezpieczenie",
     color: "hover:text-white hover:bg-[#25D366]",
   },
   // {
