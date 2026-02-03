@@ -29,12 +29,12 @@ const insuranceVariants = [
   { id: "medyczny", title: "Pakiet Medyczny", icon: Heart },
   { id: "zycie", title: "Ubezpieczenie Życia", icon: Shield },
   { id: "podroze", title: "Ubezpieczenie Podróży", icon: Plane },
-  { id: "dom", title: "Ubezpieczenie Domu", icon: Home },
+  { id: "nieruchomosc", title: "Ubezpieczenie Nieruchomości", icon: Home },
   { id: "firma", title: "Ubezpieczenie Firmy", icon: Building2 },
   { id: "inne", title: "Pozostałe Ubezpieczenia", icon: Package },
 ];
 
-const FormsContent = () => {
+const OfferContent = () => {
   const searchParams = useSearchParams();
   const {
     register,
@@ -61,7 +61,7 @@ const FormsContent = () => {
     const variant = searchParams.get("variant");
     if (variant) {
       setSelectedVariant(variant);
-      setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 100);
+      setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 200);
     }
   }, [searchParams]);
 
@@ -193,7 +193,7 @@ const FormsContent = () => {
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="bg-muted/50 px-4 md:px-2 py-12 md:py-16">
+      <section id="contact-form" className="scroll-mt-12 bg-muted/50 px-4 md:px-2 py-12 md:py-16">
         <div className="container m-auto">
           <Card className="mx-auto max-w-2xl border-border shadow-card">
             <CardHeader>
@@ -412,4 +412,4 @@ const FormsContent = () => {
   );
 };
 
-export default FormsContent;
+export default OfferContent;

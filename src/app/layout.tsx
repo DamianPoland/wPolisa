@@ -18,9 +18,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.wpolisa.pl"),
-  title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Życia, Zdrowotne",
+  title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Mieszkania, Życia, Zdrowotne",
   description:
-    "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
+    "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie mieszkania, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
   keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
 
   // Manifest & Web App

@@ -4,7 +4,8 @@ import { KnowledgeContent } from "@/components/knowledge/KnowledgeContent";
 
 export const metadata: Metadata = {
   title: "Baza wiedzy | wPolisa - Pytania o ubezpieczeniach",
-  description: "Odpowiedzi na wszystkie pytania o ubezpieczeniach: OC, AC, ubezpieczenie domu, zdrowia i więcej.",
+  description:
+    "Odpowiedzi na wszystkie pytania o ubezpieczeniach: OC, AC, ubezpieczenie domu, mieszkania, zdrowia i więcej.",
   keywords: "pytania o ubezpieczeniach, FAQ ubezpieczenia, poradnik ubezpieczeniowy",
   openGraph: {
     title: "Baza wiedzy - wPolisa",

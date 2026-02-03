@@ -26,8 +26,8 @@ const insuranceTypes = [
     color: "from-violet-500 to-purple-500",
   },
   {
-    id: "dom",
-    title: "Ubezpieczenie Domu",
+    id: "nieruchomosc",
+    title: "Ubezpieczenie Nieruchomości",
     description: "Twój dom to Twoja twierdza. A my pilnujemy, by stał twardo na fundamentach.",
     icon: Home,
     color: "from-emerald-500 to-teal-500",
@@ -54,7 +54,7 @@ const InsuranceTiles = () => {
       <div className="container m-auto">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">
-            Nasze <span className="text-accent">Hity</span>
+            Nasza <span className="text-accent">Oferta</span>
           </h2>
           <p className="mt-4 text-muted-foreground">Zaufali nam najlepsi &ndash; i my im też.</p>
           <p className="mt-4 text-muted-foreground">
@@ -66,7 +66,7 @@ const InsuranceTiles = () => {
           {insuranceTypes.map((insurance, index) => (
             <Link
               key={insurance.id}
-              href={`/forms?variant=${insurance.id}`}
+              href={`/offer?variant=${insurance.id}`}
               className="group animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
