@@ -215,7 +215,7 @@ const OfferContent = () => {
               </CardTitle>
               {priceParams && selectedInsurance?.id === variantParams && (
                 <div className="mt-4 rounded-lg bg-accent/10 p-4">
-                  <p className="text-sm font-medium text-accent">💡 Oferta specjalana</p>
+                  <p className="text-sm font-medium text-accent">💡 Oferta specjalna</p>
                   <p className="mt-1 text-md text-muted-foreground">{`${selectedInsurance?.title} ${priceParams}`}</p>
                 </div>
               )}
@@ -396,6 +396,16 @@ const OfferContent = () => {
                     </div>
                   </div>
                 </div>
+                {/* TODO info że Wakacje */}
+                {false && (
+                  <div className="mt-4 rounded-lg bg-accent/10 p-4">
+                    <p className="text-sm font-medium text-accent">💡 Dziękujemy za zaufanie!</p>
+                    <p className="mt-1 text-md text-muted-foreground">
+                      Cieszymy się, że tak wiele osób chce z nami współpracować. Obecnie czas oczekiwania na odpowiedź
+                      jest nieco dłuższy.
+                    </p>
+                  </div>
+                )}
 
                 <Button
                   type="submit"
