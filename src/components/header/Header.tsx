@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Strona główna", path: "/" },
   { name: "O nas", path: "/description" },
   { name: "Baza wiedzy", path: "/knowledge" },
-  { name: "Formularze", path: "/forms" },
+  { name: "Oferta", path: "/offer" },
   { name: "Kontakt", path: "/contact" },
 ];
 

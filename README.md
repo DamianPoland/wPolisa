@@ -32,7 +32,7 @@ src/
 │   ├── contact/      # strona kontaktu
 │   ├── cookies/      # strona cookies
 │   ├── description/  # strona o nas
-│   ├── forms/        # strona z formularzami
+│   ├── offer/        # strona z formularzami
 │   ├── terms/        # strona terms & conditions
 │   ├── global.css    # Style globalne
 │   ├── layout.tsx    # layout główny
@@ -69,15 +69,15 @@ npm run build
 
 ## 📄 Strony
 
-| Ścieżka        | Opis                               |
-| -------------- | ---------------------------------- |
-| `/`            | Strona główna                      |
-| `/description` | Informacje o firmie                |
-| `/knowledge`   | Baza wiedzy                        |
-| `/forms`       | Formularze zapytań o ubezpieczenia |
-| `/contact`     | Dane kontaktowe                    |
-| `/terms`       | Regulamin serwisu                  |
-| `/cookies`     | Polityka prywatności i cookies     |
+| Ścieżka        | Opis                                         |
+| -------------- | -------------------------------------------- |
+| `/`            | Strona główna                                |
+| `/description` | Informacje o firmie                          |
+| `/knowledge`   | Baza wiedzy                                  |
+| `/offer`       | Oferta z formularzem zapytań o ubezpieczenia |
+| `/contact`     | Dane kontaktowe                              |
+| `/terms`       | Regulamin serwisu                            |
+| `/cookies`     | Polityka prywatności i cookies               |
 
 ## 📱 Responsywność
 

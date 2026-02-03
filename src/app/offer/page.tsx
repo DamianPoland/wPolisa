@@ -1,20 +1,20 @@
 import { Suspense } from "react";
-import FormsContent from "@/components/forms/FormsContent";
 import type { Metadata } from "next";
+import OfferContent from "@/components/offer/OfferContent";
 
 export const metadata: Metadata = {
-  title: "Formularze | wPolisa - Otrzymaj ofertę ubezpieczeń",
+  title: "Oferta | wPolisa - Otrzymaj ofertę ubezpieczeń",
   description:
-    "Wypełnij formularz i otrzymaj darmową wycenę ubezpieczenia. OC, AC, ubezpieczenie domu, zdrowia i więcej.",
+    "Wypełnij formularz i otrzymaj darmową wycenę ubezpieczenia. OC, AC, ubezpieczenie domu, mieszkania, zdrowia, życia i więcej.",
   openGraph: {
-    title: "Formularze - wPolisa",
-    description: "Szybkie formularz do otrzymania oferty ubezpieczenia dostosowanej do Twoich potrzeb.",
+    title: "Oferta - wPolisa",
+    description: "Szybki formularz do otrzymania oferty ubezpieczenia dostosowanej do Twoich potrzeb.",
     type: "website",
-    url: "https://www.wpolisa.pl/forms",
+    url: "https://www.wpolisa.pl/offer",
   },
 };
 
-const FormPage = () => {
+const OfferPage = () => {
   return (
     <main>
       {/* Hero */}
@@ -32,12 +32,12 @@ const FormPage = () => {
           </div>
         </div>
       </section>
-      {/* Need Suspense because of useSearchParams in FormsContent */}
+      {/* Need Suspense because of useSearchParams in OfferContent */}
       <Suspense fallback={<div />}>
-        <FormsContent />
+        <OfferContent />
       </Suspense>
     </main>
   );
 };
 
-export default FormPage;
+export default OfferPage;

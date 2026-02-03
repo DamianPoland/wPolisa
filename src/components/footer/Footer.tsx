@@ -38,8 +38,8 @@ const Footer = () => {
               >
                 Baza wiedzy
               </Link>
-              <Link href="/forms" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
-                Formularze
+              <Link href="/offer" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
+                Oferta
               </Link>
               <Link href="/contact" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
                 Kontakt
@@ -52,37 +52,37 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Ubezpieczenia</h3>
             <nav className="flex flex-col gap-2">
               <Link
-                href="/forms?variant=medyczny"
+                href="/offer?variant=medyczny"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Pakiet Medyczny
               </Link>
               <Link
-                href="/forms?variant=zycie"
+                href="/offer?variant=zycie"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Życia
               </Link>
               <Link
-                href="/forms?variant=podroze"
+                href="/offer?variant=podroze"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Podróży
               </Link>
               <Link
-                href="/forms?variant=dom"
+                href="/offer?variant=nieruchomosc"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
-                Ubezpieczenie Domu
+                Ubezpieczenie Nieruchomości
               </Link>
               <Link
-                href="/forms?variant=firma"
+                href="/offer?variant=firma"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Ubezpieczenie Firmy
               </Link>
               <Link
-                href="/forms?variant=inne"
+                href="/offer?variant=inne"
                 className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
               >
                 Pozostałe Ubezpieczenia
