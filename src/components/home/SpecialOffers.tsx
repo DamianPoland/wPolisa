@@ -7,7 +7,7 @@ const specialOffersTypes = [
   {
     id: "medyczny",
     title: "Pakiet Medyczny",
-    price: "99zł/m-c",
+    price: "95zł/m-c",
     description: "Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
     badge: "BESTSELLER",
     badgeVariant: "bestseller" as const,
@@ -126,7 +126,7 @@ const SpecialOffers = () => {
           {specialOffersTypes.map((offer, index) => (
             <Link
               key={offer.id}
-              href={`/offer?variant=${offer.id}`}
+              href={`/offer?variant=${offer.id}&price=${encodeURIComponent(offer.price)}`}
               className="group animate-fade-in block h-full"
               style={{ animationDelay: `${index * 0.15}s` }}
             >

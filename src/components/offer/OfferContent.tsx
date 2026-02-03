@@ -36,6 +36,9 @@ const insuranceVariants = [
 
 const OfferContent = () => {
   const searchParams = useSearchParams();
+  const variantParams = searchParams.get("variant");
+  const priceParams = searchParams.get("price");
+
   const {
     register,
     handleSubmit,
@@ -58,12 +61,11 @@ const OfferContent = () => {
 
   // Scroll to form if variant is preselected via URL param
   useEffect(() => {
-    const variant = searchParams.get("variant");
-    if (variant) {
-      setSelectedVariant(variant);
+    if (variantParams) {
+      setSelectedVariant(variantParams);
       setTimeout(() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" }), 200);
     }
-  }, [searchParams]);
+  }, [variantParams]);
 
   // Load reCAPTCHA v3 script, site key is provided in constants.ts
   useEffect(() => {
@@ -122,12 +124,16 @@ const OfferContent = () => {
         ? `referrer: ${localStorage.getItem(ORIGIN_REFERRER)}`
         : "brak danych";
 
+    const variantTitle =
+      `${insuranceVariants.find((v) => v.id === selectedVariant)?.title}${selectedInsurance?.id === variantParams ? " " + priceParams : ""}` ||
+      "";
+
     const dataToSend: HubSpotContactPropertiesInputApi = {
       firstname: data.firstname || "",
       email: data.email || "",
       phone: data.phone || "",
       description: data.description || "",
-      variant: insuranceVariants.find((v) => v.id === selectedVariant)?.title || "",
+      variant: variantTitle,
       origin: originReferrer,
       privacy_consent: data.privacy_consent || false,
       marketing_consent: data.marketing_consent || false,
@@ -207,6 +213,12 @@ const OfferContent = () => {
                   "Formularz kontaktowy"
                 )}
               </CardTitle>
+              {priceParams && selectedInsurance?.id === variantParams && (
+                <div className="mt-4 rounded-lg bg-accent/10 p-4">
+                  <p className="text-sm font-medium text-accent">💡 Oferta specjalana</p>
+                  <p className="mt-1 text-md text-muted-foreground">{`${selectedInsurance?.title} ${priceParams}`}</p>
+                </div>
+              )}
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
