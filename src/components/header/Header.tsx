@@ -13,6 +13,7 @@ const navLinks = [
   { name: "O nas", path: "/description" },
   { name: "Baza wiedzy", path: "/knowledge" },
   { name: "Oferta", path: "/offer" },
+  // { name: "Promocje", path: "/promotions" },
   { name: "Kontakt", path: "/contact" },
 ];
 
