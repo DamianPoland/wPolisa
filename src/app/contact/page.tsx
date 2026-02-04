@@ -47,7 +47,7 @@ const ContactPage = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-20">
+      <section className="bg-gradient-hero px-4 md:px-2 py-16 md:py-24">
         <div className="container m-auto">
           <div className="animate-slide-up mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">Skontaktuj się z nami.</h1>

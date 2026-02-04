@@ -1,3 +1,5 @@
 {
-  "cSpell.words": ["Polisa"]
+  "cSpell.words": ["Polisa"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
