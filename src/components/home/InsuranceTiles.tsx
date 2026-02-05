@@ -1,54 +1,56 @@
-import { Heart, Shield, Plane, Home, Building2, Package, ArrowRight } from "lucide-react";
+import { Heart, Shield, Plane, Home, Building2, Package, ArrowRight, LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { InsuranceVariantsId } from "@/utils/types";
+import { insuranceVariants } from "@/utils/constants";
 
-const insuranceTypes = [
+interface InsuranceType {
+  id: InsuranceVariantsId;
+  description: string;
+  color: string;
+}
+
+const insuranceTypes: InsuranceType[] = [
   {
-    id: "medyczny",
-    title: "Pakiet Medyczny",
+    id: InsuranceVariantsId.medyczny,
     description: "Zdrowie pod kontrolą. Z nami to nie łut szczęścia, a plan.",
-    icon: Heart,
     color: "from-rose-500 to-pink-500",
   },
   {
-    id: "zycie",
-    title: "Ubezpieczenie Życia",
+    id: InsuranceVariantsId.zycie,
     description:
       "Zabezpiecz przyszłość tych, na których Ci zależy. Bo pieniądze szczęścia nie dają, ale pomagają w trudnych chwilach.",
-    icon: Shield,
     color: "from-blue-500 to-cyan-500",
   },
   {
-    id: "podroze",
-    title: "Ubezpieczenie Podróży",
+    id: InsuranceVariantsId.podroze,
     description: "Zwiedzaj bez stresu! W razie czego, my łapiemy samolot za Ciebie.",
-    icon: Plane,
     color: "from-violet-500 to-purple-500",
   },
   {
-    id: "nieruchomosc",
-    title: "Ubezpieczenie Nieruchomości",
+    id: InsuranceVariantsId.nieruchomosc,
     description: "Twój dom to Twoja twierdza. A my pilnujemy, by stał twardo na fundamentach.",
-    icon: Home,
     color: "from-emerald-500 to-teal-500",
   },
   {
-    id: "firma",
-    title: "Ubezpieczenie Firmy",
+    id: InsuranceVariantsId.firma,
     description: "Biznes pod ochroną. Zadbaj o firmę, a my zadbamy o to, byś mógł spokojnie spać.",
-    icon: Building2,
     color: "from-amber-500 to-orange-500",
   },
   {
-    id: "inne",
-    title: "Pozostałe Ubezpieczenia",
+    id: InsuranceVariantsId.inne,
     description: "Coś więcej? Pomożemy! Ubezpieczymy prawie wszystko, co ma sens.",
-    icon: Package,
     color: "from-slate-500 to-gray-500",
   },
 ];
 
 const InsuranceTiles = () => {
+  const OfferIcon = ({ id }: { id: InsuranceVariantsId }) => {
+    const Icon = insuranceVariants.find((t) => t.id === id)?.icon;
+    if (!Icon) return null;
+    return <Icon className="h-7 w-7 text-white" />;
+  };
+
   return (
     <section className="px-4 md:px-2 py-16 md:py-24">
       <div className="container m-auto">
@@ -75,9 +77,11 @@ const InsuranceTiles = () => {
                   <div
                     className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${insurance.color}`}
                   >
-                    <insurance.icon className="h-6 w-6 text-white" />
+                    <OfferIcon id={insurance.id} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">{insurance.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">
+                    {insuranceVariants.find((t) => t.id === insurance.id)?.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground">{insurance.description}</p>
                   <div className="mt-4 flex items-center text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                     Wypełnij formularz

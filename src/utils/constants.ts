@@ -1,10 +1,11 @@
 import { Plus_Jakarta_Sans, Figtree, Manrope } from "next/font/google";
-import { FaqItem } from "@/utils/types";
+import { FaqItem, InsuranceVariantsId, InsuranceVariantType } from "@/utils/types";
 import Facebook from "@/assets/images/facebook-brands-solid-full.svg";
 import X from "@/assets/images/x-twitter-brands-solid-full.svg";
 import Linkedin from "@/assets/images/linkedin-brands-solid-full.svg";
 import Whatsapp from "@/assets/images/whatsapp-brands-solid-full.svg";
 import Instagram from "@/assets/images/instagram-brands-solid-full.svg";
+import { Building2, Heart, Home, Package, Plane, Shield } from "lucide-react";
 // import Youtube from "@/assets/images/youtube-brands-solid-full.svg";
 
 // query params
@@ -34,6 +35,17 @@ export const FORM_PHONE_MAX_LENGTH = 30;
 export const FORM_DESCRIPTION_MAX_LENGTH = 2000;
 export const FORM_RECAPTCHA_MAX_LENGTH = 5000;
 
+// Insurance variants
+export const insuranceVariants: InsuranceVariantType[] = [
+  { id: InsuranceVariantsId.medyczny, title: "Pakiet Medyczny", icon: Heart },
+  { id: InsuranceVariantsId.zycie, title: "Ubezpieczenie Życia", icon: Shield },
+  { id: InsuranceVariantsId.podroze, title: "Ubezpieczenie Podróży", icon: Plane },
+  { id: InsuranceVariantsId.nieruchomosc, title: "Ubezpieczenie Nieruchomości", icon: Home },
+  { id: InsuranceVariantsId.firma, title: "Ubezpieczenie Firmy", icon: Building2 },
+  { id: InsuranceVariantsId.inne, title: "Pozostałe Ubezpieczenia", icon: Package },
+];
+
+// Fonts
 export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
@@ -41,6 +53,7 @@ export const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+// Manrope font
 export const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
@@ -48,6 +61,7 @@ export const manrope = Manrope({
   display: "swap",
 });
 
+// Figtree font
 export const figtree = Figtree({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "700", "800"],
@@ -55,6 +69,7 @@ export const figtree = Figtree({
   display: "swap",
 });
 
+// Social links
 export const socialLinks = [
   {
     name: "Facebook",
