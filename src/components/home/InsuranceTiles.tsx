@@ -8,7 +8,7 @@ const insuranceTypes = [
     title: "Pakiet Medyczny",
     description: "Zdrowie pod kontrolą. Z nami to nie łut szczęścia, a plan.",
     icon: Heart,
-    color: "from-rose-500 to-pink-500",
+    color: "from-red-900 to-rose-400",
   },
   {
     id: "zycie",
@@ -16,35 +16,35 @@ const insuranceTypes = [
     description:
       "Zabezpiecz przyszłość tych, na których Ci zależy. Bo pieniądze szczęścia nie dają, ale pomagają w trudnych chwilach.",
     icon: Shield,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-cyan-800 to-cyan-400",
   },
   {
     id: "podroze",
     title: "Ubezpieczenie Podróży",
     description: "Zwiedzaj bez stresu! W razie czego, my łapiemy samolot za Ciebie.",
     icon: Plane,
-    color: "from-violet-500 to-purple-500",
+    color: "from-violet-800 to-fuchsia-400",
   },
   {
     id: "nieruchomosc",
     title: "Ubezpieczenie Nieruchomości",
     description: "Twój dom to Twoja twierdza. A my pilnujemy, by stał twardo na fundamentach.",
     icon: Home,
-    color: "from-emerald-500 to-teal-500",
+    color: "from-emerald-900 to-emerald-500",
   },
   {
     id: "firma",
     title: "Ubezpieczenie Firmy",
     description: "Biznes pod ochroną. Zadbaj o firmę, a my zadbamy o to, byś mógł spokojnie spać.",
     icon: Building2,
-    color: "from-amber-500 to-orange-500",
+    color: "from-yellow-600 to-yellow-400",
   },
   {
     id: "inne",
     title: "Pozostałe Ubezpieczenia",
     description: "Coś więcej? Pomożemy! Ubezpieczymy prawie wszystko, co ma sens.",
     icon: Package,
-    color: "from-slate-500 to-gray-500",
+    color: "from-zinc-800 to-zinc-400",
   },
 ];
 
