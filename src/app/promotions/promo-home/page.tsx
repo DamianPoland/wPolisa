@@ -101,7 +101,7 @@ const PromotionHomePage = () => {
           style={{ animationDelay: "0.2s" }}
         >
           <Button variant="hero" size="xl" asChild>
-            <Link href="/offer?variant=nieruchomosc&price='Bon na Dom'">Odbieram ofertę i kartę podarunkową</Link>
+            <Link href="/offer?variant=nieruchomosc&promo=Bon na Dom">Odbieram ofertę i kartę podarunkową</Link>
           </Button>
         </div>
       </section>
@@ -167,7 +167,7 @@ const PromotionHomePage = () => {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="xl" asChild>
-                  <Link href="/offer?variant=nieruchomosc&price='Bon na Dom'">Wypełnij zgłoszenie teraz</Link>
+                  <Link href="/offer?variant=nieruchomosc&promo=Bon na Dom">Wypełnij zgłoszenie teraz</Link>
                 </Button>
                 <Button variant="hero-outline" size="xl" asChild>
                   <Link href="/promotions">Wróć do promocji</Link>
