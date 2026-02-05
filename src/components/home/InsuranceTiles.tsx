@@ -14,33 +14,33 @@ const insuranceTypes: InsuranceType[] = [
   {
     id: InsuranceVariantsId.medyczny,
     description: "Zdrowie pod kontrolą. Z nami to nie łut szczęścia, a plan.",
-    color: "from-rose-500 to-pink-500",
+    color: "from-red-900 to-rose-400",
   },
   {
     id: InsuranceVariantsId.zycie,
     description:
       "Zabezpiecz przyszłość tych, na których Ci zależy. Bo pieniądze szczęścia nie dają, ale pomagają w trudnych chwilach.",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-cyan-800 to-cyan-400",
   },
   {
     id: InsuranceVariantsId.podroze,
     description: "Zwiedzaj bez stresu! W razie czego, my łapiemy samolot za Ciebie.",
-    color: "from-violet-500 to-purple-500",
+    color: "from-violet-800 to-fuchsia-400",
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     description: "Twój dom to Twoja twierdza. A my pilnujemy, by stał twardo na fundamentach.",
-    color: "from-emerald-500 to-teal-500",
+    color: "from-emerald-900 to-emerald-500",
   },
   {
     id: InsuranceVariantsId.firma,
     description: "Biznes pod ochroną. Zadbaj o firmę, a my zadbamy o to, byś mógł spokojnie spać.",
-    color: "from-amber-500 to-orange-500",
+    color: "from-yellow-600 to-yellow-400",
   },
   {
     id: InsuranceVariantsId.inne,
     description: "Coś więcej? Pomożemy! Ubezpieczymy prawie wszystko, co ma sens.",
-    color: "from-slate-500 to-gray-500",
+    color: "from-zinc-800 to-zinc-400",
   },
 ];
 
