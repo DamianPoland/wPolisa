@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export interface HubSpotContactPropertiesInputApi {
   firstname: string;
   email: string;
@@ -31,4 +33,19 @@ export type CategoryConfig = {
 export enum Icon {
   DARK = "dark",
   LIGHT = "light",
+}
+
+export interface InsuranceVariantType {
+  id: InsuranceVariantsId;
+  title: string;
+  icon: LucideIcon;
+}
+
+export enum InsuranceVariantsId {
+  medyczny = "medyczny",
+  zycie = "zycie",
+  podroze = "podroze",
+  nieruchomosc = "nieruchomosc",
+  firma = "firma",
+  inne = "inne",
 }
