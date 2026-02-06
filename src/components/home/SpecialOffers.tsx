@@ -12,7 +12,7 @@ interface SpecialOffer {
   promo: string;
   description: string;
   glowColor: string;
-  badge: string;
+  badgeText: string;
   badgeVariant: BadgeVariant;
 }
 
@@ -22,7 +22,7 @@ const specialOffersTypes: SpecialOffer[] = [
     promo: "95zł/m-c",
     description: "Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
     glowColor: "rose",
-    badge: "BESTSELLER",
+    badgeText: "BESTSELLER",
     badgeVariant: BadgeVariant.one,
   },
   {
@@ -30,7 +30,7 @@ const specialOffersTypes: SpecialOffer[] = [
     promo: "150zł/rok",
     description: "Gwarancja stałej składki tylko do końca miesiąca.",
     glowColor: "emerald",
-    badge: "LIMITOWANA OFERTA",
+    badgeText: "LIMITOWANA OFERTA",
     badgeVariant: BadgeVariant.two,
   },
   {
@@ -38,7 +38,7 @@ const specialOffersTypes: SpecialOffer[] = [
     promo: "299zł/rok",
     description: "Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
     glowColor: "blue",
-    badge: "SUPER OFERTA",
+    badgeText: "SUPER OFERTA",
     badgeVariant: BadgeVariant.three,
   },
 ];
@@ -65,7 +65,7 @@ const SpecialOffers = () => {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <Card className="relative h-full overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                <CornerInfoBadge text={offer.badge} variant={offer.badgeVariant} />
+                <CornerInfoBadge text={offer.badgeText} variant={offer.badgeVariant} />
 
                 {/* Gradient top accent */}
                 <div
@@ -91,7 +91,7 @@ const SpecialOffers = () => {
                   {/* CTA Button */}
                   <div className="mt-auto pt-6">
                     <Button variant="accent" className="w-full group/btn cursor-pointer">
-                      Sprawdź szczegóły
+                      Wypełnij formularz
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
                   </div>
