@@ -22,14 +22,8 @@ export const metadata: Metadata = {
   description:
     "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie mieszkania, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
   keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
-
-  // Manifest & Web App
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: "wPolisa",
-  },
+  themeColor: "#1c3757",
+  manifest: null,
 
   // Format Detection
   formatDetection: {
