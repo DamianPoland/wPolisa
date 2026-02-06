@@ -4,18 +4,38 @@ const getCornerInfoBadgeColors = (variant: BadgeVariant) => {
   switch (variant) {
     case BadgeVariant.one:
       return {
-        main: "#f59e0b", // amber-500
-        dark: "#b45309", // amber-700
+        main: "#e67a2c", // accent
+        dark: "#7C2D12", // orange-900
       };
     case BadgeVariant.two:
       return {
-        main: "#9333ea", // purple-600
-        dark: "#6b21a8", // purple-800
+        main: "#0369A1", // sky-700
+        dark: "#172554", // blue-950
       };
     case BadgeVariant.three:
       return {
-        main: "#e67a2c", // accent
-        dark: "#c2410c", // orange-700
+        main: "#D946EF", // fuchsia-500
+        dark: "#581C87", // purple-800
+      };
+    case 4:
+      return {
+        main: " #84CC16", // lime-500
+        dark: "#064E3B", // emerald-800
+      };
+    case 5:
+      return {
+        main: "#FB7185", // rose-400
+        dark: "#831843", // pink-900
+      };
+    case 5:
+      return {
+        main: "#84CC16", // lime-500
+        dark: "#064E3B", // emerald-800
+      };
+    case 6:
+      return {
+        main: "#0EA5E9", // sky-500
+        dark: "#3730A3", // indigo-800
       };
     default:
       return {
@@ -58,7 +78,7 @@ const CornerInfoBadge = ({ text, variant }: { text: string; variant: BadgeVarian
             {text}
           </span>
           {/* Inner highlight for 3D shine */}
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-white/30" />
+          <div className="absolute top-0 left-0 w-full h-px bg-white/30" />
         </div>
       </div>
     </div>
