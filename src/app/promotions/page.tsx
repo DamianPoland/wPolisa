@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Badge, Gift, Globe, Shield, Users } from "lucide-react";
+import { ArrowRight, Gift, Globe, Users } from "lucide-react";
 import Link from "next/link";
 import CornerInfoBadge from "@/components/cornerInfoBadge/CornerInfoBadge";
 import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
@@ -66,10 +66,16 @@ const promotions: Promotion[] = [
   },
 ];
 
-// TODO: dostosować metadane
 export const metadata = {
-  title: "Promocje | wPolisa.pl",
-  description: "Promocje dla Ciebie i Twojej Firmy",
+  title: "Promocje | wPolisa - Oferty specjalne dla Ciebie i Twojej Firmy",
+  description:
+    "Odkryj nasze wyjątkowe promocje i oferty specjalne. Bon na Dom, ubezpieczenia dla biznesu, pakiety transportowe i wiele więcej.",
+  openGraph: {
+    title: "Promocje - wPolisa",
+    description: "Skorzystaj z wyjątkowych ofert przygotowanych specjalnie dla naszych klientów.",
+    type: "website",
+    url: "https://www.wpolisa.pl/promotions",
+  },
 };
 
 const PromotionsPage = () => {
