@@ -12,8 +12,8 @@ interface Promotion {
   title: string;
   benefits: string[];
   icon: React.ElementType;
-  gradient: string;
-  badge: string;
+  color: string;
+  badgeText: string;
   badgeVariant: BadgeVariant;
   isActive: boolean;
 }
@@ -29,8 +29,8 @@ const promotions: Promotion[] = [
       "Szybka realizacja i proste zasady.",
     ],
     icon: Gift,
-    gradient: "from-emerald-900 to-emerald-500",
-    badge: "Dla Ciebie",
+    color: "from-emerald-900 to-emerald-500",
+    badgeText: "Dla Ciebie",
     badgeVariant: BadgeVariant.one,
     isActive: true,
   },
@@ -44,10 +44,10 @@ const promotions: Promotion[] = [
       "Kompleksowe wsparcie techniczne i nowoczesny design.",
     ],
     icon: Globe,
-    gradient: "from-yellow-600 to-yellow-400",
-    badge: "Dla Firmy",
+    color: "from-yellow-600 to-yellow-400",
+    badgeText: "Dla Firmy",
     badgeVariant: BadgeVariant.two,
-    isActive: true,
+    isActive: false,
   },
   {
     id: "bezpieczny-zespol",
@@ -59,8 +59,8 @@ const promotions: Promotion[] = [
       "Pełna ochrona Twojej floty i kadry w jednym pakiecie.",
     ],
     icon: Users,
-    gradient: "from-blue-500 to-indigo-500",
-    badge: "Dla Firmy",
+    color: "from-blue-500 to-indigo-500",
+    badgeText: "Dla Firmy",
     badgeVariant: BadgeVariant.two,
     isActive: false,
   },
@@ -111,21 +111,21 @@ const PromotionsPage = () => {
                     ${promo.isActive ? "hover:shadow-xl hover:-translate-y-1" : "grayscale opacity-80"}`}
                   >
                     {!promo.isActive && (
-                      <div className="absolute inset-0 z-50 flex items-center justify-center ">
+                      <div className="absolute inset-0 z-50 flex items-center justify-center backdrop-blur-[1px]">
                         <div className="rotate-[-12deg] rounded-lg border-2 border-destructive/80 bg-destructive/90 px-6 py-2 shadow-sm backdrop-blur-md">
-                          <span className="text-lg font-bold uppercase tracking-widest text-white">Wygasła</span>
+                          <span className="text-xl font-bold uppercase tracking-widest text-white">Wygasła</span>
                         </div>
                       </div>
                     )}
 
                     {/* Gradient top accent */}
-                    <div className={`h-1.5 w-full bg-gradient-to-r ${promo.gradient}`} />
+                    <div className={`h-1.5 w-full bg-gradient-to-r ${promo.color}`} />
 
                     <CardContent className="p-6 md:p-8 flex flex-col flex-1">
-                      <CornerInfoBadge text={promo.badge} variant={promo.badgeVariant} />
+                      <CornerInfoBadge text={promo.badgeText} variant={promo.badgeVariant} />
 
                       {/* Icon */}
-                      <InsuranceVariantIcon icon={promo.icon} gradient={promo.gradient} />
+                      <InsuranceVariantIcon icon={promo.icon} gradient={promo.color} />
 
                       {/* Title */}
                       <h2 className="pt-4 text-xl font-bold text-foreground mb-4">{promo.title}</h2>
@@ -134,9 +134,7 @@ const PromotionsPage = () => {
                       <ul className="space-y-3 mb-6 flex-1">
                         {promo.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <div
-                              className={`mt-1.5 h-2 w-2 rounded-full bg-gradient-to-br ${promo.gradient} shrink-0`}
-                            />
+                            <div className={`mt-1.5 h-2 w-2 rounded-full bg-gradient-to-br ${promo.color} shrink-0`} />
                             <span className="text-sm text-muted-foreground leading-relaxed">{benefit}</span>
                           </li>
                         ))}

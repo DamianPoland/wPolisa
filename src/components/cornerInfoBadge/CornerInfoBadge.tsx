@@ -17,22 +17,17 @@ const getCornerInfoBadgeColors = (variant: BadgeVariant) => {
         main: "#D946EF", // fuchsia-500
         dark: "#581C87", // purple-800
       };
-    case 4:
+    case BadgeVariant.four:
       return {
         main: " #84CC16", // lime-500
         dark: "#064E3B", // emerald-800
       };
-    case 5:
+    case BadgeVariant.five:
       return {
         main: "#FB7185", // rose-400
         dark: "#831843", // pink-900
       };
-    case 5:
-      return {
-        main: "#84CC16", // lime-500
-        dark: "#064E3B", // emerald-800
-      };
-    case 6:
+    case BadgeVariant.six:
       return {
         main: "#0EA5E9", // sky-500
         dark: "#3730A3", // indigo-800
