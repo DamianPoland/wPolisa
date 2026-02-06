@@ -105,8 +105,8 @@ const ContactForm = ({ variant, promo, onSubmitSuccess }: ContactFormProps) => {
       toast.error("Weryfikacja reCAPTCHA nie powiodła się. Spróbuj ponownie.");
       return;
     }
-    const originReferrer = localStorage.getItem(ORIGIN_QUERY_PARAM_URL)
-      ? (localStorage.getItem(ORIGIN_QUERY_PARAM_URL) as string)
+    const originReferrer = sessionStorage.getItem(ORIGIN_QUERY_PARAM_URL)
+      ? (sessionStorage.getItem(ORIGIN_QUERY_PARAM_URL) as string)
       : localStorage.getItem(ORIGIN_REFERRER)
         ? `referrer: ${localStorage.getItem(ORIGIN_REFERRER)}`
         : "brak danych";

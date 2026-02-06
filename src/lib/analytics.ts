@@ -123,6 +123,6 @@ export function trackEvent(name: string, params: Record<string, string> = {}) {
   window.gtag("event", name, {
     ...params,
     referrer: localStorage.getItem(ORIGIN_REFERRER) || referrerHostname,
-    origin: localStorage.getItem(ORIGIN_QUERY_PARAM_URL) || "noOrigin",
+    origin: sessionStorage.getItem(ORIGIN_QUERY_PARAM_URL) || "noOrigin",
   });
 }
