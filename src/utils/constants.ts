@@ -37,12 +37,42 @@ export const FORM_RECAPTCHA_MAX_LENGTH = 5000;
 
 // Insurance variants
 export const insuranceVariants: InsuranceVariantType[] = [
-  { id: InsuranceVariantsId.medyczny, title: "Pakiet Medyczny", icon: Heart },
-  { id: InsuranceVariantsId.zycie, title: "Ubezpieczenie Życia", icon: Shield },
-  { id: InsuranceVariantsId.podroze, title: "Ubezpieczenie Podróży", icon: Plane },
-  { id: InsuranceVariantsId.nieruchomosc, title: "Ubezpieczenie Nieruchomości", icon: Home },
-  { id: InsuranceVariantsId.firma, title: "Ubezpieczenie Firmy", icon: Building2 },
-  { id: InsuranceVariantsId.inne, title: "Pozostałe Ubezpieczenia", icon: Package },
+  {
+    id: InsuranceVariantsId.medyczny,
+    title: "Pakiet Medyczny",
+    icon: Heart,
+    color: "from-rose-500 via-pink-500 to-rose-600",
+  },
+  {
+    id: InsuranceVariantsId.zycie,
+    title: "Ubezpieczenie Życia",
+    icon: Shield,
+    color: "from-blue-500 via-cyan-500 to-blue-600",
+  },
+  {
+    id: InsuranceVariantsId.podroze,
+    title: "Ubezpieczenie Podróży",
+    icon: Plane,
+    color: "from-violet-500 via-purple-500 to-violet-600",
+  },
+  {
+    id: InsuranceVariantsId.nieruchomosc,
+    title: "Ubezpieczenie Nieruchomości",
+    icon: Home,
+    color: "from-emerald-500 via-teal-500 to-emerald-600",
+  },
+  {
+    id: InsuranceVariantsId.firma,
+    title: "Ubezpieczenie Firmy",
+    icon: Building2,
+    color: "from-amber-500 via-orange-500 to-amber-600",
+  },
+  {
+    id: InsuranceVariantsId.inne,
+    title: "Pozostałe Ubezpieczenia",
+    icon: Package,
+    color: "from-slate-500 via-gray-500 to-slate-600",
+  },
 ];
 
 // Fonts

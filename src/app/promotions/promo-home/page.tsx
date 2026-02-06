@@ -3,22 +3,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ShieldCheck, Coffee, ShoppingBag, ArrowRight, Gift, Shield, Clock } from "lucide-react";
 import Link from "next/link";
+import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
 
 const steps = [
   {
     step: "1",
     title: "Wypełnij Formularz",
     desc: "Podaj podstawowe dane nieruchomości, którą chcesz ubezpieczyć.",
+    color: "from-blue-500 via-cyan-500 to-blue-600",
   },
   {
     step: "2",
     title: "Wybierz Ofertę",
     desc: "Nasi eksperci przygotują dla Ciebie najlepsze opcje ubezpieczenia.",
+    color: "from-amber-500 via-orange-500 to-amber-600",
   },
   {
     step: "3",
     title: "Odbierz Nagrodę",
     desc: "Po opłaceniu składki za min. 500 zł, karta podarunkowa o wartości 50 zł trafi na Twój adres e-mail i ruszasz na łowy!",
+    color: "from-emerald-500 via-teal-500 to-emerald-600",
   },
 ];
 
@@ -27,20 +31,20 @@ const benefits = [
     icon: Shield,
     title: "Najlepsze Ubezpieczenie",
     description: "Masz najlepsze ubezpieczenie dostępne na rynku. Proste zasady, szybka realizacja i realne korzyści.",
-    color: "text-orange-500",
+    color: "from-blue-500 via-cyan-500 to-blue-600",
   },
   {
     icon: Gift,
     title: "Voucher 50 zł na Allegro",
     description:
       "Kupujesz ubezpieczenie nieruchomości za min. 500 zł i otrzymujesz kartę podarunkową o wartości 50 zł do wykorzystania na dowolne zakupy.",
-    color: "text-amber-500",
+    color: "from-amber-500 via-orange-500 to-amber-600",
   },
   {
     icon: Clock,
     title: "Szybka Decyzja",
     description: "Otrzymaj propozycję ubezpieczenia w 24 godziny od zgłoszenia.",
-    color: "text-orange-600",
+    color: "from-emerald-500 via-teal-500 to-emerald-600",
   },
 ];
 
@@ -112,12 +116,10 @@ const PromotionHomePage = () => {
           {benefits.map((item, i) => (
             <Card key={i} className="border-border/50 bg-card hover:shadow-lg transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <div
-                  className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500/10 ${item.color}`}
-                >
-                  <item.icon className="h-8 w-8" />
-                </div>
-                <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
+                {/* Icon */}
+                <InsuranceVariantIcon icon={item.icon} gradient={item.color} />
+
+                <h3 className="my-4 text-xl font-bold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </CardContent>
             </Card>
@@ -139,8 +141,9 @@ const PromotionHomePage = () => {
 
             {steps.map((step, i) => (
               <div key={i} className="relative flex flex-col items-center text-center">
-                {/* TODO zmienić kolory kółek "from" "to" na takie co mamy w aplikacji */}
-                <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full border-4 border-background bg-gradient-to-br from-orange-500 to-amber-500 text-3xl font-bold text-white shadow-xl">
+                <div
+                  className={`mb-6 flex h-24 w-24 items-center justify-center rounded-full border-4 border-background bg-gradient-to-br ${step.color} text-3xl font-bold text-white shadow-xl`}
+                >
                   {step.step}
                 </div>
                 <h3 className="mb-3 text-xl font-bold">{step.title}</h3>
@@ -179,7 +182,7 @@ const PromotionHomePage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="px-4 py-16 md:py-24 bg-muted/30">
         <div className="container m-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl font-bold text-foreground md:text-4xl">Często zadawane pytania</h2>

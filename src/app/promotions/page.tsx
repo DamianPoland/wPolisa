@@ -2,7 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Badge, Gift, Globe, Shield, Users } from "lucide-react";
 import Link from "next/link";
-import CornerInfoBadge, { BadgeVariant } from "@/components/cornerInfoBadge/CornerInfoBadge";
+import CornerInfoBadge from "@/components/cornerInfoBadge/CornerInfoBadge";
+import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
+import { BadgeVariant } from "@/utils/types";
 
 interface Promotion {
   id: string;
@@ -29,7 +31,7 @@ const promotions: Promotion[] = [
     icon: Gift,
     gradient: "from-orange-500 to-amber-500",
     badge: "Dla Ciebie",
-    badgeVariant: 1,
+    badgeVariant: BadgeVariant.one,
     isActive: true,
   },
   {
@@ -44,7 +46,7 @@ const promotions: Promotion[] = [
     icon: Globe,
     gradient: "from-emerald-500 to-teal-500",
     badge: "Dla Firmy",
-    badgeVariant: 2,
+    badgeVariant: BadgeVariant.two,
     isActive: true,
   },
   {
@@ -59,7 +61,7 @@ const promotions: Promotion[] = [
     icon: Users,
     gradient: "from-blue-500 to-indigo-500",
     badge: "Dla Firmy",
-    badgeVariant: 2,
+    badgeVariant: BadgeVariant.two,
     isActive: false,
   },
 ];
@@ -98,8 +100,6 @@ const PromotionsPage = () => {
           {/* Promotions Grid */}
           <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
             {promotions.map((promo, index) => {
-              const IconComponent = promo.icon;
-
               return (
                 <div
                   key={promo.id}
@@ -124,14 +124,11 @@ const PromotionsPage = () => {
                     <CardContent className="p-6 md:p-8 flex flex-col flex-1">
                       <CornerInfoBadge text={promo.badge} variant={promo.badgeVariant} />
 
-                      <div
-                        className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${promo.gradient} shadow-lg`}
-                      >
-                        <IconComponent className="h-7 w-7 text-white" />
-                      </div>
+                      {/* Icon */}
+                      <InsuranceVariantIcon icon={promo.icon} gradient={promo.gradient} />
 
                       {/* Title */}
-                      <h2 className="text-xl font-bold text-foreground mb-4">{promo.title}</h2>
+                      <h2 className="pt-4 text-xl font-bold text-foreground mb-4">{promo.title}</h2>
 
                       {/* Benefits */}
                       <ul className="space-y-3 mb-6 flex-1">

@@ -2,16 +2,15 @@ import { Heart, Home, Shield, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import CornerInfoBadge, { BadgeVariant } from "../cornerInfoBadge/CornerInfoBadge";
-import { InsuranceVariantsId } from "@/utils/types";
+import CornerInfoBadge from "../cornerInfoBadge/CornerInfoBadge";
+import { BadgeVariant, InsuranceVariantsId } from "@/utils/types";
 import { insuranceVariants } from "@/utils/constants";
+import InsuranceVariantIcon from "../insuranceVariantIcon/InsuranceVariantIcon";
 
 interface SpecialOffer {
   id: InsuranceVariantsId;
   promo: string;
   description: string;
-  gradient: string;
-  borderGradient: string;
   glowColor: string;
   badge: string;
   badgeVariant: BadgeVariant;
@@ -22,39 +21,27 @@ const specialOffersTypes: SpecialOffer[] = [
     id: InsuranceVariantsId.medyczny,
     promo: "95zł/m-c",
     description: "Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
-    gradient: "from-rose-500 via-pink-500 to-rose-600",
-    borderGradient: "from-rose-400 via-pink-400 to-rose-500",
     glowColor: "rose",
     badge: "BESTSELLER",
-    badgeVariant: 1,
+    badgeVariant: BadgeVariant.one,
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     promo: "150zł/rok",
     description: "Gwarancja stałej składki tylko do końca miesiąca.",
-    gradient: "from-emerald-500 via-teal-500 to-emerald-600",
-    borderGradient: "from-emerald-400 via-teal-400 to-emerald-500",
     glowColor: "emerald",
     badge: "LIMITOWANA OFERTA",
-    badgeVariant: 2,
+    badgeVariant: BadgeVariant.two,
   },
   {
     id: InsuranceVariantsId.zycie,
     promo: "299zł/rok",
     description: "Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
-    gradient: "from-blue-500 via-cyan-500 to-blue-600",
-    borderGradient: "from-blue-400 via-cyan-400 to-blue-500",
     glowColor: "blue",
     badge: "SUPER OFERTA",
-    badgeVariant: 3,
+    badgeVariant: BadgeVariant.three,
   },
 ];
-
-const OfferIcon = ({ id }: { id: InsuranceVariantsId }) => {
-  const Icon = insuranceVariants.find((t) => t.id === id)?.icon;
-  if (!Icon) return null;
-  return <Icon className="h-7 w-7 text-white" />;
-};
 
 const SpecialOffers = () => {
   return (
@@ -81,18 +68,16 @@ const SpecialOffers = () => {
                 <CornerInfoBadge text={offer.badge} variant={offer.badgeVariant} />
 
                 {/* Gradient top accent */}
-                <div className={`h-1.5 w-full bg-gradient-to-r ${offer.gradient}`} />
+                <div
+                  className={`h-1.5 w-full bg-gradient-to-r ${insuranceVariants.find((t) => t.id === offer.id)?.color}`}
+                />
 
                 <CardContent className="p-6 md:p-8 pt-8 flex flex-col flex-1">
                   {/* Icon */}
-                  <div
-                    className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${offer.gradient} shadow-lg`}
-                  >
-                    <OfferIcon id={offer.id} />
-                  </div>
+                  <InsuranceVariantIcon id={offer.id} />
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="mt-4 text-xl font-bold text-foreground group-hover:text-accent transition-colors">
                     {insuranceVariants.find((t) => t.id === offer.id)?.title}
                   </h3>
 

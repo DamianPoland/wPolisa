@@ -6,6 +6,7 @@ import { CheckCircle } from "lucide-react";
 import { insuranceVariants } from "@/utils/constants";
 import ContactForm from "../form/ContactForm";
 import { InsuranceVariantsId } from "@/utils/types";
+import InsuranceVariantIcon from "../insuranceVariantIcon/InsuranceVariantIcon";
 
 const OfferContent = () => {
   const searchParams = useSearchParams();
@@ -39,15 +40,16 @@ const OfferContent = () => {
                     isSelected ? "border-accent bg-accent/5" : "border-border bg-card hover:border-accent/50"
                   }`}
                 >
-                  <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${
+                  {/* Icon */}
+                  <InsuranceVariantIcon
+                    id={variant.id}
+                    gradient={
                       isSelected
                         ? "bg-accent text-accent-foreground"
-                        : "bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent"
-                    }`}
-                  >
-                    <variant.icon className="h-6 w-6" />
-                  </div>
+                        : "bg-basicMiddle text-muted-foreground group-hover:bg-accent/50 group-hover:text-accent"
+                    }
+                  />
+
                   <div>
                     <div className={`font-semibold ${isSelected ? "text-accent" : "text-foreground"}`}>
                       {variant.title}

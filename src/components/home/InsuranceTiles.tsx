@@ -3,54 +3,42 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { InsuranceVariantsId } from "@/utils/types";
 import { insuranceVariants } from "@/utils/constants";
+import InsuranceVariantIcon from "../insuranceVariantIcon/InsuranceVariantIcon";
 
 interface InsuranceType {
   id: InsuranceVariantsId;
   description: string;
-  color: string;
 }
 
 const insuranceTypes: InsuranceType[] = [
   {
     id: InsuranceVariantsId.medyczny,
     description: "Zdrowie pod kontrolą. Z nami to nie łut szczęścia, a plan.",
-    color: "from-rose-500 to-pink-500",
   },
   {
     id: InsuranceVariantsId.zycie,
     description:
       "Zabezpiecz przyszłość tych, na których Ci zależy. Bo pieniądze szczęścia nie dają, ale pomagają w trudnych chwilach.",
-    color: "from-blue-500 to-cyan-500",
   },
   {
     id: InsuranceVariantsId.podroze,
     description: "Zwiedzaj bez stresu! W razie czego, my łapiemy samolot za Ciebie.",
-    color: "from-violet-500 to-purple-500",
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     description: "Twój dom to Twoja twierdza. A my pilnujemy, by stał twardo na fundamentach.",
-    color: "from-emerald-500 to-teal-500",
   },
   {
     id: InsuranceVariantsId.firma,
     description: "Biznes pod ochroną. Zadbaj o firmę, a my zadbamy o to, byś mógł spokojnie spać.",
-    color: "from-amber-500 to-orange-500",
   },
   {
     id: InsuranceVariantsId.inne,
     description: "Coś więcej? Pomożemy! Ubezpieczymy prawie wszystko, co ma sens.",
-    color: "from-slate-500 to-gray-500",
   },
 ];
 
 const InsuranceTiles = () => {
-  const OfferIcon = ({ id }: { id: InsuranceVariantsId }) => {
-    const Icon = insuranceVariants.find((t) => t.id === id)?.icon;
-    if (!Icon) return null;
-    return <Icon className="h-7 w-7 text-white" />;
-  };
-
   return (
     <section className="px-4 md:px-2 py-16 md:py-24">
       <div className="container m-auto">
@@ -74,12 +62,9 @@ const InsuranceTiles = () => {
             >
               <Card className="h-full overflow-hidden border-border/50 bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-card-hover">
                 <CardContent className="p-6">
-                  <div
-                    className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${insurance.color}`}
-                  >
-                    <OfferIcon id={insurance.id} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">
+                  {/* Icon */}
+                  <InsuranceVariantIcon id={insurance.id} />
+                  <h3 className="mt-4 text-lg font-semibold text-foreground group-hover:text-accent">
                     {insuranceVariants.find((t) => t.id === insurance.id)?.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">{insurance.description}</p>
