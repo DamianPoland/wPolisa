@@ -39,6 +39,7 @@ export interface InsuranceVariantType {
   id: InsuranceVariantsId;
   title: string;
   icon: LucideIcon;
+  color: string;
 }
 
 export enum InsuranceVariantsId {
@@ -48,4 +49,10 @@ export enum InsuranceVariantsId {
   nieruchomosc = "nieruchomosc",
   firma = "firma",
   inne = "inne",
+}
+
+export enum BadgeVariant {
+  one = 1,
+  two = 2,
+  three = 3,
 }

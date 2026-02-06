@@ -1,18 +1,18 @@
-export type BadgeVariant = 1 | 2 | 3 | 4 | 5 | 6;
+import { BadgeVariant } from "@/utils/types";
 
 const getCornerInfoBadgeColors = (variant: BadgeVariant) => {
   switch (variant) {
-    case 1:
+    case BadgeVariant.one:
       return {
         main: "#e67a2c", // accent
         dark: "#7C2D12", // orange-900
       };
-    case 2:
+    case BadgeVariant.two:
       return {
         main: "#0369A1", // sky-700
         dark: "#172554", // blue-950
       };
-    case 3:
+    case BadgeVariant.three:
       return {
         main: "#D946EF", // fuchsia-500
         dark: "#581C87", // purple-800
