@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ShieldCheck, Coffee, ShoppingBag, ArrowRight, Gift, Shield, Clock } from "lucide-react";
+import { Gift, Shield, Clock } from "lucide-react";
 import Link from "next/link";
 import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
 
@@ -50,14 +50,14 @@ const benefits = [
 
 const faqItems = [
   {
-    question: "Jak długo muszę czekać na kod do Allegro?",
-    answer:
-      "Kod wysyłamy w ciągu 14 dni roboczych od zaksięgowania składki. Wystarczająco długo, żebyśmy mogli zaparzyć kawę, sprawdzić Twoją polisę i upewnić się, że wszystko gra.",
-  },
-  {
     question: "Czy ubezpieczenie garażu też się liczy?",
     answer:
       "Pewnie! Garaż, domek letniskowy, a nawet szopa na narzędzia – jeśli to nieruchomość i polisa kosztuje min. 500 zł, bon jest Twój. Twój garaż zasługuje na ochronę tak samo jak Twoje auto w środku.",
+  },
+  {
+    question: "Czy mogę wykorzystać bon na cokolwiek na Allegro?",
+    answer:
+      "Tak! Allegro to Allegro – kup co chcesz. Nowa lampa do salonu? Proszę bardzo. Karma dla kota? Czemu nie. Kolejna szafka do skręcania? Twoja sprawa, my nie oceniamy! 🛒",
   },
   {
     question: "Co jeśli moja polisa kosztuje 499 zł?",
@@ -65,16 +65,22 @@ const faqItems = [
       "Hmm, to prawie jak bon, ale jeszcze nie bon 😉 Możesz dorzucić dodatkowe ryzyko (np. stłuczenie szyb albo przepięcia) i przekroczyć magiczną granicę 500 zł. Bonus: lepsza ochrona + 50 zł na zakupy. Win-win!",
   },
   {
-    question: "Czy mogę wykorzystać bon na cokolwiek na Allegro?",
+    question: "Jak długo muszę czekać na kod do Allegro?",
     answer:
-      "Tak! Allegro to Allegro – kup co chcesz. Nowa lampa do salonu? Proszę bardzo. Karma dla kota? Czemu nie. Kolejna szafka do skręcania? Twoja sprawa, my nie oceniamy! 🛒",
+      "Kod wysyłamy w ciągu 14 dni liczonych od dnia, w którym upłynął termin na skuteczne odstąpienie od umowy ubezpieczenia. Wystarczająco długo, żebyśmy mogli zaparzyć kawę, sprawdzić Twoją polisę i upewnić się, że wszystko gra.",
   },
 ];
 
-// TODO: dostosować metadane
 export const metadata = {
-  title: "Bon na Dom | wPolisa.pl",
-  description: "Odbierz voucher 50 zł i bonusy za ubezpieczenie domu!",
+  title: "Bon na Dom | wPolisa - Voucher 50 zł na Allegro",
+  description:
+    "Ubezpiecz dom i odbierz voucher 50 zł na Allegro oraz dodatkowe bonusy. Promocja Bon na Dom od wPolisa.",
+  openGraph: {
+    title: "Bon na Dom - wPolisa",
+    description: "Ubezpiecz swoją nieruchomość i odbierz wartościową nagrodę. Szybka decyzja, najlepsze ubezpieczenie.",
+    type: "website",
+    url: "https://www.wpolisa.pl/promotions/promo-home",
+  },
 };
 
 const PromotionHomePage = () => {
@@ -105,7 +111,7 @@ const PromotionHomePage = () => {
           style={{ animationDelay: "0.2s" }}
         >
           <Button variant="hero" size="xl" asChild>
-            <Link href="/offer?variant=nieruchomosc&promo=Bon na Dom">Odbieram ofertę i kartę podarunkową</Link>
+            <Link href="/offer?variant=nieruchomosc&promo=Bon na Dom">Odbieram kartę podarunkową</Link>
           </Button>
         </div>
       </section>

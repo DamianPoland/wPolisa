@@ -333,7 +333,7 @@ const ContactForm = ({ variant, promo, onSubmitSuccess }: ContactFormProps) => {
                   </div>
                 </div>
               </div>
-              {/* TODO info że Wakacje */}
+              {/* info vacation/holiday */}
               {false && (
                 <div className="mt-4 rounded-lg bg-accent/10 p-4">
                   <p className="text-sm font-medium text-accent">💡 Dziękujemy za zaufanie!</p>

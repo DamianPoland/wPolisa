@@ -24,10 +24,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.wpolisa.pl/knowledge",
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: "https://www.wpolisa.pl/offer",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.wpolisa.pl/promotions",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.wpolisa.pl/promotions/promo-home",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
