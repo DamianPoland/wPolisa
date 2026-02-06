@@ -9,12 +9,13 @@ export default function QueryParamsTracker() {
 
   // Wykona się tylko raz przy zamontowaniu aplikacji
   useEffect(() => {
+    // save referer in localStorage
     localStorage.setItem(ORIGIN_REFERRER, document.referrer ? new URL(document.referrer).hostname : "");
+
+    // save origin in sessionStorage
     const originParam = searchParams.get(ORIGIN_QUERY_PARAM);
     if (originParam) {
-      localStorage.setItem(ORIGIN_QUERY_PARAM_URL, originParam);
-    } else {
-      localStorage.removeItem(ORIGIN_QUERY_PARAM_URL);
+      sessionStorage.setItem(ORIGIN_QUERY_PARAM_URL, originParam);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
