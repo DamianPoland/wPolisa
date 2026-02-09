@@ -11,7 +11,6 @@ interface SpecialOffer {
   id: InsuranceVariantsId;
   promo: string;
   description: string;
-  glowColor: string;
   badgeText: string;
   badgeVariant: BadgeVariant;
 }
@@ -21,23 +20,20 @@ const specialOffersTypes: SpecialOffer[] = [
     id: InsuranceVariantsId.medyczny,
     promo: "95zł/m-c",
     description: "Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
-    glowColor: "rose",
     badgeText: "BESTSELLER",
-    badgeVariant: BadgeVariant.one,
+    badgeVariant: BadgeVariant.two,
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     promo: "150zł/rok",
     description: "Gwarancja stałej składki tylko do końca miesiąca.",
-    glowColor: "emerald",
     badgeText: "LIMITOWANA OFERTA",
-    badgeVariant: BadgeVariant.two,
+    badgeVariant: BadgeVariant.one,
   },
   {
     id: InsuranceVariantsId.zycie,
     promo: "299zł/rok",
     description: "Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
-    glowColor: "blue",
     badgeText: "SUPER OFERTA",
     badgeVariant: BadgeVariant.three,
   },
