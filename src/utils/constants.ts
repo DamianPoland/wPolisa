@@ -1,5 +1,5 @@
 import { Plus_Jakarta_Sans, Figtree, Manrope } from "next/font/google";
-import { FaqItem, InsuranceVariantsId, InsuranceVariantType } from "@/utils/types";
+import { FaqItem, InsuranceVariantsId, InsuranceVariantType, TILE_GRADIENTS } from "@/utils/types";
 import Facebook from "@/assets/images/facebook-brands-solid-full.svg";
 import X from "@/assets/images/x-twitter-brands-solid-full.svg";
 import Linkedin from "@/assets/images/linkedin-brands-solid-full.svg";
@@ -41,37 +41,37 @@ export const insuranceVariants: InsuranceVariantType[] = [
     id: InsuranceVariantsId.medyczny,
     title: "Pakiet Medyczny",
     icon: Heart,
-    color: "from-red-900 via-rose-400 to-red-900",
+    color: TILE_GRADIENTS.red,
   },
   {
     id: InsuranceVariantsId.zycie,
     title: "Ubezpieczenie Życia",
     icon: Shield,
-    color: "from-cyan-800 via-cyan-400 to-cyan-800",
+    color: TILE_GRADIENTS.blue,
   },
   {
     id: InsuranceVariantsId.podroze,
     title: "Ubezpieczenie Podróży",
     icon: Plane,
-    color: "from-violet-800 via-purple-400 to-violet-800",
+    color: TILE_GRADIENTS.purple,
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     title: "Ubezpieczenie Nieruchomości",
     icon: Home,
-    color: "from-emerald-800 via-emerald-500 to-emerald-800",
+    color: TILE_GRADIENTS.green,
   },
   {
     id: InsuranceVariantsId.firma,
     title: "Ubezpieczenie Firmy",
     icon: Building2,
-    color: "from-orange-600 via-amber-500 to-orange-600",
+    color: TILE_GRADIENTS.orange,
   },
   {
     id: InsuranceVariantsId.inne,
     title: "Pozostałe Ubezpieczenia",
     icon: Package,
-    color: "from-zinc-800 via-zinc-400 to-zinc-800",
+    color: TILE_GRADIENTS.grey,
   },
 ];
 

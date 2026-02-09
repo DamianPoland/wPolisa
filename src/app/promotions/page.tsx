@@ -4,7 +4,7 @@ import { ArrowRight, Gift, Globe, Users } from "lucide-react";
 import Link from "next/link";
 import CornerInfoBadge from "@/components/cornerInfoBadge/CornerInfoBadge";
 import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
-import { BadgeVariant } from "@/utils/types";
+import { BadgeVariant, TILE_GRADIENTS } from "@/utils/types";
 
 interface Promotion {
   id: string;
@@ -29,7 +29,7 @@ const promotions: Promotion[] = [
       "Szybka realizacja i proste zasady.",
     ],
     icon: Gift,
-    color: "from-emerald-800 via-emerald-500 to-emerald-800",
+    color: TILE_GRADIENTS.green,
     badgeText: "Dla Ciebie",
     badgeVariant: BadgeVariant.one,
     isActive: true,
@@ -44,7 +44,7 @@ const promotions: Promotion[] = [
       "Kompleksowe wsparcie techniczne i nowoczesny design.",
     ],
     icon: Globe,
-    color: "from-orange-600 via-amber-500 to-orange-600",
+    color: TILE_GRADIENTS.orange,
     badgeText: "Dla Firmy",
     badgeVariant: BadgeVariant.two,
     isActive: false,
@@ -59,7 +59,7 @@ const promotions: Promotion[] = [
       "Pełna ochrona Twojej floty i kadry w jednym pakiecie.",
     ],
     icon: Users,
-    color: "from-yellow-600 via-yellow-400 to-yellow-600",
+    color: TILE_GRADIENTS.yellow,
     badgeText: "Dla Firmy",
     badgeVariant: BadgeVariant.two,
     isActive: false,

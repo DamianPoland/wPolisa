@@ -5,49 +5,50 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import InsuranceVariantIcon from "@/components/insuranceVariantIcon/InsuranceVariantIcon";
 import InsurancePartners from "@/components/partnersSections/InsurancePartners";
-
-const steps = [
-  {
-    step: "1",
-    title: "Wypełnij Formularz",
-    desc: "Podaj dane nieruchomości. To zajmie tylko minutę.",
-    color: "from-cyan-800 via-cyan-400 to-cyan-800",
-    icon: Shield,
-  },
-  {
-    step: "2",
-    title: "Wybierz Ofertę",
-    desc: "Porównamy dla Ciebie oferty i znajdziemy najlepszą ochronę.",
-    color: "from-orange-600 via-amber-500 to-orange-600",
-    icon: Clock,
-  },
-  {
-    step: "3",
-    title: "Odbierz 50 zł",
-    desc: "Opłać składkę (min. 500 zł) i ciesz się bonem na zakupy!",
-    color: "from-emerald-800 via-emerald-500 to-emerald-800",
-    icon: Gift,
-  },
-];
+import { TILE_GRADIENTS } from "@/utils/types";
 
 const benefits = [
   {
     icon: Shield,
     title: "Pełna Ochrona",
     description: "Ubezpieczenie od pożaru, zalania, kradzieży i OC w życiu prywatnym w jednej polisie.",
-    color: "from-cyan-800 via-cyan-400 to-cyan-800",
+    color: TILE_GRADIENTS.blue,
   },
   {
     icon: ShoppingBag,
     title: "Karta Allegro 50 zł",
     description: "Gwarantowany bon do wykorzystania na WSZYSTKO w serwisie Allegro.",
-    color: "from-orange-600 via-amber-500 to-orange-600",
+    color: TILE_GRADIENTS.orange,
   },
   {
     icon: Landmark,
     title: "Honorowana przez Banki",
     description: "Polisa w 100% spełnia wymogi do kredytu hipotecznego. Przygotujemy cesję dla Twojego banku.",
-    color: "from-emerald-800 via-emerald-500 to-emerald-800",
+    color: TILE_GRADIENTS.green,
+  },
+];
+
+const steps = [
+  {
+    step: "1",
+    title: "Wypełnij Formularz",
+    desc: "Podaj dane nieruchomości. To zajmie tylko minutę.",
+    color: TILE_GRADIENTS.blue,
+    icon: Shield,
+  },
+  {
+    step: "2",
+    title: "Wybierz Ofertę",
+    desc: "Porównamy dla Ciebie oferty i znajdziemy najlepszą ochronę.",
+    color: TILE_GRADIENTS.orange,
+    icon: Clock,
+  },
+  {
+    step: "3",
+    title: "Odbierz 50 zł",
+    desc: "Opłać składkę (min. 500 zł) i ciesz się bonem na zakupy!",
+    color: TILE_GRADIENTS.green,
+    icon: Gift,
   },
 ];
 
