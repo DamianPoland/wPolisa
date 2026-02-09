@@ -24,7 +24,7 @@ const promotions: Promotion[] = [
     goTo: "/promotions/promo-home",
     title: "Bon na Dom",
     benefits: [
-      "Odbierz voucher o wartości 50 zł na zakupy.",
+      "Odbierz bon o wartości 50 zł na zakupy.",
       "Bonus za każde 500 zł wydane na ubezpieczenie.",
       "Szybka realizacja i proste zasady.",
     ],
