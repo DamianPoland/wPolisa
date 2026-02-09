@@ -118,14 +118,14 @@ const PromotionsPage = () => {
                   >
                     {!promo.isActive && (
                       <div className="absolute inset-0 z-50 flex items-center justify-center backdrop-blur-[1px]">
-                        <div className="rotate-[-12deg] rounded-lg border-2 border-destructive/80 bg-destructive/90 px-6 py-2 shadow-sm backdrop-blur-md">
+                        <div className="-rotate-12 rounded-lg border-2 border-destructive/80 bg-destructive/90 px-6 py-2 shadow-sm backdrop-blur-md">
                           <span className="text-xl font-bold uppercase tracking-widest text-white">Wygasła</span>
                         </div>
                       </div>
                     )}
 
                     {/* Gradient top accent */}
-                    <div className={`h-1.5 w-full bg-gradient-to-r ${promo.color}`} />
+                    <div className={`h-1.5 w-full bg-linear-to-r ${promo.color}`} />
 
                     <CardContent className="p-6 md:p-8 flex flex-col flex-1">
                       <CornerInfoBadge text={promo.badgeText} variant={promo.badgeVariant} />
@@ -140,7 +140,7 @@ const PromotionsPage = () => {
                       <ul className="space-y-3 mb-6 flex-1">
                         {promo.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <div className={`mt-1.5 h-2 w-2 rounded-full bg-gradient-to-br ${promo.color} shrink-0`} />
+                            <div className={`mt-1.5 h-2 w-2 rounded-full bg-linear-to-br ${promo.color} shrink-0`} />
                             <span className="text-sm text-muted-foreground leading-relaxed">{benefit}</span>
                           </li>
                         ))}

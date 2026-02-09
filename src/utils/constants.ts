@@ -321,12 +321,6 @@ export const faqItems: FaqItem[] = [
     answer:
       "Karencja to określony w umowie czas po zawarciu polisy, w którym ochrona jeszcze nie obowiązuje mimo opłacania składki. Ubezpieczyciele stosują ją, aby uniknąć sytuacji, w których klient kupuje polisę wiedząc o planowanej operacji lub ciąży. Im szybciej zawrzesz umowę, tym szybciej miną okresy karencji.",
   },
-  // {
-  //   category: "Zdrowie i Życie",
-  //   question: "Jakie ubezpieczenie dla seniora jest najlepsze?",
-  //   answer:
-  //     "Dla seniorów polecane są ubezpieczenia zdrowotne z szybkim dostępem do geriatrów i kardiologów oraz polisy typu 'Whole Life'. Ważnym elementem jest także Assistance medyczny, oferujący wizyty domowe lekarza i pielęgniarki oraz dowóz leków, co zapewnia starszym osobom poczucie bezpieczeństwa.",
-  // },
   {
     category: "Zdrowie i Życie",
     question: "Czy ubezpieczenie NNW szkolne jest obowiązkowe?",
@@ -403,18 +397,6 @@ export const faqItems: FaqItem[] = [
     answer:
       "Ubezpieczenie ochrony prawnej pokrywa koszty adwokata, opłat sądowych i opinii biegłych w sporach prawnych. Pozwala ono na dochodzenie swoich praw bez ryzyka finansowego, na przykład w sporze z nieuczciwym pracodawcą czy sprzedawcą wadliwego towaru.",
   },
-  // {
-  //   category: "Firma i Specjalistyczne",
-  //   question: "Co obejmuje ubezpieczenie Cyber dla osób prywatnych?",
-  //   answer:
-  //     "Ubezpieczenie Cyber chroni przed skutkami ataków hakerskich, kradzieży tożsamości oraz hejtu internetowego. Zapewnia dostęp do specjalistów IT, którzy pomogą odzyskać dane, oraz wsparcie prawne w przypadku naruszenia dóbr osobistych w sieci.",
-  // },
-  // {
-  //   category: "Firma i Specjalistyczne",
-  //   question: "Co to jest ubezpieczenie D&O dla zarządu firmy?",
-  //   answer:
-  //     "Ubezpieczenie D&O (Directors and Officers) chroni prywatny majątek członków zarządów i dyrektorów przed roszczeniami wynikającymi z błędnych decyzji menedżerskich. W dobie rosnącej odpowiedzialności osobistej za losy spółki, polisa D&O jest fundamentem bezpieczeństwa dla osób zarządzających przedsiębiorstwami.",
-  // },
   {
     category: "Firma i Specjalistyczne",
     question: "Jak ubezpieczyć flotę samochodów w firmie?",
@@ -453,12 +435,6 @@ export const faqItems: FaqItem[] = [
     answer:
       "Większość ofert przygotowujemy w czasie rzeczywistym podczas rozmowy, a porównania mailowe wysyłamy w ciągu 24-48 godzin. W sytuacjach pilnych działamy w trybie ekspresowym – wystarczy skontaktować się z naszym agentem telefonicznie.",
   },
-  // {
-  //   category: "Wiedza Ogólna",
-  //   question: "Czym różni się udział własny od franszyzy redukcyjnej?",
-  //   answer:
-  //     "Udział własny to określona część szkody, którą pokrywasz z własnej kieszeni (np. 500 zł). Franszyza redukcyjna to kwota, o którą ubezpieczyciel pomniejsza każde odszkodowanie. Stosowanie tych mechanizmów pozwala na znaczne obniżenie składki za polisę.",
-  // },
   {
     category: "Wiedza Ogólna",
     question: "Co to jest suma ubezpieczenia i jak ją określić?",
@@ -471,12 +447,6 @@ export const faqItems: FaqItem[] = [
     answer:
       "Odmowa może nastąpić w przypadku rażącego niedbalstwa (np. kluczyki w stacyjce podczas kradzieży auta), działania umyślnego lub bycia pod wpływem środków odurzających. Dokładna lista wyłączeń znajduje się zawsze w OWU – pomagamy je analizować, abyś znał zakres swojej ochrony.",
   },
-  // {
-  //   category: "Wiedza Ogólna",
-  //   question: "Czy ubezpieczenie dla psa lub kota jest opłacalne?",
-  //   answer:
-  //     "Ubezpieczenie pet insurance pokrywa koszty leczenia weterynaryjnego w razie nagłej choroby oraz OC właściciela. Biorąc pod uwagę rosnące ceny usług weterynaryjnych, polisa ta pozwala na szybką diagnostykę bez obciążania budżetu nagłymi wydatkami rzędu kilku tysięcy złotych.",
-  // },
   {
     category: "Wiedza Ogólna",
     question: "Jak ubezpieczyć sprzęt elektroniczny poza domem?",

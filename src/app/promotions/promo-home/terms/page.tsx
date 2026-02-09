@@ -31,7 +31,9 @@ const PromoHomeTermsPage = () => {
                 <FileText className="h-8 w-8" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold md:text-3xl text-foreground">Regulamin Promocji "Bon na Dom"</h1>
+                <h1 className="text-2xl font-bold md:text-3xl text-foreground">
+                  Regulamin Promocji &quot;Bon na Dom&quot;
+                </h1>
                 <p className="text-muted-foreground mt-2 flex items-center gap-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
                   Obowiązuje od dnia 01.02.2025 r.
@@ -49,9 +51,9 @@ const PromoHomeTermsPage = () => {
                 </h3>
                 <ol className="list-decimal pl-5 space-y-3 text-muted-foreground marker:text-foreground/70">
                   <li>
-                    Organizatorem promocji "Bon na Dom" (zwanej dalej "Promocją") jest{" "}
+                    Organizatorem promocji &quot;Bon na Dom&quot; (zwanej dalej &quot;Promocją&quot;) jest{" "}
                     <strong>wPolisa sp. z o.o.</strong> z siedzibą w Gdyni, wpisana do rejestru przedsiębiorców KRS pod
-                    numerem 0001215491, NIP: 5862425740, REGON: 543671892 (zwana dalej "Organizatorem").
+                    numerem 0001215491, NIP: 5862425740, REGON: 543671892 (zwana dalej &quot;Organizatorem&quot;).
                   </li>
                   <li>Promocja trwa od dnia 01.02.2025 r. do odwołania lub do wyczerpania puli nagród.</li>
                   <li>
@@ -71,8 +73,8 @@ const PromoHomeTermsPage = () => {
                 </p>
                 <ol className="list-decimal pl-5 space-y-3 text-muted-foreground marker:text-foreground/70">
                   <li>
-                    W okresie trwania Promocji zakupi polisę ubezpieczenia nieruchomości ("Polisa") za pośrednictwem
-                    wPolisa sp. z o.o.
+                    W okresie trwania Promocji zakupi polisę ubezpieczenia nieruchomości (&quot;Polisa&quot;) za
+                    pośrednictwem wPolisa sp. z o.o.
                   </li>
                   <li>
                     Wartość składki za zakupioną Polisę wynosi minimum <strong>500,00 zł</strong> (słownie: pięćset

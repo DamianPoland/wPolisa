@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, Gift, Clock, Star, CheckCircle, ArrowRight, ShoppingBag, Check, Landmark } from "lucide-react";
+import { Shield, Gift, Clock, Star, ShoppingBag, Check, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -112,7 +112,7 @@ const PromotionHomePage = () => {
           <div className="text-center md:text-left animate-slide-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 border border-accent/30 text-accent mb-6 backdrop-blur-sm">
               <Star className="w-4 h-4 fill-current" />
-              <span className="text-sm font-semibold tracking-wide">Promocja "Bon na Dom"</span>
+              <span className="text-sm font-semibold tracking-wide">Promocja &quot;Bon na Dom&quot;</span>
             </div>
             <h1 className="text-4xl font-bold text-primary-foreground md:text-5xl">
               Ubezpiecz nieruchomość i odbierz 50 zł
@@ -153,7 +153,7 @@ const PromotionHomePage = () => {
           >
             {/* Karta Allegro CSS */}
             <div className="relative group perspective-1000">
-              <div className="relative w-[320px] h-[200px] sm:w-[400px] sm:h-[250px] bg-gradient-to-br from-[#ff5a00] to-[#ff8d00] rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2 rotate-[-6deg] flex flex-col justify-between p-6 sm:p-8 border-t border-white/20">
+              <div className="relative w-[320px] h-[200px] sm:w-[400px] sm:h-[250px] bg-linear-to-br from-[#ff5a00] to-[#ff8d00] rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2 -rotate-6 flex flex-col justify-between p-6 sm:p-8 border-t border-white/20">
                 {/* Logo Allegro style */}
                 <div className="text-white font-bold text-2xl tracking-tight opacity-90">allegro</div>
 
@@ -168,7 +168,7 @@ const PromotionHomePage = () => {
                 </div>
 
                 {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-2xl pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/10 to-transparent rounded-2xl pointer-events-none" />
               </div>
 
               {/* Floating elements */}
@@ -215,12 +215,12 @@ const PromotionHomePage = () => {
 
           <div className="grid gap-8 md:grid-cols-3 relative">
             {/* Linia łącząca na desktopie */}
-            <div className="absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-blue-200 via-orange-200 to-emerald-200 hidden md:block -z-10" />
+            <div className="absolute top-12 left-[16%] right-[16%] h-0.5 bg-linear-to-r from-blue-200 via-orange-200 to-emerald-200 hidden md:block -z-10" />
 
             {steps.map((step, i) => (
               <div key={i} className="relative flex flex-col items-center text-center group">
                 <div
-                  className={`mb-6 flex h-24 w-24 items-center justify-center rounded-full border-4 border-background bg-gradient-to-br ${step.color} text-white shadow-xl group-hover:scale-105 transition-transform duration-300 relative z-10`}
+                  className={`mb-6 flex h-24 w-24 items-center justify-center rounded-full border-4 border-background bg-linear-to-br ${step.color} text-white shadow-xl group-hover:scale-105 transition-transform duration-300 relative z-10`}
                 >
                   <step.icon className="w-10 h-10" />
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center font-bold text-foreground shadow-md border border-gray-100">
@@ -247,7 +247,7 @@ const PromotionHomePage = () => {
           <div className="mt-12 text-center">
             <div className="inline-block bg-blue-50 border border-blue-100 p-4 rounded-lg text-sm text-blue-800 shadow-sm">
               💡 <strong>Wskazówka:</strong> Masz kredyt? Ubezpieczenie pod cesję zazwyczaj przekracza 500 zł, więc bon
-              otrzymasz niejako "w gratisie" do obowiązkowej polisy. Jeśli brakuje Ci kilku złotych, dobierz
+              otrzymasz niejako &quot;w gratisie&quot; do obowiązkowej polisy. Jeśli brakuje Ci kilku złotych, dobierz
               ubezpieczenie szyb lub Assistance!
             </div>
           </div>
@@ -257,7 +257,7 @@ const PromotionHomePage = () => {
       {/* CTA Section - More "Allegro" vibes */}
       <section className="py-16 md:py-24 px-4 text-center">
         <div className="container mx-auto ">
-          <Card className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white border-none overflow-hidden relative shadow-2xl">
+          <Card className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white border-none overflow-hidden relative shadow-2xl">
             {/* Abstrakcyjne tło */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff5a00] rounded-full blur-[100px] opacity-20 translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full blur-[80px] opacity-20 -translate-x-1/3 translate-y-1/3" />
@@ -300,6 +300,14 @@ const PromotionHomePage = () => {
         </div>
       </section>
 
+      {/* Insurance Partners */}
+      <section className="py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl">Sieć Partnerska</h2>
+        </div>
+        <InsurancePartners />
+      </section>
+
       {/* FAQ Section */}
       <section className="px-4 py-16 md:py-24 bg-background">
         <div className="container m-auto max-w-4xl">
@@ -327,20 +335,12 @@ const PromotionHomePage = () => {
                 href="/promotions/promo-home/terms"
                 className="text-primary font-medium underline hover:text-[#ff5a00] transition-colors"
               >
-                Regulaminie Promocji "Bon na Dom"
+                Regulaminie Promocji &quot;Bon na Dom&quot;
               </Link>
               .
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Insurance Partners */}
-      <section className="mb-16 md:mb-24 py-16 md:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground md:text-4xl">Sieć Partnerska</h2>
-        </div>
-        <InsurancePartners />
       </section>
     </main>
   );

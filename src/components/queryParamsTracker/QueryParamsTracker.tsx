@@ -7,7 +7,7 @@ import { ORIGIN_QUERY_PARAM, ORIGIN_QUERY_PARAM_URL, ORIGIN_REFERRER } from "@/u
 export default function QueryParamsTracker() {
   const searchParams = useSearchParams();
 
-  // Wykona się tylko raz przy zamontowaniu aplikacji
+  // call only onece during app load
   useEffect(() => {
     // save referer in localStorage
     localStorage.setItem(ORIGIN_REFERRER, document.referrer ? new URL(document.referrer).hostname : "");
@@ -20,5 +20,5 @@ export default function QueryParamsTracker() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return null; // Komponent nic nie renderuje
+  return null; // no UI component, just a tracker
 }
