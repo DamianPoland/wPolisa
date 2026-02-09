@@ -41,37 +41,37 @@ export const insuranceVariants: InsuranceVariantType[] = [
     id: InsuranceVariantsId.medyczny,
     title: "Pakiet Medyczny",
     icon: Heart,
-    color: "from-rose-500 via-pink-500 to-rose-600",
+    color: "from-red-900 via-rose-400 to-red-900",
   },
   {
     id: InsuranceVariantsId.zycie,
     title: "Ubezpieczenie Życia",
     icon: Shield,
-    color: "from-blue-500 via-cyan-500 to-blue-600",
+    color: "from-cyan-800 via-cyan-400 to-cyan-800",
   },
   {
     id: InsuranceVariantsId.podroze,
     title: "Ubezpieczenie Podróży",
     icon: Plane,
-    color: "from-violet-500 via-purple-500 to-violet-600",
+    color: "from-violet-800 via-purple-400 to-violet-800",
   },
   {
     id: InsuranceVariantsId.nieruchomosc,
     title: "Ubezpieczenie Nieruchomości",
     icon: Home,
-    color: "from-emerald-500 via-teal-500 to-emerald-600",
+    color: "from-emerald-800 via-emerald-500 to-emerald-800",
   },
   {
     id: InsuranceVariantsId.firma,
     title: "Ubezpieczenie Firmy",
     icon: Building2,
-    color: "from-amber-500 via-orange-500 to-amber-600",
+    color: "from-orange-600 via-amber-500 to-orange-600",
   },
   {
     id: InsuranceVariantsId.inne,
     title: "Pozostałe Ubezpieczenia",
     icon: Package,
-    color: "from-slate-500 via-gray-500 to-slate-600",
+    color: "from-zinc-800 via-zinc-400 to-zinc-800",
   },
 ];
 

@@ -11,21 +11,21 @@ const steps = [
     step: "1",
     title: "Wypełnij Formularz",
     desc: "Podaj dane nieruchomości. To zajmie tylko minutę.",
-    color: "from-blue-500 via-cyan-500 to-blue-600",
+    color: "from-cyan-800 via-cyan-400 to-cyan-800",
     icon: Shield,
   },
   {
     step: "2",
     title: "Wybierz Ofertę",
     desc: "Porównamy dla Ciebie oferty i znajdziemy najlepszą ochronę.",
-    color: "from-amber-500 via-orange-500 to-amber-600",
+    color: "from-orange-600 via-amber-500 to-orange-600",
     icon: Clock,
   },
   {
     step: "3",
     title: "Odbierz 50 zł",
     desc: "Opłać składkę (min. 500 zł) i ciesz się bonem na zakupy!",
-    color: "from-emerald-500 via-teal-500 to-emerald-600",
+    color: "from-emerald-800 via-emerald-500 to-emerald-800",
     icon: Gift,
   },
 ];
@@ -35,19 +35,19 @@ const benefits = [
     icon: Shield,
     title: "Pełna Ochrona",
     description: "Ubezpieczenie od pożaru, zalania, kradzieży i OC w życiu prywatnym w jednej polisie.",
-    color: "from-blue-500 via-cyan-500 to-blue-600",
+    color: "from-cyan-800 via-cyan-400 to-cyan-800",
   },
   {
     icon: ShoppingBag,
     title: "Karta Allegro 50 zł",
     description: "Gwarantowany bon do wykorzystania na WSZYSTKO w serwisie Allegro.",
-    color: "from-amber-500 via-orange-500 to-amber-600",
+    color: "from-orange-600 via-amber-500 to-orange-600",
   },
   {
     icon: Landmark,
     title: "Honorowana przez Banki",
     description: "Polisa w 100% spełnia wymogi do kredytu hipotecznego. Przygotujemy cesję dla Twojego banku.",
-    color: "from-emerald-500 via-teal-500 to-emerald-600",
+    color: "from-emerald-800 via-emerald-500 to-emerald-800",
   },
 ];
 
@@ -131,7 +131,7 @@ const PromotionHomePage = () => {
               </li>
             </ul>
             <h2 className="text-4xl font-bold text-accent md:text-5xl mt-6 pb-4">
-              Twoja polisa teraz „płaci" za zakupy!
+              Twoja polisa teraz &quot;płaci&quot; za zakupy!
             </h2>
             <p className="mt-6 text-primary-foreground/80 text-lg">
               Zyskaj spokój ducha dzięki najlepszej polisie i zrób darmowe zakupy na Allegro.
