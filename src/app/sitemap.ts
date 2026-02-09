@@ -12,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.wpolisa.pl/contact",
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.6,
     },
     {
       url: "https://www.wpolisa.pl/description",
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.5,
     },
     {
       url: "https://www.wpolisa.pl/knowledge",

@@ -1,4 +1,4 @@
-import { Heart, Shield, Plane, Home, Building2, Package, ArrowRight, LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { InsuranceVariantsId } from "@/utils/types";

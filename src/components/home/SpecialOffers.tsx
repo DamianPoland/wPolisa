@@ -1,4 +1,4 @@
-import { Heart, Home, Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -65,7 +65,7 @@ const SpecialOffers = () => {
 
                 {/* Gradient top accent */}
                 <div
-                  className={`h-1.5 w-full bg-gradient-to-r ${insuranceVariants.find((t) => t.id === offer.id)?.color}`}
+                  className={`h-1.5 w-full bg-linear-to-r ${insuranceVariants.find((t) => t.id === offer.id)?.color}`}
                 />
 
                 <CardContent className="p-6 md:p-8 pt-8 flex flex-col flex-1">

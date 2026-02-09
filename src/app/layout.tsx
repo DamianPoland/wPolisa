@@ -14,6 +14,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
+  themeColor: "#1c3757",
 };
 
 export const metadata: Metadata = {
@@ -22,7 +23,6 @@ export const metadata: Metadata = {
   description:
     "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie mieszkania, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
   keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
-  themeColor: "#1c3757",
   manifest: null,
 
   // Format Detection
