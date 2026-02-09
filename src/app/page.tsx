@@ -10,8 +10,8 @@ export const HomePage = () => {
       <HeroSection />
       <SpecialOffers />
       <InsuranceTiles />
-      <PartnersSection />
       <CTASection />
+      <PartnersSection />
     </main>
   );
 };
