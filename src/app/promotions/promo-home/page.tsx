@@ -76,7 +76,7 @@ const faqItems = [
   {
     question: "Co jeśli moja polisa kosztuje 499 zł?",
     answer:
-      "Hmm, to prawie jak bon, ale jeszcze nie bon 😉 Możesz dorzucić dodatkowe ryzyko (np. stłuczenie szyb albo nnw) i przekroczyć magiczną granicę 500 zł. Bonus: lepsza ochrona + 50 zł na zakupy. Win-win!",
+      "Hmm, to prawie jak bon, ale jeszcze nie bon 😉 Możesz dorzucić dodatkowe ryzyko (np. stłuczenie szyb albo NNW) i przekroczyć magiczną granicę 500 zł. Bonus: lepsza ochrona + 50 zł na zakupy. Win-win!",
   },
   {
     question: "Gdzie wpisać kod promocyjny?",
