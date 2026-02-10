@@ -76,7 +76,7 @@ const faqItems = [
   {
     question: "Co jeśli moja polisa kosztuje 499 zł?",
     answer:
-      "Hmm, to prawie jak bon, ale jeszcze nie bon 😉 Możesz dorzucić dodatkowe ryzyko (np. stłuczenie szyb albo przepięcia) i przekroczyć magiczną granicę 500 zł. Bonus: lepsza ochrona + 50 zł na zakupy. Win-win!",
+      "Hmm, to prawie jak bon, ale jeszcze nie bon 😉 Możesz dorzucić dodatkowe ryzyko (np. stłuczenie szyb albo NNW) i przekroczyć magiczną granicę 500 zł. Bonus: lepsza ochrona + 50 zł na zakupy. Win-win!",
   },
   {
     question: "Gdzie wpisać kod promocyjny?",
@@ -86,7 +86,7 @@ const faqItems = [
   {
     question: "Kiedy dokładnie otrzymam bon do Allegro?",
     answer:
-      "Kod wysyłamy w ciągu 14 dni liczonych od dnia, w którym upłynął termin na skuteczne odstąpienie od umowy ubezpieczenia. To czas na ewentualne formalności – po nim nagroda jest Twoja!",
+      "Kod wysyłamy w terminie do 45 dni od opłacenia całej składki. To czas na ewentualne formalności – po nim nagroda jest Twoja!",
   },
 ];
 
@@ -153,7 +153,7 @@ const PromotionHomePage = () => {
           >
             {/* Karta Allegro CSS */}
             <div className="relative group perspective-1000">
-              <div className="relative w-[320px] h-[200px] sm:w-[400px] sm:h-[250px] bg-linear-to-br from-[#ff5a00] to-[#ff8d00] rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2 -rotate-6 flex flex-col justify-between p-6 sm:p-8 border-t border-white/20">
+              <div className="relative w-[320px] h-[200px] sm:w-[400px] sm:h-[250px] bg-linear-to-br from-orange-600 to-accent rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2 -rotate-6 flex flex-col justify-between p-6 sm:p-8 border-t border-white/20">
                 {/* Logo Allegro style */}
                 <div className="text-white font-bold text-2xl tracking-tight opacity-90">allegro</div>
 
@@ -215,7 +215,7 @@ const PromotionHomePage = () => {
 
           <div className="grid gap-8 md:grid-cols-3 relative">
             {/* Linia łącząca na desktopie */}
-            <div className="absolute top-12 left-[16%] right-[16%] h-0.5 bg-linear-to-r from-blue-200 via-orange-200 to-emerald-200 hidden md:block -z-10" />
+            <div className="absolute top-12 left-[16%] right-[16%] h-0.5 bg-linear-to-r from-cyan-200 via-orange-200 to-emerald-200 hidden md:block -z-10" />
 
             {steps.map((step, i) => (
               <div key={i} className="relative flex flex-col items-center text-center group">
@@ -247,8 +247,8 @@ const PromotionHomePage = () => {
           <div className="mt-12 text-center">
             <div className="inline-block bg-blue-50 border border-blue-100 p-4 rounded-lg text-sm text-blue-800 shadow-sm">
               💡 <strong>Wskazówka:</strong> Masz kredyt? Ubezpieczenie pod cesję zazwyczaj przekracza 500 zł, więc bon
-              otrzymasz niejako &quot;w gratisie&quot; do obowiązkowej polisy. Jeśli brakuje Ci kilku złotych, dobierz
-              ubezpieczenie szyb lub Assistance!
+              otrzymasz praktycznie &quot;w gratisie&quot; do obowiązkowej polisy. Jeśli brakuje Ci kilku złotych,
+              dobierz ubezpieczenie szyb lub Assistance!
             </div>
           </div>
         </div>
@@ -264,10 +264,12 @@ const PromotionHomePage = () => {
 
             <CardContent className="p-12 md:p-16 relative z-10 flex flex-col items-center">
               <div className="bg-white/10 backdrop-blur-md p-4 rounded-full mb-8">
-                <Gift className="h-12 w-12 text-[#ff5a00]" />
+                <Gift className="h-12 w-12 text-accent" />
               </div>
 
-              <h2 className="text-3xl font-bold md:text-5xl mb-6">50 zł na Allegro czeka na Ciebie!</h2>
+              <h2 className="text-3xl font-bold md:text-5xl mb-6">
+                50 zł na <span className="text-accent">Allegro</span> czeka na Ciebie!
+              </h2>
               <p className="text-lg text-gray-300 max-w-xl mx-auto mb-10">
                 Nie zwlekaj. Ubezpieczenie i tak musisz kupić – dlaczego nie dostać za to prezentu? Kliknij poniżej i
                 sprawdź cenę polisy w 3 minuty.
@@ -277,7 +279,7 @@ const PromotionHomePage = () => {
                 <Button
                   variant="hero"
                   size="xl"
-                  className="bg-[#ff5a00] hover:bg-[#e04f00] text-white border-none h-auto py-4 whitespace-normal"
+                  className="bg-accent hover:bg-amber-600 text-white border-none h-auto py-4 whitespace-normal"
                   asChild
                 >
                   <Link href="/offer?variant=nieruchomosc&promo=Bon na Dom">Wypełnij wniosek i odbierz bon</Link>
@@ -293,7 +295,7 @@ const PromotionHomePage = () => {
               </div>
 
               <p className="mt-6 text-xs text-gray-400">
-                Oferta ważna do odwołania. Dotyczy nowych polis o wartości min. 500 zł.
+                Oferta ważna do odwołania. Dotyczy nowych polis ze składką min. 500 zł.
               </p>
             </CardContent>
           </Card>
@@ -318,7 +320,7 @@ const PromotionHomePage = () => {
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqItems.map((item, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg px-4 bg-card shadow-sm">
-                <AccordionTrigger className="text-left font-semibold text-lg py-4 hover:text-[#ff5a00] transition-colors hover:no-underline">
+                <AccordionTrigger className="text-left font-semibold text-lg py-4 hover:text-accent transition-colors hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-4">
@@ -333,7 +335,7 @@ const PromotionHomePage = () => {
               Szczegółowe warunki promocji znajdziesz w{" "}
               <Link
                 href="/promotions/promo-home/terms"
-                className="text-primary font-medium underline hover:text-[#ff5a00] transition-colors"
+                className="text-primary font-medium underline hover:text-accent transition-colors"
               >
                 Regulaminie Promocji &quot;Bon na Dom&quot;
               </Link>
