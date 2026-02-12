@@ -16,7 +16,7 @@ const Logo = ({ logoVariant }: LogoType) => {
   return (
     <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80 focus:outline-none">
       <div
-        className={`flex h-14 min-w-14 w-14 items-center justify-center rounded-lg ${isLogoLight ? "bg-basic-bright" : "bg-gradient-hero"}`}
+        className={`flex h-14 min-w-14 w-14 items-center justify-center rounded-lg ${isLogoLight ? "bg-background" : "bg-gradient-hero"}`}
       >
         <Image
           src={isLogoLight ? shieldDark : shieldLight}
