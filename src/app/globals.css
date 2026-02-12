@@ -4,11 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-basicBright: #f8f8f8;
-  --color-basicMiddle: #9ba4af;
-  --color-basicDark: #1c3757;
-  --color-accentBright: #e67a2c;
-  --color-accentDark: #d45c10;
   --font-family-base-sans: "Plus Jakarta Sans", "Manrope", "Figtree", "Sansation", sans-serif;
 
   --color-background: hsl(0 0% 97%);
@@ -25,6 +20,7 @@
 
   --color-secondary: hsl(212 14% 65%);
   --color-secondary-foreground: hsl(213 52% 22%);
+
   --color-muted: hsl(210 20% 94%);
   --color-muted-foreground: hsl(212 14% 50%);
 
@@ -40,21 +36,10 @@
   --color-input: hsl(210 20% 88%);
   --color-ring: hsl(24 79% 54%);
 
-  --color-basic-bright: hsl(0 0% 97%);
-  --color-basic-middle: hsl(212 14% 65%);
   --color-basic-dark: hsl(213 52% 22%);
-  --color-accent-bright: hsl(24 79% 54%);
 
   /* Gradients */
   --gradient-hero: linear-gradient(135deg, hsl(213 52% 22%) 0%, hsl(213 52% 28%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(24 79% 54%) 0%, hsl(22 86% 45%) 100%);
-  --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
-
-  /* Shadows */
-  --shadow-sm: 0 2px 8px -2px hsl(213 52% 22% / 0.08);
-  --shadow-md: 0 8px 24px -8px hsl(213 52% 22% / 0.12);
-  --shadow-lg: 0 16px 48px -12px hsl(213 52% 22% / 0.16);
-  --shadow-accent: 0 8px 24px -8px hsl(24 79% 54% / 0.35);
 }
 
 .dark {
@@ -88,8 +73,6 @@
   --color-input: hsl(213 40% 25%);
   --color-ring: hsl(24 79% 54%);
 
-  --color-basic-bright: hsl(213 52% 12%);
-  --color-basic-middle: hsl(212 14% 50%);
   --color-basic-dark: hsl(0 0% 97%);
 }
 
@@ -113,33 +96,8 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
-  }
-
   .bg-gradient-hero {
     background: var(--gradient-hero);
-  }
-
-  .bg-gradient-accent {
-    background: var(--gradient-accent);
-  }
-
-  .bg-gradient-card {
-    background: var(--gradient-card);
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-md);
-  }
-
-  .shadow-card-hover {
-    box-shadow: var(--shadow-lg);
-  }
-
-  .shadow-accent {
-    box-shadow: var(--shadow-accent);
   }
 
   .animate-float {

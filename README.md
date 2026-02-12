@@ -44,16 +44,6 @@ src/
 └── utils/            # utilities
 ```
 
-## 🎨 System kolorów
-
-Projekt wykorzystuje spójny system kolorów zdefiniowany w Tailwind:
-
-- **basicBright** (`#f8f8f8`) - jasne tła
-- **basicMiddle** (`#9ba4af`) - tekst drugorzędny
-- **basicDark** (`#1c3757`) - główny tekst, ciemne sekcje
-- **accentBright** (`#e67a2c`) - przyciski CTA
-- **accentDark** (`#d45c10`) - stany hover
-
 ## 🚀 Uruchomienie lokalne
 
 ```bash
