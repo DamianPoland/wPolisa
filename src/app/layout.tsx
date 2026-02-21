@@ -18,10 +18,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.wpolisa.pl"),
-  title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Komunikacyjne, Domu, Mieszkania, Życia, Zdrowotne",
+  metadataBase: new URL("https://wpolisa.pl"),
+  title: "wPolisa - Multiagencja Ubezpieczeniowa | Ubezpieczenia Domu, Życia, Zdrowotne",
   description:
-    "wPolisa to multiagencja oferująca polisy ubezpieczeniowe. Ubezpieczenie online, ubezpieczenie samochodu, ubezpieczenie domu, ubezpieczenie mieszkania, ubezpieczenie zdrowia, cyberbezpieczenienia, ubezpieczenia firmowe",
+    "Multiagencja ubezpieczeniowa wPolisa. Porównaj polisy na życie, komunikacyjne, zdrowotne oraz dla firm. Znajdź najlepszą ofertę i ubezpiecz się online!",
   keywords: "ubezpieczenia, polisa, PZU, Warta, Allianz, AXA, Generali, Link4",
   manifest: null,
 
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
     type: "website",
-    url: "https://www.wpolisa.pl",
+    url: "https://wpolisa.pl",
     siteName: "wPolisa",
     locale: "pl_PL",
     images: [
       {
-        url: "/icons/shield-dark-64.png",
-        width: 64,
-        height: 64,
+        url: "/icons/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "wPolisa - Multiagencja Ubezpieczeniowa",
       },
     ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "wPolisa - Twoje ubezpieczenia w jednym miejscu",
     description: "Porównujemy ubezpieczenia od najlepszych firm. Sprawdź ofertę wPolisa i oszczędź na składce!",
     creator: "@wpolisa",
-    images: ["/icons/shield-dark-64.png"],
+    images: ["/icons/og-image.png"],
   },
 
   // SEO
@@ -93,10 +93,10 @@ export const metadata: Metadata = {
 
   // GEO & Language
   alternates: {
-    canonical: "https://www.wpolisa.pl",
+    canonical: "https://wpolisa.pl",
     languages: {
-      "pl-PL": "https://www.wpolisa.pl",
-      pl: "https://www.wpolisa.pl",
+      "pl-PL": "https://wpolisa.pl",
+      pl: "https://wpolisa.pl",
     },
   },
 };
@@ -113,8 +113,6 @@ export default function RootLayout({
         <meta name="Content-Language" content="pl-PL" />
         <meta name="geo.region" content="PL-POM" />
         <meta name="geo.placename" content="Gdynia" />
-        <link rel="alternate" hrefLang="pl-PL" href="https://www.wpolisa.pl" />
-        <link rel="alternate" hrefLang="pl" href="https://www.wpolisa.pl" />
 
         {/* Schema.org Structured Data */}
         <SchemaScripts />
