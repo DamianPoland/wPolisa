@@ -41,6 +41,12 @@ const Footer = () => {
               <Link href="/offer" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
                 Oferta
               </Link>
+              <Link
+                href="/promotions"
+                className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              >
+                Promocje
+              </Link>
               <Link href="/contact" className="text-sm text-primary-foreground/70 transition-colors hover:text-accent">
                 Kontakt
               </Link>

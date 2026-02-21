@@ -25,8 +25,9 @@ const promotions: Promotion[] = [
     title: "Bon na Dom",
     benefits: [
       "Odbierz bon o wartości 50 zł na zakupy.",
-      "Bonus za każde 500 zł wydane na ubezpieczenie.",
+      "Bonus za 500 zł wydane na ubezpieczenie.",
       "Szybka realizacja i proste zasady.",
+      "Darmowa konsultacja z ekspertem w prezencie.",
     ],
     icon: Gift,
     color: TILE_GRADIENTS.green,
