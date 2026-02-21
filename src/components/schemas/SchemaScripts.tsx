@@ -1,6 +1,6 @@
 export default function SchemaScripts() {
-  const websiteUrl = "https://www.wpolisa.pl";
-  const logoUrl = `${websiteUrl}/icons/shield-dark-64.png`;
+  const websiteUrl = "https://wpolisa.pl";
+  const logoUrl = `${websiteUrl}/icons/icon-512x512.png`;
 
   const schemaGraph = {
     "@context": "https://schema.org",
@@ -27,6 +27,13 @@ export default function SchemaScripts() {
           width: "64",
           height: "64",
         },
+        knowsAbout: [
+          "Ubezpieczenia komunikacyjne",
+          "Ubezpieczenia domów i mieszkań",
+          "Ubezpieczenia na życie",
+          "Ubezpieczenia zdrowotne",
+          "Ubezpieczenia firmowe",
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: "Świętojańska 118",
