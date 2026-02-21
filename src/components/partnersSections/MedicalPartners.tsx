@@ -6,7 +6,7 @@ import tuZdrowie from "@/assets/images/tu-zdrowie.png";
 
 type MedicalOperatorsType = {
   name: string;
-  logo: StaticImageData;
+  logo: StaticImageData | string;
 };
 
 const medicalOperators: MedicalOperatorsType[] = [
@@ -21,8 +21,8 @@ const MedicalPartners = () => {
     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
       {medicalOperators.map((partner) => (
         <div key={partner.name} className="flex flex-col items-center gap-1 md:gap-2">
-          <div className="w-24 h-20 flex items-center justify-center rounded-lg border border-border bg-card p-3 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
-            <Image src={partner.logo} alt={`${partner.name} logo`} />
+          <div className="relative w-24 h-20 flex items-center justify-center rounded-lg border border-border bg-card p-3 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
+            <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain p-3" />
           </div>
           <div key={partner.name} className="flex items-center justify-center text-sm font-medium text-accent">
             {partner.name}
