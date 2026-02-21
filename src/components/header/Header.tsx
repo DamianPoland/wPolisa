@@ -13,7 +13,7 @@ const navLinks = [
   { name: "O nas", path: "/description" },
   { name: "Baza wiedzy", path: "/knowledge" },
   { name: "Oferta", path: "/offer" },
-  // { name: "Promocje", path: "/promotions" },
+  { name: "Promocje", path: "/promotions" },
   { name: "Kontakt", path: "/contact" },
 ];
 
@@ -23,11 +23,11 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
-      <div className="container flex h-16 gap-4 items-center justify-between md:h-20 m-auto px-4 md:px-2">
+      <div className="container flex h-16 gap-4 items-center justify-between lg:h-20 m-auto px-4 lg:px-2">
         <Logo logoVariant={Icon.DARK} />
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex md:text-center">
+        <nav className="hidden items-center gap-1 lg:flex lg:text-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -44,7 +44,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button variant="accent" asChild>
             <Link href="/contact">Skontaktuj się</Link>
           </Button>
@@ -54,7 +54,7 @@ const Header = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Otwórz menu nawigacji"
           aria-expanded={isMenuOpen}
@@ -69,7 +69,7 @@ const Header = () => {
         <div
           id="mobile-menu"
           role="navigation"
-          className="animate-fade-in border-t border-border/50 bg-background md:hidden"
+          className="animate-fade-in border-t border-border/50 bg-background lg:hidden"
         >
           <nav className="container flex flex-col gap-1 px-4 py-4 w-full m-auto">
             {navLinks.map((link) => (
