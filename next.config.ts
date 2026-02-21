@@ -61,6 +61,34 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Redirect from LinkedIn
+      {
+        source: "/li",
+        destination: "/?origin=li",
+        permanent: true,
+      },
+      // Redirect from Facebook
+      {
+        source: "/fb",
+        destination: "/?origin=fb",
+        permanent: true,
+      },
+      // Redirect from Instagram
+      {
+        source: "/ig",
+        destination: "/?origin=ig",
+        permanent: true,
+      },
+      // Redirect from X (formerly Twitter)
+      {
+        source: "/x",
+        destination: "/?origin=x",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
