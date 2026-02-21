@@ -23,8 +23,7 @@ const TermsPage = () => {
               </li>
               <li>
                 Usługodawca jest agentem ubezpieczeniowym wpisanym do Rejestru Agentów Ubezpieczeniowych prowadzonego
-                przez Komisję Nadzoru Finansowego{/* pod numerem RAU: [TODO_OLA] */}. Wpis można zweryfikować pod
-                adresem:{" "}
+                przez Komisję Nadzoru Finansowego pod numerem RAU: 11264816/A. Wpis można zweryfikować pod adresem:{" "}
                 <a
                   href="https://rpu.knf.gov.pl"
                   target="_blank"
@@ -456,9 +455,9 @@ const TermsPage = () => {
                   <li>
                     <strong>REGON:</strong> 543671892
                   </li>
-                  {/* <li>
-                    <strong>Numer RAU (KNF):</strong> [TODO_OLA]
-                  </li> */}
+                  <li>
+                    <strong>Numer RAU (KNF): 11264816/A</strong>
+                  </li>
                 </ul>
               </div>
               <div>
