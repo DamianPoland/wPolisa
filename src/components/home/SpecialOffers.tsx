@@ -18,22 +18,25 @@ interface SpecialOffer {
 const specialOffersTypes: SpecialOffer[] = [
   {
     id: InsuranceVariantsId.medyczny,
-    promo: "95zł/m-c",
-    description: "Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
+    promo: "86 zł/m-c",
+    description:
+      "PODSTAWOWY 16 specjalistów | Zabiegi ambulatoryjne | Diagnostyka ambulatoryjna (24 badania) | Badania profilaktyczne | Indywidualne ubezpieczenie zdrowotne w cenie grupowego!",
     badgeText: "BESTSELLER",
     badgeVariant: BadgeVariant.two,
   },
   {
-    id: InsuranceVariantsId.nieruchomosc,
-    promo: "150zł/rok",
-    description: "Gwarancja stałej składki tylko do końca miesiąca.",
+    id: InsuranceVariantsId.inne,
+    promo: "198 zł/m-c",
+    description:
+      "ROZSZERZONY 33 specjalistów | Zabiegi ambulatoryjne | Diagnostyka ambulatoryjna (126 badań) | Badania profilaktyczne | Szczepienia ochronne | Gwarancja stałej składki tylko do końca miesiąca.",
     badgeText: "LIMITOWANA OFERTA",
     badgeVariant: BadgeVariant.one,
   },
   {
     id: InsuranceVariantsId.zycie,
-    promo: "299zł/rok",
-    description: "Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
+    promo: "44 zł/m-c",
+    description:
+      "Suma ubezpieczenia 30 000 zł | Poważne zachorowanie 10 000 zł | Operacje chirurgiczne | Trwały uszczerbek na zdrowiu |Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
     badgeText: "SUPER OFERTA",
     badgeVariant: BadgeVariant.three,
   },

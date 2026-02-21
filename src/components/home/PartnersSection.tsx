@@ -21,7 +21,7 @@ const PartnersSection = () => {
         </div>
 
         {/* Medical Partners */}
-        <div className="mt-12">
+        <div className="mt-12 hidden">
           <h3 className="mb-6 text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground">
             Operatorzy Medyczni i Partnerzy Zdrowotni
           </h3>

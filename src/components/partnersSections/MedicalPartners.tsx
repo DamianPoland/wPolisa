@@ -3,6 +3,7 @@ import luxmed from "@/assets/images/luxmed.png";
 import medicover from "@/assets/images/medicover.png";
 import pzuZdrowie from "@/assets/images/pzu-zdrowie.png";
 import tuZdrowie from "@/assets/images/tu-zdrowie.png";
+import enelMed from "@/assets/images/enel-med.jpg";
 
 type MedicalOperatorsType = {
   name: string;
@@ -14,6 +15,7 @@ const medicalOperators: MedicalOperatorsType[] = [
   { name: "Medicover", logo: medicover },
   { name: "PZU Zdrowie", logo: pzuZdrowie },
   { name: "TU Zdrowie", logo: tuZdrowie },
+  { name: "Enel-med", logo: enelMed },
 ];
 
 const MedicalPartners = () => {
@@ -22,7 +24,7 @@ const MedicalPartners = () => {
       {medicalOperators.map((partner) => (
         <div key={partner.name} className="flex flex-col items-center gap-1 md:gap-2">
           <div className="relative w-24 h-20 flex items-center justify-center rounded-lg border border-border bg-card p-3 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
-            <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain p-3" />
+            <Image src={partner.logo} alt={`${partner.name} logo`} fill sizes="96px" className="object-contain p-3" />
           </div>
           <div key={partner.name} className="flex items-center justify-center text-sm font-medium text-accent">
             {partner.name}
