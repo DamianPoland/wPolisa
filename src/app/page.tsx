@@ -1,3 +1,4 @@
+import LifeInsuranceComparison from "@/components/home/LifeInsuranceComparison/LifeInsuranceComparison";
 import CTASection from "@/components/home/CTASection";
 import HeroSection from "@/components/home/HeroSection";
 import InsuranceTiles from "@/components/home/InsuranceTiles";
@@ -10,6 +11,7 @@ export const HomePage = () => {
       <HeroSection />
       <SpecialOffers />
       <InsuranceTiles />
+      <LifeInsuranceComparison />
       <CTASection />
       <PartnersSection />
     </main>
