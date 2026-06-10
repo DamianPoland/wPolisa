@@ -3,12 +3,13 @@
 import { useState, useMemo, useEffect, startTransition } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
-import { Search, Car, Home, Heart, Plane, Building2, HelpCircle } from "lucide-react";
+import { Search, Car, Home, Heart, Plane, Building2, HelpCircle, DoorClosed } from "lucide-react";
 import { faqItems } from "@/utils/constants";
 import { CategoryConfig, FaqItem } from "@/utils/types";
 
 const categoryConfig: Record<string, CategoryConfig> = {
   "Wiedza Ogólna": { label: "Wiedza Ogólna", icon: HelpCircle },
+  "Najem krótkoterminowy": { label: "Najem krótkoterminowy", icon: DoorClosed },
   "Ubezpieczenia Komunikacyjne": { label: "Ubezpieczenia komunikacyjne", icon: Car },
   "Dom i Nieruchomości": { label: "Dom i Nieruchomości", icon: Home },
   "Zdrowie i Życie": { label: "Zdrowie i Życie", icon: Heart },
@@ -18,6 +19,7 @@ const categoryConfig: Record<string, CategoryConfig> = {
 
 const categoryOrder = [
   "Wiedza Ogólna",
+  "Najem krótkoterminowy",
   "Zdrowie i Życie",
   "Ubezpieczenia Komunikacyjne",
   "Dom i Nieruchomości",
@@ -71,6 +73,28 @@ export const KnowledgeContent = () => {
     }
   }, [searchQuery, sortedCategories]);
 
+  // Auto scrollTo and expand categories when hash in url
+  useEffect(() => {
+    if (window.location.hash) {
+      const category = Object.keys(groupedByCategory).find(
+        (cat) => window.location.hash.substring(1) === groupedByCategory[cat][0].id
+      );
+
+      if (category) {
+        const element = document.getElementById(category);
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY; // get element position relative to the document
+          const offsetPosition = elementPosition - 80; // nav height
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+          setOpenCategories((prev) => [...prev, category]);
+        }
+      }
+    }
+  }, []);
+
   return (
     <section className="px-4 md:px-2 py-16 md:py-24 bg-background">
       <div className="container m-auto">
@@ -109,6 +133,7 @@ export const KnowledgeContent = () => {
 
                 return (
                   <AccordionItem
+                    id={cat}
                     key={cat}
                     value={cat}
                     className="rounded-lg border border-border bg-card px-4 last:border"
