@@ -144,84 +144,98 @@ export const socialLinks = [
 export const faqItems: FaqItem[] = [
   // --- UBEZPIECZENIA KOMUNIKACYJNE ---
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Jak znaleźć tanie ubezpieczenie OC i obniżyć składkę?",
     answer:
       "Tanie ubezpieczenie OC można uzyskać przede wszystkim poprzez porównanie ofert wielu towarzystw oraz wypracowanie zniżek za bezszkodową jazdę. Aby obniżyć składkę, warto rozważyć dopisanie do dowodu współwłaściciela z dłuższym stażem. Ceny polis zmieniają się dynamicznie, dlatego jako multiagencja sprawdzamy dostępne opcje w czasie rzeczywistym, by znaleźć dla Ciebie najkorzystniejszą ofertę.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czym różni się AC od OC?",
     answer:
       "OC (odpowiedzialność cywilna) jest obowiązkowe i chroni osoby trzecie przed skutkami szkód spowodowanych przez Ciebie. AC (Autocasco) jest dobrowolne i chroni Twój pojazd przed kradzieżą, zniszczeniem czy skutkami żywiołów. Wyobraź sobie: OC to ochrona dla portfela sąsiada, a AC to ochrona dla Twojego mienia. Idealne rozwiązanie to pakiet OC+AC.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czym jest ubezpieczenie GAP i dla kogo jest przeznaczone?",
     answer:
       "Ubezpieczenie GAP (Guaranteed Asset Protection) pokrywa różnicę między wartością fakturową nowo zakupionego auta a jego wartością rynkową z dnia szkody całkowitej lub kradzieży. Jest to kluczowe rozwiązanie dla osób biorących auto w leasing lub kredyt, ponieważ w razie nieszczęścia GAP pozwala spłacić zobowiązanie i zachować środki na wkład własny na nowy samochód.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Co się dzieje z ubezpieczeniem OC po sprzedaży samochodu?",
     answer:
       "Po sprzedaży samochodu ubezpieczenie OC przechodzi na nowego właściciela wraz z pojazdem, a zbywca ma obowiązek zgłosić ten fakt ubezpieczycielowi w ciągu 14 dni. Sprzedający nie otrzymuje automatycznie zwrotu składki za OC (chyba że nowy nabywca wypowie polisę), natomiast może ubiegać się o zwrot za niewykorzystany okres ubezpieczenia AC i innych polis dobrowolnych.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Co to jest szkoda całkowita w ubezpieczeniu komunikacyjnym?",
     answer:
       "Szkoda całkowita następuje, gdy koszt naprawy pojazdu przekracza określony procent jego wartości rynkowej (zazwyczaj 100% przy OC i 70% przy AC). W takiej sytuacji ubezpieczyciel wypłaca odszkodowanie równe wartości auta sprzed wypadku, pomniejszone o wartość pozostałości (wraku), które właściciel może sprzedać na specjalnej aukcji zorganizowanej przez firmę ubezpieczeniową.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Co obejmuje assistance samochodowe?",
     answer:
       "Assistance samochodowe zapewnia pomoc techniczną w trasie, taką jak holowanie pojazdu, dowóz paliwa, naprawa na miejscu zdarzenia lub wynajem auta zastępczego. Przy wyjazdach zagranicznych warto wybrać wariant z wysokim limitem kilometrów holowania (np. 1000 km lub bez limitu), aby w razie awarii bezpiecznie wrócić do kraju wraz z pasażerami.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czy brak przeglądu technicznego wpływa na wypłatę odszkodowania?",
     answer:
       "Brak ważnego przeglądu technicznego może być podstawą do odmowy wypłaty odszkodowania z polisy AC, jeśli stan techniczny pojazdu miał wpływ na powstanie szkody. W przypadku obowiązkowego OC, ubezpieczyciel musi wypłacić odszkodowanie poszkodowanemu, jednak w skrajnych przypadkach może próbować dochodzić regresu od właściciela pojazdu.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Jak uzyskać auto zastępcze z OC sprawcy?",
     answer:
       "Auto zastępcze z OC sprawcy przysługuje każdemu poszkodowanemu na czas naprawy pojazdu lub do dnia wypłaty odszkodowania w przypadku szkody całkowitej. Koszt wynajmu pokrywa ubezpieczyciel sprawcy, pod warunkiem, że stawka za dobę jest rynkowa. Jako Twoja multiagencja, pomagamy w formalnościach, aby proces najmu przebiegł bezgotówkowo i bezstresowo.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Co to jest Zielona Karta?",
     answer:
       "Zielona Karta to międzynarodowy dowód ubezpieczenia OC, niezbędny w krajach takich jak Albania, Turcja czy Ukraina. Potwierdza ona ważną ochronę ubezpieczeniową poza Unią Europejską. W renomowanych towarzystwach ubezpieczeniowych dokument ten jest zazwyczaj wydawany bezpłatnie do polisy OC. W krajach UE wystarczy standardowa polisa OC, jednak przed wyjazdem na wschód warto zadbać o ten dokument odpowiednio wcześniej.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Co to jest system Direct Help (BLS) i jak z niego skorzystać?",
     answer:
       "Bezpośrednia Likwidacja Szkód (BLS) pozwala na zgłoszenie szkody z OC u swojego ubezpieczyciela, zamiast u firmy sprawcy. Twój ubezpieczyciel wypłaca odszkodowanie i zajmuje się naprawą auta, a następnie sam rozlicza się z firmą sprawcy. To rozwiązanie znacznie przyspiesza proces i oszczędza stres, ponieważ współpracujesz z firmą, którą sam wybrałeś.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czy ubezpieczenie OC obejmuje pasażerów mojego auta?",
     answer:
       "Tak, ubezpieczenie OC posiadacza pojazdu mechanicznego chroni wszystkich pasażerów znajdujących się w aucie w momencie zdarzenia, w tym członków Twojej rodziny. Odszkodowanie z OC sprawcy pokrywa koszty ich leczenia, rehabilitacji oraz ewentualne zadośćuczynienie. Pamiętaj jednak, że OC nie chroni kierowcy-sprawcy – do tego służy dobrowolne ubezpieczenie NNW.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Jak działa ubezpieczenie szyb samochodowych?",
     answer:
       "Ubezpieczenie szyb to dodatkowa polisa, która pokrywa koszty naprawy lub wymiany uszkodzonej szyby bez utraty zniżek na główne ubezpieczenie AC. Jest to szczególnie przydatne, gdy kamień spod kół innego auta uszkodzi przednią szybę. Wymiana odbywa się zazwyczaj bezgotówkowo w warsztatach partnerskich ubezpieczyciela.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czy AC działa także za granicą?",
     answer:
       "Standardowe ubezpieczenie Autocasco (AC) zazwyczaj oferuje ochronę na terenie całej Europy, co zapewnia wsparcie finansowe w razie kradzieży, kolizji lub zdarzeń losowych poza granicami kraju. Warto jednak mieć na uwadze, że zakres terytorialny zależy od wybranego wariantu polisy. Większość ofert zawiera wyłączenia ochrony dla wybranych państw wschodniej Europy lub Afryki Północnej. Precyzyjne dopasowanie zakresu ochrony do planowanej trasy już w momencie zawierania umowy pozwala na pełny spokój i bezpieczeństwo podczas zagranicznych podróży.",
   },
   {
+    id: "ubezpieczenia-komunikacyjne",
     category: "Ubezpieczenia Komunikacyjne",
     question: "Czy oferujecie ubezpieczenia aut leasingowanych?",
     answer:
@@ -230,72 +244,84 @@ export const faqItems: FaqItem[] = [
 
   // --- DOM I NIERUCHOMOŚCI ---
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Co obejmuje ubezpieczenie mieszkania lub domu i jak wybrać najlepsze?",
     answer:
       "Kompleksowe ubezpieczenie mieszkania lub domu chroni nieruchomość przed pożarem, zalaniem, kradzieżą oraz skutkami wandalizmu. Analizując ranking ubezpieczeń, warto zwrócić uwagę, co dokładnie obejmuje polisa (ile i jakie zdarzenia losowe są w niej uwzględnione) oraz czy zawiera dodatkowe elementy, takie jak pomoc assistance w domu czy OC w życiu prywatnym. Nasza analiza obejmuje zestawienie ofert najpopularniejszych ubezpieczycieli w Polsce.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Jakie ubezpieczenie chroni przed skutkami zalania sąsiada?",
     answer:
       "Przed skutkami finansowymi zalania mieszkania sąsiada chroni OC w życiu prywatnym zwykle dodawane do ubezpieczenia nieruchomości. Jeśli awaria nastąpiła z Twojej winy (np. pęknięty wężyk w pralce), odszkodowanie dla sąsiada zostanie wypłacone z Twojej polisy, dzięki czemu unikniesz pokrywania kosztów remontu z własnych oszczędności.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy warto ubezpieczyć dom w budowie?",
     answer:
       "Ubezpieczenie domu w budowie chroni inwestycję przed ogniem, huraganem, zalaniem oraz kradzieżą materiałów budowlanych i elementów stałych. Polisa ta jest często wymagana przez bank przy kredycie hipotecznym, ale warto ją mieć niezależnie od tego, by chronić zgromadzony kapitał przed zdarzeniami losowymi.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy ubezpieczenie mieszkania lub domu chroni też rower lub hulajnogę?",
     answer:
       "Standardowe ubezpieczenie mieszkania lub domu chroni rower i hulajnogę, o ile znajdują się one wewnątrz lokalu lub w zamkniętej komórce lokatorskiej. Aby ochrona działała również w przypadku kradzieży 'z ulicy', konieczne jest dokupienie rozszerzenia o kradzież poza miejscem ubezpieczenia. Warto zadbać o dokumentację i certyfikowane zabezpieczenia.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Jak działają ubezpieczenia 'all risks' dla nieruchomości?",
     answer:
       "Ubezpieczenie nieruchomości w wariancie 'all risks' (od wszystkich ryzyk) chroni przed wszelkimi zdarzeniami, które nie zostały wyraźnie wyłączone w umowie. Obejmuje również nietypowe sytuacje, jak np. graffiti na elewacji czy przypadkowe stłuczenie drogiej płyty indukcyjnej.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy można ubezpieczyć nieruchomość pod wynajem krótkoterminowy?",
     answer:
       "Tak, ubezpieczenie nieruchomości pod wynajem (np. przez Airbnb czy Booking) wymaga specjalnego rozszerzenia o najem krótkoterminowy. Chroni ono nie tylko mury i wyposażenie przed zniszczeniem przez gości, ale może również pokrywać utracone dochody z najmu w wyniku zdarzenia losowego (np. zalania).",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy ubezpieczenie chroni mienie na balkonie lub tarasie?",
     answer:
       "Ochrona mienia na balkonie zależy od OWU – często meble ogrodowe czy rośliny są chronione przed zdarzeniami losowymi, ale nie przed kradzieżą ze względu na łatwy dostęp. Jeśli przechowujesz tam drogi sprzęt, upewnij się, że Twoja polisa zawiera odpowiednie rozszerzenie i wymagania dotyczące zabezpieczeń.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy ubezpieczenie nieruchomości obejmuje piwnicę i strych",
     answer:
       "Standardowe ubezpieczenie mieszkania i domu obejmuje pomieszczenia przynależne, takie jak piwnica, strych czy w przypadku mieszkań także komórki lokatorskiej, o ile znajduje się ona w tym samym budynku. Ważne jest jednak, aby były one odpowiednio zabezpieczone (np. solidne drzwi i kłódka). Warto sprawdzić limity odpowiedzialności za mienie przechowywane w piwnicy, gdyż mogą być one niższe niż dla wnętrza nieruchomości.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Co to jest ubezpieczenie murów, a co ubezpieczenie wyposażenia?",
     answer:
       "Ubezpieczenie murów chroni konstrukcję budynku (ściany, dach, fundamenty), natomiast ubezpieczenie wyposażenia (mienia ruchomego) obejmuje meble, sprzęt RTV/AGD, odzież i przedmioty osobiste. Przy kredycie hipotecznym bank wymaga zazwyczaj tylko ubezpieczenia murów, ale dla pełnego bezpieczeństwa warto ubezpieczyć również to, co znajduje się wewnątrz domu.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy polisa mieszkaniowa chroni przed przepięciem elektrycznym?",
     answer:
       "Ubezpieczenie od przepięć chroni sprzęt elektroniczny przed uszkodzeniem w wyniku nagłego wzrostu napięcia w sieci, np. po uderzeniu pioruna lub awarii instalacji. Wiele nowoczesnych polis oferuje to w standardzie lub jako tanie rozszerzenie. Jest to kluczowa ochrona w dobie drogich telewizorów, komputerów i systemów smart home.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Jak ubezpieczyć wyposażenie ogrodu, np. meble lub krasnale ogrodowe?",
     answer:
       "Elementy wyposażenia ogrodu, takie jak meble, altany, rzeźby czy dekoracje, można objąć ochroną w ramach ubezpieczenia domu lub mieszkania z rozszerzeniem o tzw. małą architekturę. Polisa chroni Twoje mienie przed skutkami wandalizmu, kradzieży oraz zdarzeń losowych, np. gradobicia czy silnego wiatru. Dobieramy zakres ubezpieczenia tak, aby Twoja strefa relaksu była bezpieczna przez cały rok, bez względu na kaprysy pogody.",
   },
   {
+    id: "dom-i-nieruchomosci",
     category: "Dom i Nieruchomości",
     question: "Czy mogę ubezpieczyć mieszkanie, które wynajmuję?",
     answer:
@@ -304,42 +330,49 @@ export const faqItems: FaqItem[] = [
 
   // --- ZDROWIE I ŻYCIE ---
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Jak działa ubezpieczenie na życie i czy warto je mieć?",
     answer:
       "Ubezpieczenie na życie to polisa gwarantująca wypłatę świadczenia finansowego w przypadku śmierci ubezpieczonego lub wystąpienia poważnego zachorowania. Stanowi ono kluczową poduszkę bezpieczeństwa dla rodziny, pozwalając na spłatę kredytów czy utrzymanie standardu życia bliskich.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Czy prywatne ubezpieczenie zdrowotne jest lepsze niż NFZ?",
     answer:
       "Prywatne ubezpieczenie zdrowotne zapewnia szybki dostęp do lekarzy specjalistów i badań diagnostycznych bez kolejek typowych dla publicznego systemu (NFZ). Główne korzyści to nowoczesna infrastruktura, krótki czas oczekiwania na wizytę oraz szeroki zakres profilaktyki. Należy je jednak traktować jako wartościowe uzupełnienie świadczeń NFZ. Połączenie obu systemów daje pełne poczucie bezpieczeństwa: prywatny pakiet dba o Twoją wygodę i szybką diagnostykę, a publiczny system pozostaje fundamentem w przypadku skomplikowanych operacji czy długotrwałej hospitalizacji.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Co to jest karencja w ubezpieczeniu zdrowotnym lub na życie?",
     answer:
       "Karencja to określony w umowie czas po zawarciu polisy, w którym ochrona jeszcze nie obowiązuje mimo opłacania składki. Ubezpieczyciele stosują ją, aby uniknąć sytuacji, w których klient kupuje polisę wiedząc o planowanej operacji lub ciąży. Im szybciej zawrzesz umowę, tym szybciej miną okresy karencji.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Czy ubezpieczenie NNW szkolne jest obowiązkowe?",
     answer:
       "Ubezpieczenie NNW szkolne nie jest obowiązkowe, a rodzic ma prawo wybrać dowolną polisę zamiast tej oferowanej przez szkołę. Często indywidualne ubezpieczenie dziecka oferuje znacznie wyższe sumy ubezpieczenia i szerszy zakres ochrony za podobną cenę. Warto porównać warunki przed wyborem.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Czym różni się ubezpieczenie indywidualne od grupowego?",
     answer:
       "Ubezpieczenie grupowe (zazwyczaj w pracy) ma niższą składkę i uproszczone formalności, ale oferuje uśrednione sumy ubezpieczenia. Ubezpieczenie indywidualne pozwala na precyzyjne dopasowanie zakresu i bardzo wysokich sum wypłaty do Twoich osobistych potrzeb. Indywidualna polisa jest zazwyczaj droższa, ale gwarantuje dopasowanie sum i zakresu ubezpieczenia pod Twoje konkretne potrzeby.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Czy ubezpieczenie na życie wypłaci pieniądze po zdiagnozowaniu raka?",
     answer:
       "Wypłata środków po diagnozie nowotworu złośliwego jest możliwa, jeśli polisa na życie została rozszerzona o klauzulę poważnego zachorowania. W takim przypadku ubezpieczyciel wypłaca określoną sumę pieniędzy tuż po diagnozie, co pozwala na sfinansowanie prywatnego leczenia, nierefundowanych leków lub zagranicznych konsultacji medycznych.",
   },
   {
+    id: "zdrowie-i-zycie",
     category: "Zdrowie i Życie",
     question: "Jakie ubezpieczenie chroni dziecko podczas uprawiania sportu?",
     answer:
@@ -348,36 +381,42 @@ export const faqItems: FaqItem[] = [
 
   // --- PODRÓŻE ---
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Czy ubezpieczenie turystyczne pokrywa koszty ratownictwa w górach?",
     answer:
       "Ubezpieczenie turystyczne z odpowiednim rozszerzeniem pokrywa koszty akcji ratowniczych i poszukiwawczych za granicą, które są płatne. W krajach takich jak Słowacja czy Austria jeden przelot helikoptera może kosztować kilka tysięcy euro. Przed wyjazdem na narty zawsze sprawdzaj sumę ubezpieczenia kosztów ratownictwa.",
   },
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Czy ubezpieczenie podróżne chroni w przypadku COVID-19?",
     answer:
       "Współczesne ubezpieczenia turystyczne standardowo pokrywają koszty leczenia związane z COVID-19 za granicą, w tym hospitalizację. Przed zakupem sprawdź, czy polisa obejmuje również koszty rezygnacji z wyjazdu w przypadku pozytywnego testu przed podróżą.",
   },
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Co obejmuje ubezpieczenie kosztów rezygnacji z podróży?",
     answer:
       "Ubezpieczenie to gwarantuje zwrot pieniędzy za bilety i noclegi, jeśli nie możesz wyjechać z przyczyn losowych, takich jak nagła choroba lub wypadek. Umowę taką należy zawrzeć zazwyczaj w ciągu kilku dni od zakupu wycieczki, aby ochrona była aktywna.",
   },
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Czy ubezpieczenie turystyczne działa po spożyciu alkoholu?",
     answer:
       "Wiele ubezpieczeń zawiera tzw. 'klauzulę alkoholową', która pokrywa koszty leczenia nawet po spożyciu alkoholu. Należy jednak pamiętać, że nie dotyczy ona prowadzenia pojazdów pod wpływem oraz szkód wyrządzonych osobom trzecim po spożyciu.",
   },
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Czy ubezpieczenie turystyczne działa podczas pracy za granicą?",
     answer:
       "Standardowe ubezpieczenie turystyczne chroni podczas wypoczynku. Jeśli planujesz pracować za granicą (nawet dorywczo), musisz rozszerzyć polisę o 'wykonywanie pracy'. Dotyczy to zwłaszcza pracy fizycznej, gdzie ryzyko wypadku jest wyższe. Brak takiego rozszerzenia może skutkować odmową pokrycia kosztów leczenia przez ubezpieczyciela.",
   },
   {
+    id: "podroze-i-turystyka",
     category: "Podróże i Turystyka",
     question: "Jak działa ubezpieczenie bagażu podróżnego?",
     answer:
@@ -386,24 +425,28 @@ export const faqItems: FaqItem[] = [
 
   // --- FIRMA I SPECJALISTYCZNE ---
   {
+    id: "firma-i-specjalistyczne",
     category: "Firma i Specjalistyczne",
     question: "Jakie ubezpieczenie dla freelancera i programisty (OC zawodowe)?",
     answer:
       "OC zawodowe dla freelancera chroni przed roszczeniami klientów wynikającymi z błędów w sztuce, niedotrzymania terminów lub utraty danych. W świecie IT, gdzie błąd w kodzie może przynieść ogromne straty kontrahentowi, profesjonalne OC jest standardem wymaganym w kontraktach B2B.",
   },
   {
+    id: "firma-i-specjalistyczne",
     category: "Firma i Specjalistyczne",
     question: "Czym jest ubezpieczenie ochrony prawnej?",
     answer:
       "Ubezpieczenie ochrony prawnej pokrywa koszty adwokata, opłat sądowych i opinii biegłych w sporach prawnych. Pozwala ono na dochodzenie swoich praw bez ryzyka finansowego, na przykład w sporze z nieuczciwym pracodawcą czy sprzedawcą wadliwego towaru.",
   },
   {
+    id: "firma-i-specjalistyczne",
     category: "Firma i Specjalistyczne",
     question: "Jak ubezpieczyć flotę samochodów w firmie?",
     answer:
       "Ubezpieczenie flotowe to zbiorcza polisa komunikacyjna dla firm posiadających co najmniej kilka pojazdów. Pozwala na wynegocjowanie znacznie niższych stawek niż przy ubezpieczeniach indywidualnych oraz upraszcza administrację (jedna data płatności, wspólne warunki dla wszystkich aut). Dodatkowo, historia szkodowości liczona jest na cały rok z góry.",
   },
   {
+    id: "firma-i-specjalistyczne",
     category: "Firma i Specjalistyczne",
     question: "Jak ubezpieczyć moją firmę?",
     answer:
@@ -412,93 +455,152 @@ export const faqItems: FaqItem[] = [
 
   // --- WIEDZA OGÓLNA I PROCEDURY ---
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Dlaczego warto wybrać multiagencję ubezpieczeniową?",
     answer:
       "Wybór multiagencji pozwala na porównanie ofert ponad 20 towarzystw ubezpieczeniowych w jednym miejscu, co gwarantuje oszczędność czasu i pieniędzy. Zamiast samodzielnie sprawdzać każdy ranking, otrzymujesz gotowe zestawienie najtańszych polis dopasowanych do Twojego budżetu.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Co to jest regres ubezpieczeniowy i kiedy występuje?",
     answer:
       "Regres ubezpieczeniowy to roszczenie ubezpieczyciela do sprawcy o zwrot wypłaconego odszkodowania. Najczęściej występuje, gdy sprawca prowadził pod wpływem alkoholu, nie posiadał uprawnień lub zbiegł z miejsca zdarzenia. Polisa chroni poszkodowanego, ale sprawca pokrywa koszty z własnej kieszeni.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jak działa ubezpieczenie OC w życiu prywatnym?",
     answer:
       "OC w życiu prywatnym chroni Cię przed skutkami szkód wyrządzonych osobom trzecim przez Ciebie, Twoje dzieci lub zwierzęta. Przykłady to zalanie sąsiada, potrącenie pieszego podczas jazdy rowerem czy zniszczenie towaru w sklepie przez dziecko. To jedna z najtańszych i najbardziej przydatnych polis.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jak szybko otrzymam ofertę ubezpieczenia?",
     answer:
       "Większość ofert przygotowujemy w czasie rzeczywistym podczas rozmowy, a porównania mailowe wysyłamy w ciągu 24-48 godzin. W sytuacjach pilnych działamy w trybie ekspresowym – wystarczy skontaktować się z naszym agentem telefonicznie.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Co to jest suma ubezpieczenia i jak ją określić?",
     answer:
       "Suma ubezpieczenia to maksymalna kwota, jaką otrzymasz w razie straty całkowitej. Przy domu powinna ona odpowiadać kosztowi budowy od nowa, a przy życiu – potrzebom finansowym rodziny. Zaniżenie sumy może skutkować zbyt niskim odszkodowaniem.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Kiedy ubezpieczyciel może odmówić wypłaty odszkodowania?",
     answer:
       "Odmowa może nastąpić w przypadku rażącego niedbalstwa (np. kluczyki w stacyjce podczas kradzieży auta), działania umyślnego lub bycia pod wpływem środków odurzających. Dokładna lista wyłączeń znajduje się zawsze w OWU – pomagamy je analizować, abyś znał zakres swojej ochrony.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jak ubezpieczyć sprzęt elektroniczny poza domem?",
     answer:
       "Można to zrobić poprzez rozszerzenie polisy mieszkaniowej o mienie ruchome poza miejscem ubezpieczenia. Chroni ona laptopa czy aparat przed kradzieżą z auta lub rabunkiem na ulicy. Jest to rozwiązanie szczególnie polecane dla osób pracujących mobilnie.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jakie ubezpieczenie dla sportowców amatorów?",
     answer:
       "Dla aktywnych amatorów najlepszym rozwiązaniem jest polisa NNW z rozszerzeniem o sport wysokiego ryzyka oraz OC. Warto sprawdzić, czy polisa pokrywa koszty rehabilitacji i zakupu sprzętu ortopedycznego po kontuzji, co pozwala na szybszy powrót do treningów.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Czy mogę odstąpić od umowy ubezpieczenia zawartej przez telefon?",
     answer:
       "Tak, przy umowach zawieranych na odległość (telefon, internet), konsument ma prawo do odstąpienia od umowy w ciągu 30 dni od jej zawarcia bez podania przyczyny. Wystarczy wysłać pisemne oświadczenie do ubezpieczyciela. Prawo to chroni Cię przed pochopnymi decyzjami podjętymi pod wpływem rozmowy sprzedażowej.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Co zrobić, gdy agent ubezpieczeniowy popełnił błąd?",
     answer:
       "Jeśli błąd agenta (np. błędne dane w polisie) doprowadził do szkody lub braku wypłaty odszkodowania, możesz żądać naprawienia szkody z polisy OC zawodowego agenta. Każdy multiagent ubezpieczeniowy w Polsce musi posiadać obowiązkowe ubezpieczenie OC, które chroni klientów przed skutkami jego pomyłek lub niedopatrzeń.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jak sprawdzić historię swoich szkód ubezpieczeniowych?",
     answer:
       "Historię swoich szkód komunikacyjnych oraz okresy ubezpieczenia OC i AC możesz bezpłatnie sprawdzić w Ubezpieczeniowym Funduszu Gwarancyjnym (UFG). Wystarczy założyć konto na portalu ufg.pl, aby wygenerować raport, który jest podstawą do naliczania zniżek przez firmy ubezpieczeniowe.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Czy odszkodowanie z ubezpieczenia jest opodatkowane?",
     answer:
       "Większość odszkodowań wypłacanych osobom fizycznym (np. za stłuczkę, zalanie mieszkania czy uszczerbek na zdrowiu) jest zwolniona z podatku dochodowego (PIT). Podatek może pojawić się przy ubezpieczeniach z elementem inwestycyjnym (tzw. podatek Belki), o czym zawsze informujemy przy zawieraniu umowy.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Co to jest ubezpieczenie Assistance Domowy?",
     answer:
       "Home Assistance to usługa dodawana do ubezpieczenia mieszkania lub domu, która zapewnia natychmiastową pomoc fachowców w nagłych awariach. Obejmuje m.in. wizytę hydraulika, ślusarza, elektryka czy naprawę sprzętu RTV/AGD po gwarancji. Koszt dojazdu i robocizny pokrywa ubezpieczyciel, co oszczędza mnóstwo czasu i stresu w sytuacjach kryzysowych.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Jakie dokumenty są potrzebne do wyceny ubezpieczenia?",
     answer:
       "Do przygotowania oferty zazwyczaj potrzebujemy: dowodu rejestracyjnego pojazdu (przy OC/AC), numeru PESEL właściciela oraz informacji o przedmiocie ubezpieczenia (np. metraż domu, suma ubezpieczenia na życie). Dzięki nowoczesnym systemom, większość Twoich zniżek pobieramy automatycznie z baz centralnych, co maksymalnie skraca proces wyceny.",
   },
   {
+    id: "wiedza-ogolna",
     category: "Wiedza Ogólna",
     question: "Czy polisa ubezpieczeniowa odnawia się automatycznie?",
     answer:
       "Automatycznie odnawia się OC posiadaczy pojazdów mechanicznych oraz OC rolne. Zapisy w OWU o automatycznym przedłużeniu na kolejne 12 miesięcy mogą mieć także inne rodzaje ubezpieczeń (np. grupowe ubezpieczenia na życie). Inne polisy, takie jak AC, ubezpieczenie nieruchomości czy podróżne, wygasają z końcem okresu ochrony. Zawsze przypominamy naszym klientom o kończących się polisach, aby zachować ciągłość ochrony bez ryzyka kary z UFG.",
+  },
+  // --- NAJEM KRÓTKOTERMINOWY ---
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question:
+      "Dlaczego potrzebuję specjalnego ubezpieczenia do najmu krótkoterminowego? Czy zwykła polisa nie wystarczy?",
+    answer:
+      "Standardowa polisa mieszkaniowa jest przeznaczona do celów prywatnych i zazwyczaj w Ogólnych Warunkach Ubezpieczenia (OWU) wyłącza szkody powstałe w trakcie komercyjnego wynajmu nieruchomości. Oznacza to, że jeśli gość zniszczy wyposażenie lub spowoduje pożar, ubezpieczyciel może odmówić wypłaty odszkodowania ze zwykłej polisy. Specjalne rozszerzenie pod najem krótkoterminowy oficjalnie obejmuje ryzyko związane z przebywaniem w lokalu zmieniających się, obcych osób.",
+  },
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question: "Czy ubezpieczenie chroni przed dewastacją i kradzieżą dokonaną przez gości?",
+    answer:
+      "Tak, odpowiednio dobrana polisa z klauzulą najmu krótkoterminowego (np. przez Booking, Airbnb) chroni wyposażenie apartamentu (meble, sprzęt RTV/AGD) przed aktami wandalizmu, dewastacją oraz kradzieżą ze strony najemców. Należy jednak pamiętać, by dokładnie sprawdzić w umowie limity odpowiedzialności za kradzież zwykłą (bez śladów włamania), która jest typowa przy wynajmie.",
+  },
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question: "Co w sytuacji, gdy moi goście zaleją mieszkanie sąsiada z dołu?",
+    answer:
+      "To jedno z najczęstszych ryzyk przy wynajmie. Odpowiednia polisa dla najmu krótkoterminowego powinna zawierać ubezpieczenie Odpowiedzialności Cywilnej (OC) z uwzględnieniem szkód wyrządzonych przez najemców. Dzięki temu, jeśli gość zapomni zakręcić kran w wannie i zaleje sąsiada, koszty remontu pokryje ubezpieczyciel, chroniąc Twoje finanse oraz relacje we wspólnocie mieszkaniowej.",
+  },
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question: "Czy ubezpieczenie zrekompensuje mi straty, jeśli apartament będzie wyłączony z użytku po szkodzie?",
+    answer:
+      "Wiele kompleksowych polis dedykowanych pod najem krótkoterminowy oferuje cenną klauzulę tzw. 'utraty czynszu' lub 'utraty dochodu'. Jeśli w Twoim apartamencie wybuchnie pożar lub dojdzie do poważnego zalania, co uniemożliwi przyjmowanie gości przez kilka tygodni czy miesięcy, ubezpieczyciel wypłaci Ci rekompensatę za utracone w tym czasie zyski z rezerwacji.",
+  },
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question: "Czy ochrona z platform takich jak Airbnb (AirCover) nie jest wystarczająca?",
+    answer:
+      "Ochrona oferowana przez platformy rezerwacyjne (np. AirCover) to świetne wsparcie, ale ma swoje ograniczenia i nie jest pełnoprawnym ubezpieczeniem majątkowym regulowanym polskim prawem. Często proces likwidacji szkody jest skomplikowany, a platforma wymaga najpierw samodzielnego ubiegania się o zwrot od gościa. Własna, polska polisa daje gwarancję szybkiej likwidacji szkody, jasnych procedur i chroni Cię niezależnie od tego, z jakiego źródła przyszedł klient (Booking, Airbnb czy rezerwacja bezpośrednia).",
+  },
+  {
+    id: "najem-krotkoterminowy",
+    category: "Najem krótkoterminowy",
+    question: "Ile kosztuje ubezpieczenie nieruchomości pod najem krótkoterminowy? (Przykładowe wyliczenie)",
+    answer:
+      "Koszt polisy zależy głównie od wartości mieszkania i wybranego zakresu. Samo rozszerzenie o najem krótkoterminowy podnosi bazową składkę zazwyczaj o 30-50%. Przykładowo: dla mieszkania w dużym mieście o wartości 600 000 zł, z wyposażeniem za 50 000 zł oraz wysokim OC (w tym szkody gości) na sumę 100 000 zł, standardowa polisa kosztowałaby ok. 350-450 zł rocznie. Po dodaniu pełnej ochrony najmu krótkoterminowego (wandalizm gości, OC najmu), ostateczny koszt wyniesie ok. 550-750 zł rocznie. W przeliczeniu to zaledwie ok. 1,50 - 2 zł dziennie za pełen spokój ducha. Jako multiagencja porównujemy oferty w ponad 20 towarzystwach, aby znaleźć dla Ciebie najniższą składkę przy zachowaniu maksymalnej ochrony.",
   },
 ];

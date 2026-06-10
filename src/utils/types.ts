@@ -20,6 +20,7 @@ export type MenuItem = {
 };
 
 export type FaqItem = {
+  id: string;
   question: string;
   answer: string;
   category: string;
