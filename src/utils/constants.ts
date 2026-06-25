@@ -566,14 +566,14 @@ export const faqItems: FaqItem[] = [
     question:
       "Dlaczego potrzebuję specjalnego ubezpieczenia do najmu krótkoterminowego? Czy zwykła polisa nie wystarczy?",
     answer:
-      "Standardowa polisa mieszkaniowa jest przeznaczona do celów prywatnych i zazwyczaj w Ogólnych Warunkach Ubezpieczenia (OWU) wyłącza szkody powstałe w trakcie komercyjnego wynajmu nieruchomości. Oznacza to, że jeśli gość zniszczy wyposażenie lub spowoduje pożar, ubezpieczyciel może odmówić wypłaty odszkodowania ze zwykłej polisy. Specjalne rozszerzenie pod najem krótkoterminowy oficjalnie obejmuje ryzyko związane z przebywaniem w lokalu zmieniających się, obcych osób.",
+      "Standardowa polisa mieszkaniowa jest przeznaczona do celów prywatnych. Oznacza to, że jeśli gość, któremu komercyjnie wynajmuję mieszkanie zniszczy wyposażenie lub spowoduje pożar, ubezpieczyciel może odmówić wypłaty odszkodowania ze standardowej polisy. Specjalne zapisy na polisie pod najem krótkoterminowy oficjalnie obejmują ryzyko związane z przebywaniem w lokalu zmieniających się, obcych osób.",
   },
   {
     id: "najem-krotkoterminowy",
     category: "Najem krótkoterminowy",
     question: "Czy ubezpieczenie chroni przed dewastacją i kradzieżą dokonaną przez gości?",
     answer:
-      "Tak, odpowiednio dobrana polisa z klauzulą najmu krótkoterminowego (np. przez Booking, Airbnb) chroni wyposażenie apartamentu (meble, sprzęt RTV/AGD) przed aktami wandalizmu, dewastacją oraz kradzieżą ze strony najemców. Należy jednak pamiętać, by dokładnie sprawdzić w umowie limity odpowiedzialności za kradzież zwykłą (bez śladów włamania), która jest typowa przy wynajmie.",
+      "Tak, odpowiednio dobrana polisa ze stosownymi zapisami chroni wyposażenie apartamentu (np. meble, sprzęt RTV/AGD) przed aktami wandalizmu, dewastacją oraz kradzieżą ze strony najemców. Należy jednak pamiętać, by dokładnie sprawdzić w umowie limity odpowiedzialności za kradzież zwykłą (bez śladów włamania), która jest typowa przy wynajmie.",
   },
   {
     id: "najem-krotkoterminowy",
@@ -592,15 +592,8 @@ export const faqItems: FaqItem[] = [
   {
     id: "najem-krotkoterminowy",
     category: "Najem krótkoterminowy",
-    question: "Czy ochrona z platform takich jak Airbnb (AirCover) nie jest wystarczająca?",
-    answer:
-      "Ochrona oferowana przez platformy rezerwacyjne (np. AirCover) to świetne wsparcie, ale ma swoje ograniczenia i nie jest pełnoprawnym ubezpieczeniem majątkowym regulowanym polskim prawem. Często proces likwidacji szkody jest skomplikowany, a platforma wymaga najpierw samodzielnego ubiegania się o zwrot od gościa. Własna, polska polisa daje gwarancję szybkiej likwidacji szkody, jasnych procedur i chroni Cię niezależnie od tego, z jakiego źródła przyszedł klient (Booking, Airbnb czy rezerwacja bezpośrednia).",
-  },
-  {
-    id: "najem-krotkoterminowy",
-    category: "Najem krótkoterminowy",
     question: "Ile kosztuje ubezpieczenie nieruchomości pod najem krótkoterminowy? (Przykładowe wyliczenie)",
     answer:
-      "Koszt polisy zależy głównie od wartości mieszkania i wybranego zakresu. Samo rozszerzenie o najem krótkoterminowy podnosi bazową składkę zazwyczaj o 30-50%. Przykładowo: dla mieszkania w dużym mieście o wartości 600 000 zł, z wyposażeniem za 50 000 zł oraz wysokim OC (w tym szkody gości) na sumę 100 000 zł, standardowa polisa kosztowałaby ok. 350-450 zł rocznie. Po dodaniu pełnej ochrony najmu krótkoterminowego (wandalizm gości, OC najmu), ostateczny koszt wyniesie ok. 550-750 zł rocznie. W przeliczeniu to zaledwie ok. 1,50 - 2 zł dziennie za pełen spokój ducha. Jako multiagencja porównujemy oferty w ponad 20 towarzystwach, aby znaleźć dla Ciebie najniższą składkę przy zachowaniu maksymalnej ochrony.",
+      "Koszt polisy zależy głównie od wartości mieszkania i wybranego zakresu. Przykładowo: dla mieszkania w dużym mieście (Wrocław) o wartości 600 000 zł, z wyposażeniem za 50 000 zł oraz OC w życiu prywatnym (w tym szkody gości) na sumę gwarancyjną 200 000 zł, standardowa polisa kosztowałaby ok. 500-550 zł rocznie. Po dodaniu pełnej ochrony najmu krótkoterminowego (wandalizm gości, OC najmu), ostateczny koszt wyniesie ok. 800-850 zł rocznie. W przeliczeniu to zaledwie ok. 2 – 2,3 zł dziennie za pełen spokój ducha. Jako multiagencja porównujemy oferty w ponad 20 towarzystwach, aby znaleźć dla Ciebie najniższą składkę przy zachowaniu maksymalnej ochrony.",
   },
 ];
