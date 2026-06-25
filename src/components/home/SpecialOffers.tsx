@@ -51,7 +51,7 @@ const specialOffersTypes: SpecialOffer[] = [
   {
     id: InsuranceVariantsId.zycie,
     promo: "93 zł/m-c",
-    description: "Zabezpiecz przyszłość rodziny już od 1,50 zł dziennie.",
+    description: "Zabezpiecz przyszłość rodziny już od 3 zł dziennie.",
     badgeText: "HIT CENOWY",
     badgeVariant: BadgeVariant.three,
     benefits: [
