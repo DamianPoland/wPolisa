@@ -134,14 +134,14 @@ const SchoolComparison = () => {
             </DialogHeader>
 
             <div className="px-6 pb-6">
-              <div className="rounded-xl border border-border/60 bg-muted/30 p-5 flex flex-wrap items-center justify-between gap-4">
-                <div>
+              <div className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+                <div className="min-w-0">
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Suma ubezpieczenia</p>
-                  <p className="text-2xl font-extrabold text-foreground">{tab.label}</p>
+                  <p className="text-lg sm:text-2xl font-extrabold text-foreground break-words">{tab.label}</p>
                 </div>
-                <div className="text-right">
+                <div className="min-w-0 sm:text-right">
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Roczna składka za osobę</p>
-                  <p className="text-2xl font-extrabold text-accent">{tab.desc}</p>
+                  <p className="text-lg sm:text-2xl font-extrabold text-accent break-words">{tab.desc}</p>
                 </div>
               </div>
 
@@ -215,8 +215,8 @@ const SchoolComparison = () => {
                         <tbody>
                           {section.rows.map(([label, value], idx) => (
                             <tr key={label} className={idx % 2 === 0 ? "bg-card" : "bg-muted/20"}>
-                              <td className="p-3 md:p-4 text-foreground/80 align-top">{label}</td>
-                              <td className="p-3 md:p-4 text-right font-semibold text-foreground align-top whitespace-nowrap">
+                              <td className="p-2 md:p-4 text-foreground/80 align-top">{label}</td>
+                              <td className="p-2 md:p-4 text-right font-semibold text-foreground align-top w-1/3">
                                 {value}
                               </td>
                             </tr>
