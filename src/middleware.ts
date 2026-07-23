@@ -5,8 +5,8 @@ import { Redis } from "@upstash/redis";
 
 // Create a new Ratelimit instance
 const redis = new Redis({
-  url: "https://internal-sloth-137008.upstash.io",
-  token: "gQAAAAAAAhcwAAIgcDE5Y2JhYTc1MWVkNGY0MmM4YWY0OGY2MzVkNjgxOTNhNw", // Private upsplash key - do not expose in client-side code!
+  url: "https://eternal-dingo-170551.upstash.io",
+  token: "gQAAAAAAApo3AAIgcDI1NDU4NTYwNzJkMWE0MzVlOWQ1YmQ3ZTM3N2Q2NDFhOQ", // Private upsplash key - do not expose in client-side code!
 });
 
 const ratelimit = new Ratelimit({
