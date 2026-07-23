@@ -27,7 +27,7 @@ const SchoolComparison = () => {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">Ubezpieczenie dla</h2>
           <h2 className="text-3xl font-bold text-accent mt-2 md:text-4xl">dzieci i młodzieży</h2>
-          <p className="mt-4 text-muted-foreground">Wybierz sumę ubezpieczenia i zobacz roczną składkę.</p>
+          <p className="mt-4 text-muted-foreground">Wybierz sumę ubezpieczenia i roczną składkę.</p>
         </div>
 
         {/* tabsOptions Filter */}
