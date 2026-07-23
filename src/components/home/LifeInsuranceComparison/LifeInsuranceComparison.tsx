@@ -78,13 +78,13 @@ const LifeInsuranceComparison = () => {
 
         {/* Age Filter */}
         <div className="mt-2 flex justify-center">
-          <Tabs value={age} onValueChange={(v) => setAge(v as AgeId)} className="w-full max-w-2xl">
+          <Tabs value={age} onValueChange={(v) => setAge(v as AgeId)} className="w-full max-w-2xl ">
             <TabsList className="grid w-full grid-cols-5 bg-muted/100 py-0 rounded-xl gap-1 !h-12 ">
               {ageRanges.map((ageRange) => (
                 <TabsTrigger
                   key={ageRange.id}
                   value={ageRange.id}
-                  className="flex items-center justify-center rounded-lg !h-10 text-xs sm:text-sm font-semibold data-[state=active]:bg-card data-[state=active]:text-accent data-[state=active]:shadow-sm"
+                  className="flex items-center justify-center cursor-pointer rounded-lg !h-10 text-xs sm:text-sm font-semibold data-[state=active]:bg-card data-[state=active]:text-accent data-[state=active]:shadow-sm"
                 >
                   {ageRange.label}
                 </TabsTrigger>

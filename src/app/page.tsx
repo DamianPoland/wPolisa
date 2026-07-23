@@ -4,6 +4,7 @@ import HeroSection from "@/components/home/HeroSection";
 import InsuranceTiles from "@/components/home/InsuranceTiles";
 import PartnersSection from "@/components/home/PartnersSection";
 import SpecialOffers from "@/components/home/SpecialOffers";
+import SchoolComparison from "@/components/home/SchoolComparison/SchoolComparison";
 
 export const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ export const HomePage = () => {
       <HeroSection />
       <SpecialOffers />
       <InsuranceTiles />
+      <SchoolComparison />
       <LifeInsuranceComparison />
       <CTASection />
       <PartnersSection />
