@@ -115,7 +115,14 @@ const SchoolComparison = () => {
 
               {/* CTA */}
               <div className="mt-auto pt-6">
-                <Button variant="accent" className="w-full group cursor-pointer" onClick={() => setOpen(true)}>
+                <Button
+                  variant="accent"
+                  className="w-full group cursor-pointer"
+                  onClick={() => window.open(`https://ubestrefa.pl/oferta/WPOLISAEDU`, "_blank")}
+                >
+                  Wybierz tę ofertę
+                </Button>
+                <Button variant="outline" className="w-full group cursor-pointer mt-4" onClick={() => setOpen(true)}>
                   Zobacz szczegóły
                 </Button>
               </div>
@@ -238,12 +245,13 @@ const SchoolComparison = () => {
               </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Button variant="accent" size="sm" className="w-full" asChild>
-                  <Link
-                    href={`/offer`} // TODO - dodać link do PZU
-                  >
-                    Wybierz tą ofertę
-                  </Link>
+                <Button
+                  variant="accent"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => window.open(`https://ubestrefa.pl/oferta/WPOLISAEDU`, "_blank")}
+                >
+                  Wybierz tę ofertę
                 </Button>
                 <Button
                   variant="outline"
