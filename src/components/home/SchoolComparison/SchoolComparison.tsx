@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import Image from "next/image";
 import pzu from "@/assets/images/pzu.png";
 import {
@@ -20,6 +19,22 @@ import {
 const SchoolComparison = () => {
   const [tab, setTab] = useState<tabsOptionsType>(tabsOptions[4]);
   const [open, setOpen] = useState(false);
+
+  const getOfferUrl = () => {
+    const offerStandard = "https://ubestrefa.pl/oferta/WPOLISASTANDARD";
+    const offerOptimum = "https://ubestrefa.pl/oferta/WPOLISAOPTIMUM";
+    const offerMax = "https://ubestrefa.pl/oferta/WPOLISAMAX";
+
+    if (tab === tabsOptions[0] || tab === tabsOptions[1] || tab === tabsOptions[2]) {
+      return offerStandard;
+    }
+    if (tab === tabsOptions[3] || tab === tabsOptions[4] || tab === tabsOptions[5]) {
+      return offerOptimum;
+    }
+    if (tab === tabsOptions[6] || tab === tabsOptions[7] || tab === tabsOptions[8]) {
+      return offerMax;
+    }
+  };
 
   return (
     <section id="school" className="px-4 md:px-2 py-16 md:py-24">
@@ -118,7 +133,7 @@ const SchoolComparison = () => {
                 <Button
                   variant="accent"
                   className="w-full group cursor-pointer"
-                  onClick={() => window.open(`https://ubestrefa.pl/oferta/WPOLISAEDU`, "_blank")}
+                  onClick={() => window.open(getOfferUrl(), "_blank")}
                 >
                   Wybierz tę ofertę
                 </Button>
@@ -137,6 +152,10 @@ const SchoolComparison = () => {
               <DialogTitle className="text-2xl font-bold mt-2">NNW PZU Edukacja – szczegóły oferty</DialogTitle>
               <DialogDescription>
                 Ubezpieczenie dla dzieci i młodzieży – do 18. urodzin, a jeśli się uczą – do ukończenia 26 lat.
+              </DialogDescription>
+              <DialogDescription className="mt-2 text-sm text-accent text-sm font-bold">
+                Specjalna oferta ubezpieczenia NNW PZU Edukacja skierowana do Klientów agencji ubezpieczeniowej wPolisa
+                Sp. z o.o.
               </DialogDescription>
             </DialogHeader>
 
@@ -248,8 +267,11 @@ const SchoolComparison = () => {
                 <Button
                   variant="accent"
                   size="sm"
-                  className="w-full"
-                  onClick={() => window.open(`https://ubestrefa.pl/oferta/WPOLISAEDU`, "_blank")}
+                  className="w-full cursor-pointer"
+                  onClick={() => {
+                    window.open(getOfferUrl(), "_blank");
+                    setOpen(false);
+                  }}
                 >
                   Wybierz tę ofertę
                 </Button>
