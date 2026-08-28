@@ -5,6 +5,7 @@ import InsuranceTiles from "@/components/home/InsuranceTiles";
 import PartnersSection from "@/components/home/PartnersSection";
 import SpecialOffers from "@/components/home/SpecialOffers";
 import SchoolComparison from "@/components/home/SchoolComparison/SchoolComparison";
+import PetInsuranceSection from "@/components/home/PetInsuranceSection";
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
       <InsuranceTiles />
       <SchoolComparison />
       <LifeInsuranceComparison />
+      <PetInsuranceSection />
       <CTASection />
       <PartnersSection />
     </main>
