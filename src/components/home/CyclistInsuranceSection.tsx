@@ -33,7 +33,7 @@ const benefits = [
 
 const CyclistInsuranceSection = () => {
   return (
-    <section id="pet" className="px-4 md:px-2 py-16 md:py-24">
+    <section id="bike" className="px-4 md:px-2 py-16 md:py-24">
       <div className="container m-auto">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: illustration */}
